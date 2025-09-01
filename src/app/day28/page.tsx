@@ -1,3 +1,4 @@
+'use client'
 export const metadata = {
   title: 'Day 28: Selenium Roadmap & Review | SDET Course',
   description: 'Complete roadmap covering all Selenium concepts including browser operations, locators, web elements, Actions class, alerts, and frames.',

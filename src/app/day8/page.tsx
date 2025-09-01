@@ -1,9 +1,9 @@
+'use client'
 export const metadata = {
   title: 'Day 8: Java Loops & Iterations | SDET Course',
   description: 'Master Java loops including for, while, and do-while loops. Learn loop control statements and iteration techniques for automation.',
   keywords: 'java loops, for loop, while loop, do while loop, iterations, loop control, java programming, automation loops',
 }
-'use client'
 
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'

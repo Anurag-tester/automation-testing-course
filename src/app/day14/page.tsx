@@ -1,3 +1,4 @@
+'use client'
 export const metadata = {
   title: 'Day 14: Dropdown Handling with Select Class | SDET Course',
   description: 'Learn Selenium dropdown handling using Select class. Master selectByValue, selectByText, selectByIndex, and multi-select dropdowns.',

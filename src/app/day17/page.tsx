@@ -1,3 +1,4 @@
+'use client'
 export const metadata = {
   title: 'Day 17: Frame Handling - iFrame Navigation | SDET Course',
   description: 'Learn Selenium frame handling and iFrame navigation. Master switchTo().frame(), defaultContent(), and nested frame operations.',

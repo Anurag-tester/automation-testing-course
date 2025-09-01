@@ -1,9 +1,9 @@
+'use client'
 export const metadata = {
   title: 'Day 11: Web Element Identification & Locators | SDET Course',
   description: 'Master web element identification using Selenium locators. Learn ID, Name, ClassName, XPath, CSS Selector strategies and best practices.',
   keywords: 'selenium locators, web element identification, xpath, css selector, selenium findElement, locator strategies, element location',
 }
-'use client'
 
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'

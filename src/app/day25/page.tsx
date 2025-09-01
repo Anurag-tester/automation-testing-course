@@ -1,9 +1,9 @@
+'use client'
 export const metadata = {
   title: 'Day 25: Dropdown Handling - Select Class & Dynamic | SDET Course',
   description: 'Master dropdown handling techniques including Select class for HTML select tags and iteration methods for dynamic dropdowns.',
   keywords: 'dropdown handling, select class, dynamic dropdowns, dropdown automation, selectByVisibleText, custom dropdowns',
 }
-'use client'
 
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'

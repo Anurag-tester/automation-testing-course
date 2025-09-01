@@ -1,3 +1,4 @@
+'use client'
 export const metadata = {
   title: 'Day 35: SSL Certificate & File Upload Handling | SDET Course',
   description: 'Learn to handle SSL certificates and automate file uploads using AutoIT library in Selenium WebDriver for complete automation.',

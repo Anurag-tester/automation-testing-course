@@ -1,9 +1,9 @@
+'use client'
 export const metadata = {
   title: 'Day 22: XPath Practice & Assignments | SDET Course',
   description: 'Comprehensive XPath practice session with real-world assignments and hands-on exercises for mastering element location.',
   keywords: 'xpath practice, xpath assignments, xpath exercises, element location practice, xpath training, locator practice',
 }
-'use client'
 
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'

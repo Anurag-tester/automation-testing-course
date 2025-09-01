@@ -1,9 +1,9 @@
+'use client'
 export const metadata = {
   title: 'Day 23: XPath Sibling Navigation | SDET Course',
   description: 'Master XPath sibling navigation techniques using following-sibling and preceding-sibling axes for related element location.',
   keywords: 'xpath sibling navigation, following-sibling, preceding-sibling, sibling axes, xpath navigation, element relationships',
 }
-'use client'
 
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'

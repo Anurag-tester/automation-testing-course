@@ -1,3 +1,4 @@
+'use client'
 export const metadata = {
   title: 'Day 19: JavaScript Executor - DOM Manipulation | SDET Course',
   description: 'Learn Selenium JavaScript Executor for DOM manipulation and advanced browser interactions. Master executeScript() methods.',

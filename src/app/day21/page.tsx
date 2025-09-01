@@ -1,3 +1,4 @@
+'use client'
 export const metadata = {
   title: 'Day 21: Advanced XPath & Axes | SDET Course',
   description: 'Master advanced XPath techniques including XPath axes like child, descendant, and complex DOM navigation strategies.',

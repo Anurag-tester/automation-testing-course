@@ -1,23 +1,17 @@
-import DayLayout from '@/components/DayLayout';
-import InterviewQuestionsClient from './InterviewQuestionsClient';
+'use client';
 
-export const metadata = {
-  title: 'SDET Interview Questions - 40+ Questions with Answers | Automation Testing',
-  description: 'Comprehensive SDET interview questions covering Manual Testing, Java, Selenium WebDriver, TestNG, and advanced automation concepts. Perfect for interview preparation.',
-  keywords: 'SDET interview questions, selenium interview questions, automation testing interview, java interview questions, manual testing interview, QA interview prep',
-}
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 
-export default function InterviewQuestions() {
-  return (
-    <DayLayout
-      dayNumber={0}
-      title="SDET Interview Questions"
-      description="Comprehensive collection of SDET interview questions covering Manual Testing, Java Programming, Selenium WebDriver, and TestNG with detailed answers."
-    >
-      <InterviewQuestionsClient />
-    </DayLayout>
-  );
-}
+const interviewQuestions = [
+  {
+    id: 1,
+    category: "Manual Testing",
+    question: "What is SDLC and explain its phases?",
+    answer: "SDLC stands for Software Development Life Cycle. It has 7 phases: 1) Requirement Gathering - BA team gathers requirements and creates BRS documents, 2) Analysis Requirement - BA creates SRS/FRS documents, 3) Design - High/Low level design creation, 4) Coding - Development team builds the application, 5) Testing - QA team tests the application, 6) Deployment - Application deployed to production, 7) Maintenance - Adding/modifying features.",
+    difficulty: "Basic",
+    tags: ["sdlc", "manual-testing", "phases", "brs", "srs"]
+  },
   {
     id: 2,
     category: "Manual Testing",
@@ -332,13 +326,7 @@ export default function InterviewQuestions() {
   }
 ];
 
-export const metadata = {
-  title: 'SDET Interview Questions - 40+ Questions with Answers | Automation Testing',
-  description: 'Comprehensive SDET interview questions covering Manual Testing, Java, Selenium WebDriver, TestNG, and advanced automation concepts. Perfect for interview preparation.',
-  keywords: 'SDET interview questions, selenium interview questions, automation testing interview, java interview questions, manual testing interview, QA interview prep',
-}
-
-export default function InterviewQuestions() {
+export default function InterviewQuestionsClient() {
   const [expandedQuestions, setExpandedQuestions] = useState<number[]>([]);
   
   const filteredQuestions = interviewQuestions;
@@ -373,148 +361,140 @@ export default function InterviewQuestions() {
   };
 
   return (
-    <DayLayout
-      dayNumber={0}
-      title="SDET Interview Questions"
-      description="Comprehensive collection of SDET interview questions covering Manual Testing, Java Programming, Selenium WebDriver, and TestNG with detailed answers."
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <section className="mb-12">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
-            <h2 className="text-3xl font-light text-gray-900 mb-4">SDET Interview Preparation</h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Master your SDET interviews with our comprehensive question bank covering all essential topics from Manual Testing to Advanced Selenium WebDriver concepts.
-            </p>
-            <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-blue-600">{interviewQuestions.filter(q => q.category === 'Manual Testing').length}</div>
-                <div className="text-sm text-gray-600">Manual Testing</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-purple-600">{interviewQuestions.filter(q => q.category === 'Java Programming').length}</div>
-                <div className="text-sm text-gray-600">Java Programming</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-orange-600">{interviewQuestions.filter(q => q.category === 'Selenium WebDriver').length}</div>
-                <div className="text-sm text-gray-600">Selenium WebDriver</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-pink-600">{interviewQuestions.filter(q => q.category === 'TestNG').length}</div>
-                <div className="text-sm text-gray-600">TestNG</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-green-600">{interviewQuestions.filter(q => q.category === 'Advanced Selenium').length}</div>
-                <div className="text-sm text-gray-600">Advanced Topics</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-red-600">{interviewQuestions.filter(q => q.category === 'Framework Design').length}</div>
-                <div className="text-sm text-gray-600">Framework Design</div>
-              </div>
+    <div className="max-w-6xl mx-auto">
+      {/* Header Section */}
+      <section className="mb-12">
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
+          <h2 className="text-3xl font-light text-gray-900 mb-4">SDET Interview Preparation</h2>
+          <p className="text-lg text-gray-600 mb-6">
+            Master your SDET interviews with our comprehensive question bank covering all essential topics from Manual Testing to Advanced Selenium WebDriver concepts.
+          </p>
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="bg-white rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-blue-600">{interviewQuestions.filter(q => q.category === 'Manual Testing').length}</div>
+              <div className="text-sm text-gray-600">Manual Testing</div>
+            </div>
+            <div className="bg-white rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-purple-600">{interviewQuestions.filter(q => q.category === 'Java Programming').length}</div>
+              <div className="text-sm text-gray-600">Java Programming</div>
+            </div>
+            <div className="bg-white rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-orange-600">{interviewQuestions.filter(q => q.category === 'Selenium WebDriver').length}</div>
+              <div className="text-sm text-gray-600">Selenium WebDriver</div>
+            </div>
+            <div className="bg-white rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-pink-600">{interviewQuestions.filter(q => q.category === 'TestNG').length}</div>
+              <div className="text-sm text-gray-600">TestNG</div>
+            </div>
+            <div className="bg-white rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-green-600">{interviewQuestions.filter(q => q.category === 'Advanced Selenium').length}</div>
+              <div className="text-sm text-gray-600">Advanced Topics</div>
+            </div>
+            <div className="bg-white rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-red-600">{interviewQuestions.filter(q => q.category === 'Framework Design').length}</div>
+              <div className="text-sm text-gray-600">Framework Design</div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Questions Section */}
-        <section className="mb-16">
-          <div className="space-y-4">
-            {filteredQuestions.map((question) => (
-              <div key={question.id} className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-                <div 
-                  className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
-                  onClick={() => toggleQuestion(question.id)}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(question.category)}`}>
-                          {question.category}
-                        </span>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(question.difficulty)}`}>
-                          {question.difficulty}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-medium text-gray-900 mb-2">
-                        Q{question.id}. {question.question}
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {question.tags.slice(0, 4).map((tag, index) => (
-                          <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
-                            {tag}
-                          </span>
-                        ))}
-                        {question.tags.length > 4 && (
-                          <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
-                            +{question.tags.length - 4} more
-                          </span>
-                        )}
-                      </div>
+      {/* Questions Section */}
+      <section className="mb-16">
+        <div className="space-y-4">
+          {filteredQuestions.map((question) => (
+            <div key={question.id} className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+              <div 
+                className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                onClick={() => toggleQuestion(question.id)}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(question.category)}`}>
+                        {question.category}
+                      </span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(question.difficulty)}`}>
+                        {question.difficulty}
+                      </span>
                     </div>
-                    <div className="ml-4">
-                      {expandedQuestions.includes(question.id) ? (
-                        <ChevronUp className="w-5 h-5 text-gray-400" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">
+                      Q{question.id}. {question.question}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {question.tags.slice(0, 4).map((tag, index) => (
+                        <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                          {tag}
+                        </span>
+                      ))}
+                      {question.tags.length > 4 && (
+                        <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                          +{question.tags.length - 4} more
+                        </span>
                       )}
                     </div>
                   </div>
+                  <div className="ml-4">
+                    {expandedQuestions.includes(question.id) ? (
+                      <ChevronUp className="w-5 h-5 text-gray-400" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                    )}
+                  </div>
                 </div>
-                
-                {expandedQuestions.includes(question.id) && (
-                  <div className="px-6 pb-6 border-t border-gray-100">
-                    <div className="pt-4">
-                      <h4 className="font-medium text-gray-900 mb-3">Answer:</h4>
-                      <div className="bg-green-50 rounded-lg p-4">
-                        <p className="text-gray-700 leading-relaxed">{question.answer}</p>
-                      </div>
-                      <div className="mt-4">
-                        <h5 className="font-medium text-gray-700 mb-2">Related Tags:</h5>
-                        <div className="flex flex-wrap gap-2">
-                          {question.tags.map((tag, index) => (
-                            <span key={index} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+              </div>
+              
+              {expandedQuestions.includes(question.id) && (
+                <div className="px-6 pb-6 border-t border-gray-100">
+                  <div className="pt-4">
+                    <h4 className="font-medium text-gray-900 mb-3">Answer:</h4>
+                    <div className="bg-green-50 rounded-lg p-4">
+                      <p className="text-gray-700 leading-relaxed">{question.answer}</p>
+                    </div>
+                    <div className="mt-4">
+                      <h5 className="font-medium text-gray-700 mb-2">Related Tags:</h5>
+                      <div className="flex flex-wrap gap-2">
+                        {question.tags.map((tag, index) => (
+                          <span key={index} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-
-        </section>
-
-        {/* Tips Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-light text-gray-900 mb-8">Interview Tips</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">📝 Preparation Strategy</h3>
-              <ul className="text-gray-600 space-y-2 text-sm">
-                <li>• Start with basic concepts and build up to advanced topics</li>
-                <li>• Practice coding examples for each concept</li>
-                <li>• Understand the 'why' behind each approach</li>
-                <li>• Prepare real-world scenarios and challenges you've faced</li>
-                <li>• Review your automation framework architecture</li>
-              </ul>
+                </div>
+              )}
             </div>
-            
-            <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">💡 During the Interview</h3>
-              <ul className="text-gray-600 space-y-2 text-sm">
-                <li>• Think out loud while solving problems</li>
-                <li>• Ask clarifying questions when needed</li>
-                <li>• Explain trade-offs between different approaches</li>
-                <li>• Share specific examples from your experience</li>
-                <li>• Be honest about what you don't know</li>
-              </ul>
-            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Tips Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-light text-gray-900 mb-8">Interview Tips</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">📝 Preparation Strategy</h3>
+            <ul className="text-gray-600 space-y-2 text-sm">
+              <li>• Start with basic concepts and build up to advanced topics</li>
+              <li>• Practice coding examples for each concept</li>
+              <li>• Understand the 'why' behind each approach</li>
+              <li>• Prepare real-world scenarios and challenges you've faced</li>
+              <li>• Review your automation framework architecture</li>
+            </ul>
           </div>
-        </section>
-      </div>
-    </DayLayout>
+          
+          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">💡 During the Interview</h3>
+            <ul className="text-gray-600 space-y-2 text-sm">
+              <li>• Think out loud while solving problems</li>
+              <li>• Ask clarifying questions when needed</li>
+              <li>• Explain trade-offs between different approaches</li>
+              <li>• Share specific examples from your experience</li>
+              <li>• Be honest about what you don't know</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

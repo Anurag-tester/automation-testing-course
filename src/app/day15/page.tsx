@@ -1,3 +1,4 @@
+'use client'
 export const metadata = {
   title: 'Day 15: Checkbox & Radio Button Handling | SDET Course',
   description: 'Learn Selenium checkbox and radio button handling. Master selection states, group operations, and form element automation.',
