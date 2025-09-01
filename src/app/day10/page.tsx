@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 10: Selenium Introduction & Setup | SDET Course',
   description: 'Learn Selenium WebDriver introduction, setup, and browser operations. Start your automation testing journey with first Selenium script.',

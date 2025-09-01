@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 30: Screenshots & Browser Options | SDET Course',
   description: 'Learn to capture screenshots, full page screenshots, and configure browser options like incognito mode, headless mode, and notifications.',

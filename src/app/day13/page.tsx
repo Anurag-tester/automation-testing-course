@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 13: Advanced Locators - XPath & CSS Selectors | SDET Course',
   description: 'Master advanced Selenium locators including XPath expressions, CSS selectors, and complex element location strategies.',

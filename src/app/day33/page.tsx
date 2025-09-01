@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 33: Advanced Selenium & Exception Handling | SDET Course',
   description: 'Deep dive into synchronization, flaky scenarios, exception handling, and advanced Selenium concepts for robust test automation.',

@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 34: Shadow DOM Handling in Selenium | SDET Course',
   description: 'Master the techniques for handling Shadow DOM elements in modern web applications using Selenium WebDriver 4+ features.',

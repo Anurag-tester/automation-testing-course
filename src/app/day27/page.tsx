@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 27: Multiple Window & Tab Handling | SDET Course',
   description: 'Master window and tab handling techniques using getWindowHandle(), getWindowHandles(), and switchTo().window() methods.',

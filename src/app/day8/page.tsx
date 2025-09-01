@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 8: Java Loops & Iterations | SDET Course',
   description: 'Master Java loops including for, while, and do-while loops. Learn loop control statements and iteration techniques for automation.',

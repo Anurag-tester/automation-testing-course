@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 29: Synchronization - Waits in Selenium | SDET Course',
   description: 'Master synchronization concepts including implicit wait, explicit wait, and fluent wait to handle dynamic web elements effectively.',

@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 31: Broken Link Detection | SDET Course',
   description: 'Learn to identify and validate broken links in web applications using HTTP response codes and URL connection testing.',

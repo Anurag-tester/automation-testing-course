@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 12: Element Interactions - Click, Type, Clear | SDET Course',
   description: 'Learn Selenium element interactions including click, sendKeys, clear operations. Master element states and web element methods.',

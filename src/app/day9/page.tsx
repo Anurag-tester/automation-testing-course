@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 9: Java Methods & Functions | SDET Course',
   description: 'Learn Java methods, parameters, return types, and variable scope. Master method creation and function concepts for test automation.',

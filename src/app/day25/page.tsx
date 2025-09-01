@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 25: Dropdown Handling - Select Class & Dynamic | SDET Course',
   description: 'Master dropdown handling techniques including Select class for HTML select tags and iteration methods for dynamic dropdowns.',

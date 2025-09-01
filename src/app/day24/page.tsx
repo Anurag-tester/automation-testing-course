@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 24: Advanced XPath Practice | SDET Course',
   description: 'Advanced XPath practice with complex scenarios, real-world applications, and comprehensive assignments for expert-level skills.',

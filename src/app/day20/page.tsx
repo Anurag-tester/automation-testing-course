@@ -1,4 +1,3 @@
-'use client'
 export const metadata = {
   title: 'Day 20: Relative XPath Fundamentals | SDET Course',
   description: 'Master relative XPath techniques including single attributes, logical operators, and XPath functions for robust element location.',
