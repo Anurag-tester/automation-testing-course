@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testmaster-h65zt3ual-anurag-patels-projects-41254f00.vercel.app',
+    url: 'https://testmaster-iota.vercel.app',
     title: 'Complete SDET Automation Testing Course - 35 Days Training',
     description: 'Master SDET skills with our comprehensive 35-day automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing with hands-on practice challenges.',
     siteName: 'SDET Mastery Course',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     creator: '@PrafulPawar',
   },
   alternates: {
-    canonical: 'https://testmaster-h65zt3ual-anurag-patels-projects-41254f00.vercel.app',
+    canonical: 'https://testmaster-iota.vercel.app',
   },
 }
 
