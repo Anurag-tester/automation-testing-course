@@ -1,58 +1,174 @@
-# Automation Testing Course Website
+# Complete SDET Automation Testing Course
 
-A comprehensive course website built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui components, covering Manual Testing, Java Programming, and Selenium WebDriver.
+🚀 **Full Stack SDET Training** - A comprehensive automation testing course website covering Web UI, API, Database, and Mobile testing with modern tools and frameworks.
 
-## Features
+## 🎯 Course Overview
 
-- 📚 Structured course content organized by weeks and days
-- 💻 Interactive code examples with syntax highlighting
-- 📝 Assignments and practical exercises
-- 🎨 Modern UI with Tailwind CSS and shadcn/ui
-- 📱 Responsive design for all devices
-- ⚡ Fast performance with Next.js
+**35 Days of Complete SDET Training** covering:
+- 📋 **Manual Testing Foundation** (5 days)
+- ☕ **Java Programming** (4 days) 
+- 🌐 **Selenium WebDriver Mastery** (26 days)
+- 🎯 **40+ Interview Questions**
+- 💻 **22 Practice Challenges**
+- 📚 **Complete Curriculum Guide**
 
-## Getting Started
+## ✨ Features
 
-1. Install dependencies:
+- 📚 **35 comprehensive days** of structured content
+- 💻 **Interactive code examples** with syntax highlighting
+- 🧪 **22 hands-on practice challenges** (Beginner to Expert)
+- 📝 **40 interview questions** with detailed answers
+- 🎨 **Modern UI** with Tailwind CSS and shadcn/ui
+- 📱 **Responsive design** for all devices
+- ⚡ **Fast performance** with Next.js 14
+- 🔍 **Advanced search** functionality
+
+## 🚀 Getting Started
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/Anurag-tester/automation-testing-course.git
+cd automation-testing-course
+```
+
+2. **Install dependencies:**
 ```bash
 npm install
 ```
 
-2. Run the development server:
+3. **Run the development server:**
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. **Open in browser:**
+```
+http://localhost:3000
+```
 
-## Course Structure
+## 📋 Complete Course Structure
 
-### Week 1: Manual Testing & Java Fundamentals
-- Day 1: Manual Testing Basics (SDLC, Fish Model)
-- Day 2: Testing Techniques (Black Box Testing)
-- Day 6: Java Fundamentals (Data Types, Operators)
+### 🔵 Manual Testing Foundation (Days 1-5)
+- **Day 1:** Manual Testing Basics (SDLC, Fish Model)
+- **Day 2:** Testing Techniques (Black Box, ECP, BVA)
+- **Day 3:** Advanced Testing Methods (Decision Table, State Transition)
+- **Day 4:** Test Documentation (Test Plans, Test Cases)
+- **Day 5:** Defect Management (Bug Life Cycle, Severity vs Priority)
 
-### Week 2: Selenium WebDriver Basics
-- Day 10: Selenium Introduction (Browser Operations)
+### 🟢 Java Programming (Days 6-9)
+- **Day 6:** Java Fundamentals (Data Types, Variables, Operators)
+- **Day 7:** Java Operators & Control Structures
+- **Day 8:** Loops & Iterations (For, While, Do-While)
+- **Day 9:** Methods & Functions (Parameters, Return Types, Scope)
 
-## Tech Stack
+### 🟣 Selenium WebDriver Mastery (Days 10-35)
+- **Day 10:** Selenium Introduction & Setup
+- **Day 11:** Web Element Identification & Locators
+- **Day 12:** Element Interactions (Click, Type, Clear)
+- **Day 13:** Advanced Locators (XPath, CSS Selectors)
+- **Day 14:** Dropdown Handling (Select Class)
+- **Day 15:** Checkbox & Radio Button Handling
+- **Day 16:** Alert Handling (JavaScript Alerts)
+- **Day 17:** Frame Handling (iFrame Navigation)
+- **Day 18:** Actions Class (Mouse & Keyboard Events)
+- **Day 19:** JavaScript Executor (DOM Manipulation)
+- **Day 20:** Relative XPath Fundamentals
+- **Day 21:** Advanced XPath & Axes
+- **Day 22:** XPath Practice & Assignments
+- **Day 23:** XPath Sibling Navigation
+- **Day 24:** Advanced XPath Practice
+- **Day 25:** Dropdown Handling (Select Class & Dynamic)
+- **Day 26:** Dynamic Table & Calendar Handling
+- **Day 27:** Multiple Window & Tab Handling
+- **Day 28:** Selenium Roadmap & Review
+- **Day 29:** Synchronization (Implicit, Explicit, Fluent Waits)
+- **Day 30:** Screenshots & Browser Options
+- **Day 31:** Broken Link Detection
+- **Day 32:** Selenium Theory & Interview Questions
+- **Day 33:** Advanced Concepts & Exception Handling
+- **Day 34:** Shadow DOM Handling
+- **Day 35:** SSL Certificate & File Upload (AutoIT)
 
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
-- **Icons**: Lucide React
+## 🎯 Practice Challenges (22 Total)
 
-## Project Structure
+### 🟢 Beginner Level (6 challenges)
+- Button Click Challenge
+- Input Handling Challenge
+- Select Dropdown Challenge
+- Radio Button Toggle Challenge
+- Elements Challenge
+- Forms Challenge
+
+### 🔵 Intermediate Level (4 challenges)
+- Multi-Select Challenge
+- Slider Challenge
+- Calendar Challenge
+- Waits Challenge
+
+### 🟠 Advanced Level (8 challenges)
+- Table Operations (Simple & Advanced)
+- Frame Navigation Challenge
+- Window Management Challenge
+- Drag & Drop Challenge
+- Sort Challenge
+- Alert Dialog Challenge
+- File Management Challenge
+- Shadow DOM Challenge
+
+### 🔴 Expert Level (4 challenges)
+- Complex multi-step scenarios
+- Real-world automation challenges
+
+## 📚 Additional Resources
+
+- **📋 Complete Curriculum:** Full Stack SDET training roadmap
+- **❓ Interview Questions:** 40 comprehensive Q&A covering all topics
+- **🔍 Search Functionality:** Find content across all days and topics
+- **📖 Selenium Cheatsheet:** Quick reference guide
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Icons:** Lucide React
+- **Search:** Advanced fuzzy search
+- **Deployment:** Vercel-ready
+
+## 📁 Project Structure
 
 ```
 src/
-├── app/                 # Next.js app router pages
-├── components/          # Reusable UI components
-├── data/               # Course content and data
-└── lib/                # Utility functions
+├── app/
+│   ├── day1-day35/          # 35 individual day pages
+│   ├── practice/            # 22 practice challenges
+│   ├── interview-questions/ # 40 interview Q&A
+│   ├── curriculum/          # Complete curriculum guide
+│   └── page.tsx            # Homepage
+├── components/
+│   ├── ui/                 # shadcn/ui components
+│   ├── DayLayout.tsx       # Day page layout
+│   ├── Quiz.tsx            # Interactive quizzes
+│   └── SearchBox.tsx       # Search functionality
+├── data/
+│   └── courseData.ts       # Course content and metadata
+└── lib/
+    └── utils.ts            # Utility functions
 ```
 
-## Adding New Content
+## 🤝 Contributing
 
-To add new lessons, edit the `src/data/courseData.ts` file and follow the existing structure for weeks, days, and lessons.# Automation
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨💻 Author
+
+**Praful Pawar** - SDET Trainer & Automation Expert
+
+---
+
+⭐ **Star this repository** if you find it helpful for your SDET journey!
