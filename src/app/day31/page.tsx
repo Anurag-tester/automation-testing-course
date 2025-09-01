@@ -1,10 +1,11 @@
+import DayLayout from '@/components/DayLayout';
+import Quiz from '@/components/Quiz';
+
 export const metadata = {
   title: 'Day 31: Broken Link Detection | SDET Course',
   description: 'Learn to identify and validate broken links in web applications using HTTP response codes and URL connection testing.',
   keywords: 'broken links, link validation, http response codes, url testing, link checker, selenium links, link automation',
 }
-import DayLayout from '@/components/DayLayout';
-import Quiz from '@/components/Quiz';
 
 export default function Day31() {
   const quizQuestions = [
