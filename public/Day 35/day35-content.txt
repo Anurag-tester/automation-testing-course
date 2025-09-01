@@ -1,0 +1,275 @@
+How to handle SSL Certification in selenium?											VVVVVVVIIIIMMMPPPPPPPPPPPPPPPPPPPPPPP
+
+		- SSL means Secure Socket Layers.
+		- When we test application in QA Environment or UAT Environment, we use self signed SSL Certificate.
+		- When we open application in browser then it shows """" Your Connection is not private OR this site is not secure""".
+		- Selenium does not run script properly in this scenario we have explicit allow driver to accept the SSL Certificate
+		- We add SSL certificate using setAcceptInsecureCerts(true) keyword.
+		
+Syntax:
+		//create object of ChromeOptions class.
+				ChromeOptions opt =new ChromeOptions();
+		
+		//use setAcceptInsecureCerts(true) method 
+				opt.setAcceptInsecureCerts(true);
+
+		//create object of ChromeDriver class by passing ChromeOptions instance name
+				ChromeDriver driver =new ChromeDriver(opt);
+
+
+
+step 1: create object of ChromeOptions class
+			ChromeOptions opt =new ChromeOptions();
+
+step 2: use setAcceptInsecureCerts() by passing true keyword
+
+			opt.setAcceptInsecureCerts(true);
+
+step 3: create object of ChromeDriver class by passing ChromeOptions instance name or object
+
+			ChromeDriver driver =new ChromeDriver(opt);
+
+step 4: use get() method to open a URL
+
+		driver.get("https://self-signed.badssl.com/");
+	
+
+
+package Tutorial20;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+
+		ChromeOptions opt = new ChromeOptions();
+
+		opt.setAcceptInsecureCerts(true);
+
+		ChromeDriver driver = new ChromeDriver(opt);
+
+		driver.get("https://self-signed.badssl.com/");
+
+	}
+
+}
+========================================================================================
+how to upload file in selenium?										VVVVIIIIMMMPPPPPPPPPPPPPPPPP
+
+	- We use AutoIT Library or dependency in selenium to upload the files.
+	- We focus on Desktop object by passing title of the Object , text of the object , and control ID of the Object (Combination of class + instance name				
+					ControlFocus("Title", "Text", "ControlID")
+
+	- We enter text in object by passing title of object, text of the object, control Id of the object , file path.
+					ControlSetText("Title", "Text" , "ControlID", "path");
+
+	- we click on object by passing Title of object , text of object, and control ID of object.
+						ControlClick("Title ", "Text" , "ControlID");
+	
+
+
+AutoIT				---> Open AutoIT Scripts and write a scripts
+
+	step 1: Focus on File Name Text box
+syntax:
+				ControlFocus("Title", "Text" , "ControlID")
+
+e.g.
+				ControlFocus("Open", "", "Edit1")
+				
+	step 2: enter text in File Name text box object
+syntax:
+				ControlSetText("Title", "text", "ControlID", "file path");
+
+e.g.
+				ControlSetText("Open", "", "Edit1", "C:\Users\praf0\OneDrive\Desktop\Soft-Tech Classes, Pune.xlsx");
+
+
+	step 3: click on Open Button
+
+syntax:
+				ControlClick("Title", "text", "ControlID");
+
+e.g.
+				ControlClick("Open", "", "Button1");
+
+---------------------------------------------
+
+	step 4: generate AutoIT .exec script
+			- in AutoIT Script window,  Click on Tools, and click on compile keyword.
+			- it will generate Auto ID  .exe file	
+
+
+Selenium Script
+	step 1:upload file using RunTime.getRunTime().exec() by passing AutoIT .exec script locations
+
+--------------------------------------------------------------------------------------------
+public class Demo2
+{
+
+	public static void main(String [] args)
+	{
+			ChromeDriver driver =new ChromeDriver();
+
+			driver.get("https://demoqa.com/upload-download");
+
+			driver.findElement(By.id("uploadFile")).click();
+
+			// Execute Auto IT scripts
+			RunTime.getRunTime().exec("C:\Users\praf0\OneDrive\Desktop\Upoad File folder\UploadDocuments.exe");
+
+	}
+
+}
+
+==========================================================================================
+package Tutorial20;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Demo2 {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		driver.get("https://demoqa.com/upload-download");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+		WebElement wb = driver.findElement(By.xpath("//label[text()='Select a file']/following-sibling::input"));
+		Actions act = new Actions(driver);
+		act.click(wb).build().perform();
+
+		Thread.sleep(3000);
+
+		Runtime.getRuntime().exec("C:\\Users\\praf0\\OneDrive\\Desktop\\Upoad File folder\\UploadDocuments.exe");
+
+	}
+
+}
+
+
+
+ControlFocus("Open", "", "Edit1")
+Sleep(2000)
+
+
+ControlSetText("Open", "", "Edit1", "C:\Users\praf0\OneDrive\Desktop\Soft-Tech Classes, Pune.xlsx")
+
+Sleep(2000)
+
+ControlClick("Open", "", "Button1")
+
+Sleep(2000)
+
+===================================================================
+https://demoqa.com/automation-practice-form
+
+===================================================================
+ControlFocus("Open", "", "Edit1")
+
+ControlSetText("Open", "", "Edit1", "C:\Users\praf0\OneDrive\Pictures\Screenshots\Screenshot 2023-11-23 111341.png")
+
+ControlClick("Open", "", "Button1")
+
+
+
+
+package Tutorial20;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Demo3 {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+
+		ChromeDriver driver = new ChromeDriver();
+
+		driver.get("https://demo.automationtesting.in/FileUpload.html");
+
+		driver.manage().window().maximize();
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+		WebElement wb = driver.findElement(By.id("input-4"));
+
+		Actions act = new Actions(driver);
+
+		act.click(wb).build().perform();
+
+		Thread.sleep(4000);
+
+		Runtime.getRuntime().exec("C:\\Users\\praf0\\OneDrive\\Desktop\\Upoad File folder\\UploadImage.exe");
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
