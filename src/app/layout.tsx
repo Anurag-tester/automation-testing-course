@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://automation-testing-course.vercel.app',
+    url: 'https://testmaster-h65zt3ual-anurag-patels-projects-41254f00.vercel.app',
     title: 'Complete SDET Automation Testing Course - 35 Days Training',
     description: 'Master SDET skills with our comprehensive 35-day automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing with hands-on practice challenges.',
     siteName: 'SDET Mastery Course',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     creator: '@PrafulPawar',
   },
   alternates: {
-    canonical: 'https://automation-testing-course.vercel.app',
+    canonical: 'https://testmaster-h65zt3ual-anurag-patels-projects-41254f00.vercel.app',
   },
 }
 
@@ -53,6 +54,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <div id="__next">{children}</div>
+        <Analytics />
       </body>
     </html>
   )
