@@ -366,7 +366,7 @@ export default function SearchBox() {
         allResultsMap.set(result.id, {
           ...existing,
           score: Math.max(existing.score, result.score),
-          matchedKeywords: [...new Set(combinedKeywords)]
+          matchedKeywords: Array.from(new Set(combinedKeywords))
         })
       } else {
         allResultsMap.set(result.id, result)

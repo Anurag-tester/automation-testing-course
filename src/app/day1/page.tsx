@@ -245,9 +245,9 @@ export default function Day1Page() {
       </section>
 
       {/* Quiz Section */}
-      <LazyQuiz 
-        title="Day 1 Knowledge Check"
-        questions={[
+      <section className="mb-16">
+        <h2 className="text-2xl font-light text-gray-900 mb-8">Knowledge Check</h2>
+        <Quiz questions={[
           {
             id: 1,
             question: "How many phases are there in the Software Development Life Cycle (SDLC)?",
@@ -283,8 +283,8 @@ export default function Day1Page() {
             correctAnswer: 2,
             explanation: "SRS documents contain Functional Requirements, Use Cases, Functional Flow Diagrams, Screenshots, and HLD/LLD, but not source code."
           }
-        ]}
-      />
+        ]} />
+      </section>
 
       {/* Key Points Summary */}
       <section className="mb-16">
