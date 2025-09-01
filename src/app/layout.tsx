@@ -11,8 +11,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Complete SDET Automation Testing Course - 35 Days Training',
-  description: 'Master SDET skills with our comprehensive 35-day automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing with hands-on practice challenges and interview preparation.',
+  title: 'Complete SDET Automation Testing Course - Comprehensive Training',
+  description: 'Master SDET skills with our comprehensive automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing with hands-on practice challenges and interview preparation. New lessons added regularly.',
   keywords: 'SDET course, automation testing, selenium webdriver, java programming, manual testing, API testing, test automation, software testing training, selenium tutorial, QA automation',
   authors: [{ name: 'Praful Pawar', url: 'https://github.com/Anurag-tester' }],
   creator: 'Praful Pawar',
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://testmaster-iota.vercel.app',
-    title: 'Complete SDET Automation Testing Course - 35 Days Training',
-    description: 'Master SDET skills with our comprehensive 35-day automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing with hands-on practice challenges.',
+    title: 'Complete SDET Automation Testing Course - Comprehensive Training',
+    description: 'Master SDET skills with our comprehensive automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing with hands-on practice challenges. New lessons added regularly.',
     siteName: 'SDET Mastery Course',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Complete SDET Automation Testing Course - 35 Days Training',
-    description: 'Master SDET skills with our comprehensive 35-day automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing.',
+    title: 'Complete SDET Automation Testing Course - Comprehensive Training',
+    description: 'Master SDET skills with our comprehensive automation testing course. Learn Selenium WebDriver, Java, Manual Testing, API Testing. New lessons added regularly.',
     creator: '@PrafulPawar',
   },
   alternates: {
