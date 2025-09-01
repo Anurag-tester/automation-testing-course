@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 12: Element Interactions - Click, Type, Clear | SDET Course',
+  description: 'Learn Selenium element interactions including click, sendKeys, clear operations. Master element states and web element methods.',
+  keywords: 'selenium element interactions, click, sendkeys, clear, web element methods, element states, selenium operations',
+}
 'use client'
 
 import DayLayout from '@/components/DayLayout'

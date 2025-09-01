@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 26: Dynamic Table & Calendar Handling | SDET Course',
+  description: 'Master dynamic calendar navigation and date selection techniques using while loops and enhanced for loops in Selenium WebDriver.',
+  keywords: 'dynamic calendar, calendar handling, date selection, table operations, calendar automation, date picker automation',
+}
 'use client'
 
 import DayLayout from '@/components/DayLayout'

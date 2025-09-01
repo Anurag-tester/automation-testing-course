@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 17: Frame Handling - iFrame Navigation | SDET Course',
+  description: 'Learn Selenium frame handling and iFrame navigation. Master switchTo().frame(), defaultContent(), and nested frame operations.',
+  keywords: 'selenium frames, iframe handling, frame switching, nested frames, switchTo frame, defaultContent',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

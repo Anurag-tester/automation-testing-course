@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 29: Synchronization - Waits in Selenium | SDET Course',
+  description: 'Master synchronization concepts including implicit wait, explicit wait, and fluent wait to handle dynamic web elements effectively.',
+  keywords: 'selenium synchronization, implicit wait, explicit wait, fluent wait, webdriverwait, expected conditions, wait strategies',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 15: Checkbox & Radio Button Handling | SDET Course',
+  description: 'Learn Selenium checkbox and radio button handling. Master selection states, group operations, and form element automation.',
+  keywords: 'selenium checkbox, radio buttons, form elements, selection handling, input elements, form automation',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 5: Defect Management - Bug Life Cycle & Quality Metrics | SDET Course',
+  description: 'Learn defect management including Bug Life Cycle, Severity vs Priority classification, and Quality Metrics for effective bug tracking.',
+  keywords: 'bug life cycle, defect management, severity vs priority, quality metrics, bug tracking, defect reporting, JIRA, defect analysis',
+}
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'
 

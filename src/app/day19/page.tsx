@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 19: JavaScript Executor - DOM Manipulation | SDET Course',
+  description: 'Learn Selenium JavaScript Executor for DOM manipulation and advanced browser interactions. Master executeScript() methods.',
+  keywords: 'selenium javascript executor, DOM manipulation, executeScript, browser javascript, scroll, click using js',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

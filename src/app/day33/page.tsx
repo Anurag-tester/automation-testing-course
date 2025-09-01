@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 33: Advanced Selenium & Exception Handling | SDET Course',
+  description: 'Deep dive into synchronization, flaky scenarios, exception handling, and advanced Selenium concepts for robust test automation.',
+  keywords: 'advanced selenium, exception handling, flaky tests, selenium exceptions, test stability, robust automation, selenium debugging',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

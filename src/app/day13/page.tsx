@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 13: Advanced Locators - XPath & CSS Selectors | SDET Course',
+  description: 'Master advanced Selenium locators including XPath expressions, CSS selectors, and complex element location strategies.',
+  keywords: 'advanced locators, xpath expressions, css selectors, selenium locators, complex locators, xpath functions, css combinators',
+}
 'use client'
 
 import DayLayout from '@/components/DayLayout'

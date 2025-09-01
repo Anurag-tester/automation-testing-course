@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 16: Alert Handling - JavaScript Alerts | SDET Course',
+  description: 'Master Selenium alert handling including simple alerts, confirmation alerts, and prompt dialogs. Learn switchTo().alert() methods.',
+  keywords: 'selenium alerts, javascript alerts, alert handling, confirmation alerts, prompt alerts, switchTo alert',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

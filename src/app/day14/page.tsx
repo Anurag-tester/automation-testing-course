@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 14: Dropdown Handling with Select Class | SDET Course',
+  description: 'Learn Selenium dropdown handling using Select class. Master selectByValue, selectByText, selectByIndex, and multi-select dropdowns.',
+  keywords: 'selenium dropdown, select class, selectByValue, selectByText, selectByIndex, dropdown automation, multi-select dropdown',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

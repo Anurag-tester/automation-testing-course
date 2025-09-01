@@ -1,6 +1,12 @@
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'
 
+export const metadata = {
+  title: 'Day 1: Manual Testing Basics - SDLC & Fish Model | SDET Course',
+  description: 'Learn Software Development Life Cycle (SDLC) fundamentals and Fish Model concepts. Understand BRS, SRS documents and 7 phases of software development.',
+  keywords: 'SDLC, software development life cycle, fish model, BRS documents, SRS documents, manual testing basics, business analyst, requirement gathering',
+}
+
 export default function Day1Page() {
   return (
     <DayLayout 
@@ -239,7 +245,7 @@ export default function Day1Page() {
       </section>
 
       {/* Quiz Section */}
-      <Quiz 
+      <LazyQuiz 
         title="Day 1 Knowledge Check"
         questions={[
           {

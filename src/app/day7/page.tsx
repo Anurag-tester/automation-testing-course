@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 7: Java Operators & Control Structures | SDET Course',
+  description: 'Learn Java operators, conditional statements, and decision-making structures. Master if-else, switch-case, and logical operators.',
+  keywords: 'java operators, conditional statements, if else, switch case, logical operators, java control structures, decision making',
+}
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'
 

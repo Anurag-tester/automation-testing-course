@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 9: Java Methods & Functions | SDET Course',
+  description: 'Learn Java methods, parameters, return types, and variable scope. Master method creation and function concepts for test automation.',
+  keywords: 'java methods, functions, parameters, return types, variable scope, method overloading, java programming, automation methods',
+}
 'use client'
 
 import DayLayout from '@/components/DayLayout'

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 35: SSL Certificate & File Upload Handling | SDET Course',
+  description: 'Learn to handle SSL certificates and automate file uploads using AutoIT library in Selenium WebDriver for complete automation.',
+  keywords: 'ssl certificate, ssl handling, file upload, autoit library, setacceptinsecurecerts, file upload automation, browser security',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

@@ -205,6 +205,12 @@ const getDifficultyIcon = (difficulty: string) => {
   }
 };
 
+export const metadata = {
+  title: 'Selenium Practice Problems - 22 Hands-on Challenges | Automation Testing',
+  description: 'Master Selenium WebDriver with 22 hands-on practice challenges from beginner to expert level. Real-world automation scenarios with interactive solutions.',
+  keywords: 'selenium practice problems, automation testing challenges, selenium webdriver practice, hands-on selenium, automation exercises, selenium training',
+}
+
 export default function PracticePage() {
   return (
     <DayLayout

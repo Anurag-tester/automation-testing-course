@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 3: Advanced Testing Methods - Decision Table & State Transition | SDET Course',
+  description: 'Learn advanced testing methods including Decision Table Testing, State Transition Testing, and Use Case Testing for complex business logic validation.',
+  keywords: 'decision table testing, state transition testing, use case testing, advanced testing methods, manual testing, test design techniques',
+}
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'
 

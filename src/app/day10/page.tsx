@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 10: Selenium Introduction & Setup | SDET Course',
+  description: 'Learn Selenium WebDriver introduction, setup, and browser operations. Start your automation testing journey with first Selenium script.',
+  keywords: 'selenium webdriver, selenium introduction, selenium setup, browser automation, chromedriver, automation testing, selenium tutorial',
+}
 'use client'
 
 import DayLayout from '@/components/DayLayout'

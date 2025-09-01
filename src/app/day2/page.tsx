@@ -1,6 +1,12 @@
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'
 
+export const metadata = {
+  title: 'Day 2: Testing Techniques - Black Box, ECP, BVA | SDET Course',
+  description: 'Master Black Box Testing techniques including Equivalence Class Partitioning (ECP) and Boundary Value Analysis (BVA). Learn systematic testing approaches.',
+  keywords: 'black box testing, equivalence class partitioning, boundary value analysis, ECP, BVA, testing techniques, manual testing, software testing',
+}
+
 export default function Day2Page() {
   return (
     <DayLayout 

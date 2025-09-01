@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 28: Selenium Roadmap & Review | SDET Course',
+  description: 'Complete roadmap covering all Selenium concepts including browser operations, locators, web elements, Actions class, alerts, and frames.',
+  keywords: 'selenium roadmap, selenium review, selenium concepts, automation roadmap, selenium mastery, selenium guide',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

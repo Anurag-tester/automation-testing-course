@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 21: Advanced XPath & Axes | SDET Course',
+  description: 'Master advanced XPath techniques including XPath axes like child, descendant, and complex DOM navigation strategies.',
+  keywords: 'advanced xpath, xpath axes, child axis, descendant axis, xpath navigation, dom traversal, xpath optimization',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

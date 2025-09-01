@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 20: Relative XPath Fundamentals | SDET Course',
+  description: 'Master relative XPath techniques including single attributes, logical operators, and XPath functions for robust element location.',
+  keywords: 'relative xpath, xpath fundamentals, xpath functions, xpath techniques, element location, xpath methods',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

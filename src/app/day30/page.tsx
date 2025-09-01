@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 30: Screenshots & Browser Options | SDET Course',
+  description: 'Learn to capture screenshots, full page screenshots, and configure browser options like incognito mode, headless mode, and notifications.',
+  keywords: 'selenium screenshots, takescreenshot, browser options, chrome options, headless mode, incognito mode, screenshot automation',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

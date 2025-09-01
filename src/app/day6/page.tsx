@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 6: Java Fundamentals - Data Types & Variables | SDET Course',
+  description: 'Master Java fundamentals including primitive data types, variables, and arithmetic operations. Essential Java concepts for automation testing.',
+  keywords: 'java fundamentals, java data types, variables, arithmetic operations, primitive types, java programming, automation testing java',
+}
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'
 

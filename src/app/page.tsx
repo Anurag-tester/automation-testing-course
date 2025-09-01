@@ -1,12 +1,15 @@
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { courseData, getCategoryColor, getCategoryStats } from '@/data/courseData'
 import { BookOpen, Code, TestTube, Play, Calendar, Award, ArrowRight, Search, Target, Users, Clock, Zap, CheckCircle, TrendingUp, Rocket, Star, ChevronRight, Globe, Smartphone, Database } from 'lucide-react'
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
+
+// Lazy load components
+const Footer = dynamic(() => import('@/components/Footer'), { ssr: false })
+const Navbar = dynamic(() => import('@/components/Navbar'))
 
 export default function Home() {
   const categoryStats = getCategoryStats()
@@ -15,8 +18,33 @@ export default function Home() {
   const javaDays = courseData.filter(day => day.category === 'java')
   const seleniumDays = courseData.filter(day => day.category === 'selenium')
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Complete SDET Automation Testing Course',
+    description: 'Master SDET skills with our comprehensive 35-day automation testing course covering Selenium WebDriver, Java Programming, Manual Testing, and API Testing.',
+    provider: {
+      '@type': 'Organization',
+      name: 'SDET Mastery',
+      url: 'https://automation-testing-course.vercel.app'
+    },
+    instructor: {
+      '@type': 'Person',
+      name: 'Praful Pawar'
+    },
+    courseCode: 'SDET-35',
+    educationalLevel: 'Beginner to Advanced',
+    teaches: ['Selenium WebDriver', 'Java Programming', 'Manual Testing', 'API Testing', 'Test Automation'],
+    numberOfCredits: 35,
+    timeRequired: 'P35D'
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <Navbar />
 
@@ -35,7 +63,7 @@ export default function Home() {
           </h1>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Complete Full Stack SDET Training covering Web, API, Database, and Mobile automation with modern tools and frameworks.
+            Master automation testing with our comprehensive 35-day SDET course. Learn Selenium WebDriver, Java programming, manual testing techniques, and advanced automation frameworks used by top tech companies.
           </p>
 
           {/* Interactive Stats */}

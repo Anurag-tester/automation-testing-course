@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 4: Test Documentation - Test Plans & Test Cases | SDET Course',
+  description: 'Master test documentation including Test Plans, Test Cases, and Documentation Standards. Learn IEEE standards and traceability matrix creation.',
+  keywords: 'test plans, test cases, test documentation, IEEE standards, traceability matrix, test planning, test execution, test reporting',
+}
 import DayLayout from '@/components/DayLayout'
 import Quiz from '@/components/Quiz'
 

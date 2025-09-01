@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 32: Selenium Theory & Interview Questions | SDET Course',
+  description: 'Comprehensive review of Selenium concepts, theory, and commonly asked interview questions with detailed explanations.',
+  keywords: 'selenium theory, selenium interview questions, webdriver interview, selenium concepts, automation interview, selenium knowledge',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 

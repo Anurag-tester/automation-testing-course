@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 27: Multiple Window & Tab Handling | SDET Course',
+  description: 'Master window and tab handling techniques using getWindowHandle(), getWindowHandles(), and switchTo().window() methods.',
+  keywords: 'multiple windows, tab handling, window handling, getWindowHandle, getWindowHandles, switchTo window, window switching',
+}
 'use client'
 
 import DayLayout from '@/components/DayLayout'

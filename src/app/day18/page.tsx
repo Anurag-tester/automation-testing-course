@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Day 18: Actions Class - Mouse & Keyboard Events | SDET Course',
+  description: 'Master Selenium Actions class for mouse and keyboard events. Learn drag-drop, hover, right-click, and complex interactions.',
+  keywords: 'selenium actions class, mouse actions, keyboard events, drag drop, hover, right click, complex interactions',
+}
 import DayLayout from '@/components/DayLayout';
 import Quiz from '@/components/Quiz';
 
