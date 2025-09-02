@@ -258,62 +258,123 @@ js.executeScript("window.open('https://www.facebook.com');");`}</pre>
               </div>
             </div>
 
-            {/* Navigation Operations */}
+            {/* Navigate Back */}
             <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">3-5. Navigation Operations</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">3. Navigate Back</h3>
               
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="space-y-4">
                 <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-medium text-red-900 mb-2">Navigate Back</h4>
-                  <div className="bg-gray-900 rounded-lg p-2 text-white text-xs font-mono mb-2">
-                    js.executeScript("history.go(-1)");
+                  <h4 className="font-medium text-red-900 mb-2">JavaScript Executor Approach</h4>
+                  <div className="bg-gray-900 rounded-lg p-3 text-white text-sm font-mono">
+                    js.executeScript("history.go(-4)");
                   </div>
-                  <p className="text-red-700 text-xs">Go back 1 page</p>
+                  <p className="text-red-700 text-sm mt-2">Go back 4 pages using JavaScript</p>
                 </div>
                 
-                <div className="bg-green-50 rounded-lg p-4">
-                  <h4 className="font-medium text-green-900 mb-2">Navigate Forward</h4>
-                  <div className="bg-gray-900 rounded-lg p-2 text-white text-xs font-mono mb-2">
-                    js.executeScript("history.go(+1)");
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h4 className="font-medium text-gray-900 mb-2">Alternative WebDriver Approach</h4>
+                  <div className="bg-gray-900 rounded-lg p-3 text-white text-sm font-mono">
+                    <pre>{`driver.navigate().back();
+driver.navigate().back();
+driver.navigate().back();
+driver.navigate().back();`}</pre>
                   </div>
-                  <p className="text-green-700 text-xs">Go forward 1 page</p>
-                </div>
-                
-                <div className="bg-blue-50 rounded-lg p-4">
-                  <h4 className="font-medium text-blue-900 mb-2">Refresh Browser</h4>
-                  <div className="bg-gray-900 rounded-lg p-2 text-white text-xs font-mono mb-2">
-                    js.executeScript("history.go(0)");
-                  </div>
-                  <p className="text-blue-700 text-xs">Refresh current page</p>
+                  <p className="text-gray-600 text-sm mt-2">Multiple back() calls for same result</p>
                 </div>
               </div>
+            </div>
+
+            {/* Navigate Forward */}
+            <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">4. Navigate Forward</h3>
               
-              <div className="mt-6 bg-gray-50 rounded-lg p-4">
-                <h4 className="font-medium text-gray-900 mb-3">Navigation Example</h4>
+              <div className="space-y-4">
+                <div className="bg-green-50 rounded-lg p-4">
+                  <h4 className="font-medium text-green-900 mb-2">JavaScript Executor Approach</h4>
+                  <div className="bg-gray-900 rounded-lg p-3 text-white text-sm font-mono">
+                    js.executeScript("history.go(+3)");
+                  </div>
+                  <p className="text-green-700 text-sm mt-2">Go forward 3 pages using JavaScript</p>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h4 className="font-medium text-gray-900 mb-2">Alternative WebDriver Approach</h4>
+                  <div className="bg-gray-900 rounded-lg p-3 text-white text-sm font-mono">
+                    <pre>{`driver.navigate().forward();
+driver.navigate().forward();
+driver.navigate().forward();`}</pre>
+                  </div>
+                  <p className="text-gray-600 text-sm mt-2">Multiple forward() calls for same result</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Refresh Browser */}
+            <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">5. Refresh Browser</h3>
+              
+              <div className="space-y-4">
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <h4 className="font-medium text-blue-900 mb-2">JavaScript Executor Approach</h4>
+                  <div className="bg-gray-900 rounded-lg p-3 text-white text-sm font-mono">
+                    js.executeScript("history.go(0)");
+                  </div>
+                  <p className="text-blue-700 text-sm mt-2">Refresh current page using JavaScript</p>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h4 className="font-medium text-gray-900 mb-2">Alternative WebDriver Approach</h4>
+                  <div className="bg-gray-900 rounded-lg p-3 text-white text-sm font-mono">
+                    driver.navigate().refresh();
+                  </div>
+                  <p className="text-gray-600 text-sm mt-2">Standard WebDriver refresh method</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Complete Navigation Example */}
+            <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Complete Navigation Example</h3>
+              
+              <div className="bg-gray-50 rounded-lg p-4">
+                <h4 className="font-medium text-gray-900 mb-3">Step-by-Step Navigation Process</h4>
                 <div className="bg-gray-900 rounded-lg p-4 text-white text-sm font-mono overflow-x-auto">
                   <pre>{`ChromeDriver driver = new ChromeDriver();
 driver.get("https://www.google.com");
+
+Thread.sleep(3000);
 driver.navigate().to("https://www.facebook.com");
+
+Thread.sleep(3000);
 driver.navigate().to("https://www.redbus.com");
+
+Thread.sleep(3000);
 driver.navigate().to("https://www.wikipedia.org");
+
+Thread.sleep(3000);
 driver.navigate().to("https://www.saucedemo.com");
 
 JavascriptExecutor js = (JavascriptExecutor) driver;
 
-// Navigate back to redbus (go back 2 pages)
+Thread.sleep(3000);
+// Navigate to redbus URL (go back 2 pages)
 js.executeScript("history.go(-2)");
 
+Thread.sleep(3000);
 // Navigate forward to wikipedia (go forward 1 page)
-js.executeScript("history.go(1)");
+js.executeScript("history.go(1);");
 
-// Navigate back to google (go back 3 pages)
-js.executeScript("history.go(-3)");
+Thread.sleep(3000);
+// Navigate back to google URL (go back 3 pages)
+js.executeScript("history.go(-3);");
 
-// Navigate forward to saucedemo (go forward 4 pages)
-js.executeScript("history.go(+4)");
+Thread.sleep(3000);
+// Navigate forward to saucedemo URL (go forward 4 pages)
+js.executeScript("history.go(+4);");
 
+Thread.sleep(3000);
 // Refresh page
-js.executeScript("history.go(0)");`}</pre>
+js.executeScript("history.go(0);");`}</pre>
                 </div>
               </div>
             </div>
@@ -327,18 +388,32 @@ js.executeScript("history.go(0)");`}</pre>
           <div className="space-y-8">
             {/* Click Element */}
             <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Click on Element</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">6. Click on Element</h3>
               
               <div className="space-y-4">
                 <div className="bg-orange-50 rounded-lg p-4">
-                  <h4 className="font-medium text-orange-900 mb-2">5 Ways to Click Element</h4>
-                  <ul className="text-orange-800 text-sm space-y-1">
-                    <li>1. WebElement click() method</li>
-                    <li>2. WebElement submit() method</li>
-                    <li>3. Actions class click() method</li>
-                    <li>4. Actions class Keys.ENTER keyword</li>
-                    <li>5. JavaScriptExecutor click() method</li>
-                  </ul>
+                  <h4 className="font-medium text-orange-900 mb-3">🎯 5 Ways to Click Element (IMPORTANT)</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <div className="bg-orange-100 rounded p-2">
+                        <span className="font-medium text-orange-900">1.</span> <code className="text-sm">WebElement click()</code> method
+                      </div>
+                      <div className="bg-orange-100 rounded p-2">
+                        <span className="font-medium text-orange-900">2.</span> <code className="text-sm">WebElement submit()</code> method
+                      </div>
+                      <div className="bg-orange-100 rounded p-2">
+                        <span className="font-medium text-orange-900">3.</span> <code className="text-sm">Actions class click()</code> method
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="bg-orange-100 rounded p-2">
+                        <span className="font-medium text-orange-900">4.</span> <code className="text-sm">Actions class Keys.ENTER</code> keyword
+                      </div>
+                      <div className="bg-orange-100 rounded p-2">
+                        <span className="font-medium text-orange-900">5.</span> <code className="text-sm">JavaScriptExecutor click()</code> method
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 
                 <div className="bg-yellow-50 rounded-lg p-4">
@@ -368,12 +443,15 @@ js.executeScript("arguments[0].click();", wb);`}</pre>
 
             {/* Enter Text */}
             <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Enter Text in Text Box</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">7. Enter Text in Text Box</h3>
               
               <div className="space-y-4">
                 <div className="bg-green-50 rounded-lg p-4">
-                  <h4 className="font-medium text-green-900 mb-2">Alternative to sendKeys() Method</h4>
-                  <p className="text-green-800 text-sm">You can enter text in text box using JavaScript Executor value keyword</p>
+                  <h4 className="font-medium text-green-900 mb-3">📝 How to Enter Text Without sendKeys() Method (IMPORTANT)</h4>
+                  <div className="bg-green-100 rounded-lg p-3 mb-2">
+                    <p className="text-green-800 text-sm font-medium">We can enter text in text box using JavaScript Executor <code>value</code> keyword</p>
+                  </div>
+                  <p className="text-green-700 text-xs">This is an alternative approach when sendKeys() method fails or doesn't work properly</p>
                 </div>
                 
                 <div className="bg-blue-50 rounded-lg p-4">
@@ -406,7 +484,7 @@ js.executeScript("arguments[0].value='bhosale';", wb2);`}</pre>
 
             {/* Handle Dropdown */}
             <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Handle Dropdown</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">8. Handle Dropdown</h3>
               
               <div className="space-y-4">
                 <div className="bg-purple-50 rounded-lg p-4">
@@ -439,6 +517,98 @@ js.executeScript("arguments[0].value='11';", wb2);
 // Select 2010 year using getElementsByName
 js.executeScript("document.getElementsByName('birthday_year')[0].value='2010';");`}</pre>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Missing Operations 9-15 */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-light text-gray-900 mb-8">Additional JavaScript Executor Operations (9-15)</h2>
+          
+          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm mb-8">
+            <div className="bg-yellow-50 rounded-lg p-6">
+              <h3 className="text-lg font-medium text-yellow-900 mb-4">🚧 Advanced Operations Coming Soon</h3>
+              <p className="text-yellow-800 text-sm mb-4">
+                The following operations will be covered in upcoming lessons with detailed examples:
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">9.</span> Mouse over event
+                  </div>
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">10.</span> Scroll down or scroll up
+                  </div>
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">11.</span> Capture browser title
+                  </div>
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">12.</span> Capture browser URL
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">13.</span> Create border for element
+                  </div>
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">14.</span> Highlight element with color
+                  </div>
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">15.</span> Generate custom alerts/confirm/prompt popups
+                  </div>
+                  <div className="bg-yellow-100 rounded p-2 text-sm">
+                    <span className="font-medium">16.</span> Closed shadow root handling
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DemoQA Dropdown Example */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-light text-gray-900 mb-8">DemoQA Dropdown Example</h2>
+          
+          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Dynamic Dropdown Selection on DemoQA</h3>
+            
+            <div className="space-y-6">
+              <div className="bg-purple-50 rounded-lg p-4">
+                <h4 className="font-medium text-purple-900 mb-3">URL: https://demoqa.com/automation-practice-form</h4>
+                <div className="bg-gray-900 rounded-lg p-4 text-white text-sm font-mono overflow-x-auto">
+                  <pre>{`// Step 1: Open a chrome browser
+ChromeDriver driver = new ChromeDriver();
+
+// Step 2: Open a URL
+driver.get("https://demoqa.com/automation-practice-form");
+
+// Step 3: Locate the dropdown element
+WebElement wb1 = driver.findElement(By.xpath("dropdown_xpath"));
+
+// Step 4: Convert WebDriver object into JavascriptExecutor
+JavascriptExecutor js = (JavascriptExecutor) driver;
+
+// Step 5: Click on dropdown
+js.executeScript("arguments[0].click();", wb1);
+
+// Step 6: Locate all dropdown values
+List<WebElement> listValues = driver.findElements(By.xpath("options_xpath"));
+
+// Step 7: Iterate all values using enhanced for loop
+for(WebElement value : listValues) {
+    // Step 8: Capture actual dropdown value using getText() method
+    String actualValue = value.getText();
+    
+    // Step 9: Check expected value is present or not
+    if(actualValue.equals("Expected Value")) {
+        // Step 10: Click on dropdown value and break the loop
+        js.executeScript("arguments[0].click();", value);
+        break;
+    }
+}`}</pre>
                 </div>
               </div>
             </div>
@@ -494,6 +664,55 @@ for(WebElement value : listValues) {
         break;
     }
 }`}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Assignment Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-light text-gray-900 mb-8">📝 Assignment</h2>
+          
+          <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
+              <h3 className="text-lg font-medium text-orange-900 mb-4">🎯 Practice Assignment</h3>
+              
+              <div className="space-y-4">
+                <div className="bg-orange-100 rounded-lg p-4">
+                  <h4 className="font-medium text-orange-900 mb-2">Assignment URL:</h4>
+                  <div className="bg-gray-900 rounded-lg p-3 text-white text-sm font-mono break-all">
+                    https://portal2.passportindia.gov.in/AppOnlineProject/user/RegistrationBaseAction?request_locale=en
+                  </div>
+                </div>
+                
+                <div className="bg-red-50 rounded-lg p-4">
+                  <h4 className="font-medium text-red-900 mb-3">Task Instructions:</h4>
+                  <ul className="text-red-800 text-sm space-y-2">
+                    <li>• Practice all JavaScript Executor operations learned in this lesson</li>
+                    <li>• Use the Passport India registration form for hands-on practice</li>
+                    <li>• Implement dropdown handling, text input, and element clicking</li>
+                    <li>• Apply both JavaScript Executor and WebDriver approaches</li>
+                    <li>• Compare the effectiveness of different methods</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-yellow-50 rounded-lg p-4">
+                  <h4 className="font-medium text-yellow-900 mb-2">📝 Practice Focus Areas:</h4>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="space-y-1 text-sm">
+                      <div>✓ Browser navigation operations</div>
+                      <div>✓ Element clicking with JS Executor</div>
+                      <div>✓ Text input without sendKeys()</div>
+                      <div>✓ Dropdown value selection</div>
+                    </div>
+                    <div className="space-y-1 text-sm">
+                      <div>✓ Dynamic element handling</div>
+                      <div>✓ Alternative method comparison</div>
+                      <div>✓ Error handling scenarios</div>
+                      <div>✓ Code optimization techniques</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
