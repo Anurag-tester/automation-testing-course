@@ -4,7 +4,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
-import { courseData, getCategoryColor, getCategoryStats } from '@/data/courseData'
+import { courseData, getCategoryColor, getCategoryStats, getUrlFromDayId } from '@/data/courseData'
 import { BookOpen, Code, TestTube, Play, Calendar, Award, ArrowRight, Search, Target, Users, Clock, Zap, CheckCircle, TrendingUp, Rocket, Star, ChevronRight, Globe, Smartphone, Database } from 'lucide-react'
 
 // Lazy load components
@@ -87,7 +87,7 @@ export default function Home() {
 
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/day1">
+            <Link href={getUrlFromDayId('day1')}>
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <Play className="w-4 h-4 mr-2" />
                 Start Your Journey
@@ -248,7 +248,7 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {manualTestingDays.map((day, index) => (
-                <Link key={day.id} href={`/${day.id}`}>
+                <Link key={day.id} href={getUrlFromDayId(day.id)}>
                   <Card className="group hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-200 cursor-pointer h-full bg-gradient-to-br from-white to-blue-50/30">
                     <CardHeader className="p-4">
                       <div className="flex items-center justify-between mb-3">
@@ -288,7 +288,7 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {javaDays.map((day, index) => (
-                <Link key={day.id} href={`/${day.id}`}>
+                <Link key={day.id} href={getUrlFromDayId(day.id)}>
                   <Card className="group hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-200 cursor-pointer h-full bg-gradient-to-br from-white to-green-50/30">
                     <CardHeader className="p-4">
                       <div className="flex items-center justify-between mb-3">
@@ -338,7 +338,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-3">
-                <Link href="/day19">
+                <Link href={getUrlFromDayId('day19')}>
                   <div className="bg-white rounded-lg p-3 border border-indigo-200 hover:border-indigo-300 hover:shadow-md transition-all group cursor-pointer">
                     <div className="flex items-center justify-between">
                       <div>
@@ -350,7 +350,7 @@ export default function Home() {
                     </div>
                   </div>
                 </Link>
-                <Link href="/day36">
+                <Link href={getUrlFromDayId('day36')}>
                   <div className="bg-white rounded-lg p-3 border border-indigo-200 hover:border-indigo-300 hover:shadow-md transition-all group cursor-pointer">
                     <div className="flex items-center justify-between">
                       <div>
@@ -369,7 +369,7 @@ export default function Home() {
               {seleniumDays.map((day, index) => {
                 const isJSExecutor = day.id === 'day36' || day.id === 'day19';
                 return (
-                  <Link key={day.id} href={`/${day.id}`} className="block">
+                  <Link key={day.id} href={getUrlFromDayId(day.id)} className="block">
                     <Card className={`group hover:shadow-lg hover:scale-105 transition-all duration-300 border cursor-pointer h-full flex flex-col ${
                       isJSExecutor 
                         ? 'border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 ring-2 ring-indigo-200' 
@@ -413,7 +413,7 @@ export default function Home() {
           <p className="text-gray-600 mb-8 max-w-xl mx-auto">
             Begin with 35 comprehensive days of content and continue learning as we add advanced topics weekly
           </p>
-          <Link href="/day1">
+          <Link href={getUrlFromDayId('day1')}>
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <Rocket className="w-5 h-5 mr-3" />
               Start Your SDET Journey Now

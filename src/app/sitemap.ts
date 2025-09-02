@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { courseData } from '@/data/courseData'
+import { courseData, getUrlFromDayId } from '@/data/courseData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://testmaster-iota.vercel.app'
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Day pages
   const dayPages = courseData.map((day) => ({
-    url: `${baseUrl}/${day.id}`,
+    url: `${baseUrl}${getUrlFromDayId(day.id)}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
