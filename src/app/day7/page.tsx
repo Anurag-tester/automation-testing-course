@@ -456,9 +456,6 @@ System.out.println(a);    // 11`}</code>
           </div>
         </section>
 
-        {/* Quiz Section */}
-        <Quiz 
-          title="Day 7 Knowledge Check"
           questions={[
             {
               id: 1,

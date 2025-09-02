@@ -293,9 +293,6 @@ export default function Day4() {
           </div>
         </section>
 
-        {/* Quiz Section */}
-        <Quiz 
-          title="Day 4 Knowledge Check"
           questions={[
             {
               id: 1,

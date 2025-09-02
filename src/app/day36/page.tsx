@@ -501,10 +501,7 @@ for(WebElement value : listValues) {
         </section>
 
         {/* Quiz Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-light text-gray-900 mb-8">Knowledge Check</h2>
-          <Quiz questions={quizQuestions} />
-        </section>
+        <Quiz questions={quizQuestions} />
 
         {/* Key Points Summary */}
         <section className="mb-16">
