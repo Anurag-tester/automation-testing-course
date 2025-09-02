@@ -323,6 +323,70 @@ const interviewQuestions = [
     answer: "Automation frameworks: 1) Linear/Record-Playback - simple recording, not maintainable, 2) Modular - functions for reusability, 3) Data Driven - external data sources, 4) Keyword Driven - keywords represent actions, 5) Hybrid - combination of multiple approaches, 6) BDD - Behavior Driven Development with Cucumber, 7) Page Object Model - page-based organization, 8) Each has specific use cases and complexity levels.",
     difficulty: "Advanced",
     tags: ["frameworks", "modular", "data-driven", "keyword-driven", "hybrid", "bdd"]
+  },
+  {
+    id: 41,
+    category: "JavaScript Executor",
+    question: "What is JavaScript Executor in Selenium and when do you use it?",
+    answer: "JavaScript Executor is an interface used to execute JavaScript through Selenium WebDriver. Use it when: 1) Normal WebDriver methods fail, 2) Elements are hidden or overlapped, 3) Need to scroll to elements, 4) Handle disabled elements, 5) Perform complex DOM operations. It provides executeScript() and executeAsyncScript() methods. Example: JavascriptExecutor js = (JavascriptExecutor) driver; js.executeScript('arguments[0].click();', element);",
+    difficulty: "Advanced",
+    tags: ["javascript-executor", "executeScript", "dom-manipulation", "hidden-elements"]
+  },
+  {
+    id: 42,
+    category: "JavaScript Executor",
+    question: "How many ways can you open a URL using JavaScript Executor?",
+    answer: "Three ways to open URL: 1) driver.get('URL') - standard WebDriver method, 2) driver.navigate().to('URL') - navigation interface, 3) js.executeScript('window.location=URL;') - JavaScript Executor method. For new tab: js.executeScript('window.open(URL);'). JavaScript method is useful when standard methods fail or for specific browser behaviors.",
+    difficulty: "Intermediate",
+    tags: ["javascript-executor", "window-location", "window-open", "url-navigation"]
+  },
+  {
+    id: 43,
+    category: "JavaScript Executor",
+    question: "How many ways can you click an element in Selenium?",
+    answer: "Five ways to click element: 1) element.click() - WebElement method, 2) element.submit() - for form submission, 3) Actions.click(element) - Actions class, 4) Actions.sendKeys(Keys.ENTER) - keyboard action, 5) js.executeScript('arguments[0].click();', element) - JavaScript Executor. JavaScript click is most reliable for hidden/overlapped elements and works when other methods fail.",
+    difficulty: "Intermediate",
+    tags: ["javascript-executor", "element-click", "actions-class", "multiple-approaches"]
+  },
+  {
+    id: 44,
+    category: "JavaScript Executor",
+    question: "How do you handle browser navigation using JavaScript Executor?",
+    answer: "Browser navigation with JavaScript: 1) Navigate back: js.executeScript('history.go(-1);') or history.go(-4) for multiple pages, 2) Navigate forward: js.executeScript('history.go(+1);') or history.go(+3), 3) Refresh page: js.executeScript('history.go(0);'), 4) Alternative: driver.navigate().back(), forward(), refresh(). JavaScript method allows precise control over navigation steps.",
+    difficulty: "Intermediate",
+    tags: ["javascript-executor", "browser-navigation", "history-go", "page-refresh"]
+  },
+  {
+    id: 45,
+    category: "JavaScript Executor",
+    question: "How do you enter text using JavaScript Executor instead of sendKeys()?",
+    answer: "Enter text using JavaScript: js.executeScript('arguments[0].value=text;', element). This method: 1) Bypasses sendKeys() limitations, 2) Works with disabled elements, 3) Faster than sendKeys(), 4) Doesn't trigger key events, 5) Directly sets element value. Example: WebElement textBox = driver.findElement(By.id('username')); js.executeScript('arguments[0].value=admin;', textBox);",
+    difficulty: "Intermediate",
+    tags: ["javascript-executor", "text-input", "element-value", "sendkeys-alternative"]
+  },
+  {
+    id: 46,
+    category: "JavaScript Executor",
+    question: "How do you handle dropdowns using JavaScript Executor?",
+    answer: "Handle dropdowns with JavaScript: 1) For select elements: js.executeScript('arguments[0].value=optionValue;', selectElement), 2) For dynamic dropdowns: click dropdown, iterate options, use JavaScript click, 3) Direct selection: js.executeScript('document.getElementsByName(elementName)[0].value=value;'), 4) Example for date dropdown: js.executeScript('arguments[0].value=10;', dayDropdown); js.executeScript('arguments[0].value=11;', monthDropdown);",
+    difficulty: "Advanced",
+    tags: ["javascript-executor", "dropdown-handling", "select-element", "dynamic-dropdown"]
+  },
+  {
+    id: 47,
+    category: "JavaScript Executor",
+    question: "What are the 15 operations you can perform with JavaScript Executor?",
+    answer: "15 JavaScript Executor operations: 1) Open URL in browser, 2) Open new tab with URL, 3) Navigate back, 4) Navigate forward, 5) Refresh browser, 6) Click on element, 7) Enter text in textbox, 8) Handle dropdown, 9) Mouse over event, 10) Scroll down/up, 11) Capture browser title, 12) Capture browser URL, 13) Create border for element, 14) Highlight element with color, 15) Generate custom alert/confirm/prompt popups.",
+    difficulty: "Advanced",
+    tags: ["javascript-executor", "browser-operations", "element-operations", "advanced-operations"]
+  },
+  {
+    id: 48,
+    category: "JavaScript Executor",
+    question: "What is the difference between executeScript() and executeAsyncScript() methods?",
+    answer: "executeScript() vs executeAsyncScript(): 1) executeScript() - synchronous execution, waits for script completion, returns result immediately, 2) executeAsyncScript() - asynchronous execution, doesn't block browser, requires callback function, 3) executeScript() for simple operations like click, scroll, get values, 4) executeAsyncScript() for AJAX calls, timers, complex operations, 5) Async method needs explicit callback to signal completion.",
+    difficulty: "Advanced",
+    tags: ["javascript-executor", "executeScript", "executeAsyncScript", "synchronous", "asynchronous"]
   }
 ];
 
@@ -356,6 +420,7 @@ export default function InterviewQuestionsClient() {
       case 'TestNG': return 'bg-pink-100 text-pink-800';
       case 'Advanced Selenium': return 'bg-green-100 text-green-800';
       case 'Framework Design': return 'bg-red-100 text-red-800';
+      case 'JavaScript Executor': return 'bg-indigo-100 text-indigo-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
@@ -369,7 +434,7 @@ export default function InterviewQuestionsClient() {
           <p className="text-lg text-gray-600 mb-6">
             Master your SDET interviews with our comprehensive question bank covering all essential topics from Manual Testing to Advanced Selenium WebDriver concepts.
           </p>
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-4">
             <div className="bg-white rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-blue-600">{interviewQuestions.filter(q => q.category === 'Manual Testing').length}</div>
               <div className="text-sm text-gray-600">Manual Testing</div>
@@ -393,6 +458,10 @@ export default function InterviewQuestionsClient() {
             <div className="bg-white rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-red-600">{interviewQuestions.filter(q => q.category === 'Framework Design').length}</div>
               <div className="text-sm text-gray-600">Framework Design</div>
+            </div>
+            <div className="bg-white rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-indigo-600">{interviewQuestions.filter(q => q.category === 'JavaScript Executor').length}</div>
+              <div className="text-sm text-gray-600">JavaScript Executor</div>
             </div>
           </div>
         </div>

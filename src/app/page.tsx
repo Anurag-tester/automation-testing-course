@@ -326,27 +326,84 @@ export default function Home() {
                 <span className="text-sm font-bold text-purple-700">{categoryStats['selenium']} Days</span>
               </div>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {seleniumDays.map((day, index) => (
-                <Link key={day.id} href={`/${day.id}`}>
-                  <Card className="group hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-200 cursor-pointer h-full bg-gradient-to-br from-white to-purple-50/30">
-                    <CardHeader className="p-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="w-12 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-sm">
-                          Day {day.id.replace('day', '')}
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all" />
+            {/* JavaScript Executor Highlight */}
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 mb-6 border border-indigo-200">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-indigo-900 text-sm">🔥 Advanced Topic: JavaScript Executor</h4>
+                  <p className="text-indigo-700 text-xs">Master DOM manipulation and advanced browser operations</p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-3">
+                <Link href="/day19">
+                  <div className="bg-white rounded-lg p-3 border border-indigo-200 hover:border-indigo-300 hover:shadow-md transition-all group cursor-pointer">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-indigo-600 mb-1">Day 19</div>
+                        <div className="text-sm font-medium text-gray-900 group-hover:text-indigo-600">JavaScript Executor Basics</div>
+                        <div className="text-xs text-gray-600">DOM manipulation & scroll operations</div>
                       </div>
-                      <CardTitle className="text-base font-bold group-hover:text-purple-600 transition-colors mb-2">
-                        {day.title.replace(/^Day \d+: /, '')}
-                      </CardTitle>
-                      <CardDescription className="text-gray-600 text-xs leading-relaxed">
-                        {day.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
+                      <ChevronRight className="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
                 </Link>
-              ))}
+                <Link href="/day36">
+                  <div className="bg-white rounded-lg p-3 border border-indigo-200 hover:border-indigo-300 hover:shadow-md transition-all group cursor-pointer">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-indigo-600 mb-1">Day 36 🆕</div>
+                        <div className="text-sm font-medium text-gray-900 group-hover:text-indigo-600">Advanced JS Executor</div>
+                        <div className="text-xs text-gray-600">15 operations & browser control</div>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {seleniumDays.map((day, index) => {
+                // Highlight Day 36 (JavaScript Executor) with special styling
+                const isJSExecutor = day.id === 'day36' || day.id === 'day19';
+                return (
+                  <Link key={day.id} href={`/${day.id}`}>
+                    <Card className={`group hover:shadow-lg hover:scale-105 transition-all duration-300 border cursor-pointer h-full ${
+                      isJSExecutor 
+                        ? 'border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 ring-2 ring-indigo-200' 
+                        : 'border-gray-200 bg-gradient-to-br from-white to-purple-50/30'
+                    }`}>
+                      <CardHeader className="p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <div className={`w-12 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-sm ${
+                            isJSExecutor 
+                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500' 
+                              : 'bg-gradient-to-r from-purple-500 to-purple-600'
+                          }`}>
+                            Day {day.id.replace('day', '')}
+                            {day.id === 'day36' && <span className="ml-1 text-yellow-300">🆕</span>}
+                          </div>
+                          <ChevronRight className={`w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-all ${
+                            isJSExecutor ? 'group-hover:text-indigo-600' : 'group-hover:text-purple-600'
+                          }`} />
+                        </div>
+                        <CardTitle className={`text-base font-bold transition-colors mb-2 ${
+                          isJSExecutor ? 'group-hover:text-indigo-600' : 'group-hover:text-purple-600'
+                        }`}>
+                          {day.title.replace(/^Day \d+: /, '')}
+                          {day.id === 'day36' && <span className="ml-2 text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full">JS Executor</span>}
+                        </CardTitle>
+                        <CardDescription className="text-gray-600 text-xs leading-relaxed">
+                          {day.description}
+                        </CardDescription>
+                      </CardHeader>
+                    </Card>
+                  </Link>
+                );
+              })}
             </div>
           </section>
         </div>

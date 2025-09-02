@@ -1,0 +1,789 @@
+what is JavascriptExecutor in Selenium?
+	- JavascriptExecutor is an interface which is used to execute Javascript through Selenium WebDriver JavascriptExecutor interface.
+	- If we can't perform operation using selenium WebDriver methods then we use JavascriptExecutor interface to execute actions/ operations.
+	- JavascriptExecutor interface it provides the 2 methods which is used to execute actions on WebElement and browser properties
+				1) executeScript() method
+				2) executeASyncScript() method
+
+	- we can perform different operation using JavascriptExecutor interface
+				1) open URL in browser window
+				2) open a new tab with URL
+				3) navigate back
+				4) navigate forward
+				5) refresh browser
+				5) click on element
+				6) enter text in text box
+				7) handle drop down
+				8) mouse over event
+				9) scroll down or scroll up
+				10) capture browser title
+				11) capture browser URL
+				12) create border for element
+				13) highlight the element with color
+				14) Generate Custom Alert pop up / confirm pop up / prompt pop up 
+				15) closed shadow root
+========================================================================================================
+1) open URL in browser window
+		- Convert WebDriver object into the JavascriptExecutor
+			syntax:
+						JavascriptExecutor js = (JavascriptExecutor)driver;
+
+		- use executeScript() method by passing window.location='URL'
+			syntax:
+						js.executeScript("window.location='https://www.google.com';");
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+			
+2) open a new tab with URL
+		- Convert WebDriver object into the JavascriptExecutor
+			syntax:
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		- use executeScript() method by passing window.open('URL')
+			syntax:
+					js.executeScript("window.open('https://www.facebook.com');");
+					
+		---------------------------------------------------------------------------------
+		driver.switchTo().newWindow(WindowType.TAB);
+		driver.get("https://www.google.com");
+			
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+3) navigate back
+		- Convert WebDriver object into the JavascriptExecutor
+		syntax:			
+					JavascriptExecutor js = (JavascriptExecutor)driver;
+		
+		- use executeScript() method by passing history.go(-1)
+		syntax:
+					js.executeScript("history.go(-4)");
+
+		-------------------------------------------------------------
+		driver.navigate().back();
+		driver.navigate().back();
+		driver.navigate().back();
+		driver.navigate().back();
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+4) navigate forward
+		- Convert WebDriver object into the JavascriptExecutor
+		syntax
+					JavascriptExecutor js = (JavascriptExecutor)driver;
+
+		- use executeScript() method by passing history.go(+1)
+		syntax:
+					js.executeScript("history.go(+3)");
+
+		-------------------------------------------------------------
+		driver.navigate().forward();
+		driver.navigate().forward();
+		driver.navigate().forward();
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+5) refresh browser
+		- Convert WebDriver object into the JavascriptExecutor
+		syntax
+					JavascriptExecutor js = (JavascriptExecutor)driver;
+
+		- use executeScript() method by passing history.go(0)
+		syntax:
+				js.executeScript("history.go(0)");
+
+===================================================================================================================
+Open a URL Using JavascriptExecutor
+
+		step 1: open a chrome browser
+					ChromeDriver driver = new ChromeDriver();
+	
+		step 2: convert WebDriver object into the JavascriptExecutor
+					JavascriptExecutor js = (JavascriptExecutor)driver;
+
+		step 3: use executeScript() method by passing window.location='https://www.google.com'				
+				js.executeScript("window.location='https://www.google.com';");
+
+
+package Tutorial1;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+
+		ChromeDriver driver = new ChromeDriver();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		js.executeScript("window.location='https://www.redbus.com';");
+	}
+
+}
+===================================================================================================================
+Open a URL in new TAB
+
+step 1: open a chrome browser
+			ChromeDriver driver = new ChromeDriver();
+
+step 2: Convert WebDriver object into JavascriptExecutor 
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+
+step 3: open a URL in browser window
+		
+			driver.get("https://www.google.com");
+
+			//driver.navigate().to("https://www.google.com");
+
+			//js.executeScript("window.location='https://www.google.com';");
+		
+step 4: open a URL in new TAB
+
+			js.executeScript("window.open('https://www.facebook.com');")
+
+			//driver.switchTo().newWindow(WindowType.TAB);
+			//driver.get("https://www.facebook.com");
+
+
+package Tutorial1;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo2 {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		ChromeDriver driver = new ChromeDriver();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		// Open URL
+
+		driver.get("https://www.google.com");
+		// driver.navigate().to("https://www.google.com");
+		// js.executeScript("window.location='https://www.google.com';");
+
+		Thread.sleep(4000);
+
+		
+		// Open new URL in new TAB
+		js.executeScript("window.open('https://www.facebook.com');");
+
+		// driver.switchTo().newWindow(WindowType.TAB);
+		// driver.get("https://www.facebook.com");
+
+	}
+
+}
+===================================================================================================
+Navigate back
+navigate forward
+refresh browser
+
+
+step 1: open a chrome browser
+			ChromeDriver driver =new ChromeDriver();
+
+step 2: open a google url
+			driver.get("https://www.google.com");
+
+step 3: navigate to Facebook URL
+			driver.navigate().to("https://www.facebook.com");
+
+step 4: navigate to Red Bus URL
+			driver.navigate().to("https://www.redbus.com");
+
+step 5: navigate to Wikipedia URL
+			driver.navigate().to("https://www.wikipedia.org");
+
+
+step 6: navigate to sauce demo URL
+			driver.navigate().to("https://www.saucedemo.com");
+
+
+step 7: convert WebDriver object into JavascriptExecutor
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+	
+step 8: navigate back to red bus URL
+			js.executeScript("history.go(-2)");
+			------------------------------------------------------------------
+			driver.navigate().back();
+			driver.navigate().back();
+
+	
+step 9: navigate forward to Wikipedia URL
+		js.executeScript("history.go(1)");
+		---------------------------------------------------
+		driver.navigate().forward();
+		
+step 10: navigate back to google URL
+			js.executeScript("history.go(-3)");
+		-----------------------------------------------------------------		
+			driver.navigate().back();
+			driver.navigate().back();
+			driver.navigate().back();
+
+step 11: navigate forward to sauce demo URL
+
+		js.executeScript("history.go(+4)");
+		-----------------------------------------------------------------
+		driver.navigate().forward();
+		driver.navigate().forward();
+		driver.navigate().forward();
+		driver.navigate().forward();
+
+step 12: refresh page
+		
+		js.executeScript("history.go(0)");
+		-----------------------------------------------------------
+		driver.navigate().refresh();
+
+
+package Tutorial1;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo3 {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.google.com");
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.facebook.com");
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.redbus.com");
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.wikipedia.org");
+
+		Thread.sleep(3000);
+		driver.navigate().to("https://www.saucedemo.com");
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		Thread.sleep(3000);
+
+		// Navigate to redbus URL
+		js.executeScript("history.go(-2)");
+
+		Thread.sleep(3000);
+
+		// Navigate forward to wikipedia
+		js.executeScript("history.go(1);");
+
+		Thread.sleep(3000);
+
+		// navigate back to google URL
+		js.executeScript("history.go(-3);");
+
+		Thread.sleep(3000);
+
+		// navigate forward to saucedemo URL
+		js.executeScript("history.go(+4);");
+
+		Thread.sleep(3000);
+		// refresh page
+		js.executeScript("history.go(0);");
+
+	}
+
+}
+=======================================================================================================
+5) click on element
+	- locate WebElement
+		WebElement wb = driver.findElement(By.id("id value"));
+	
+	- Convert WebDriver object into the JavascriptExecutor
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+
+	- use executeScript() method by passing 2 arguments as like arguments[0].click() and 2nd arguments WebElement
+
+		js.executeScript("arguments[0].click()", wb);
+
+------------------------------------------------------------------------------------------------------------------------------
+6) enter text in text box
+	- locate WebElement
+		WebElement wb = driver.findElement(By.id("id value"));
+
+	- Convert WebDriver object into the JavascriptExecutor
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+
+	- use executeScript() method by passing 2 arguments as like arguments[0].value='Expected Value' and 2nd arguments WebElement
+			js.executeScript("arguments[0].value='Sonali'; ", wb);
+
+------------------------------------------------------------------------------------------------------------------------------
+7) handle drop down
+	- locate WebElement
+		WebElement wb = driver.findElement(By.id("id value"));
+
+	- Convert WebDriver object into the JavascriptExecutor
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+
+
+	- use executeScript() method by passing 2 arguments as like arguments[0].value='Expected Value' and 2nd arguments WebElement
+
+			js.executeScript("arguments[0].value='Nov'; ", wb);
+
+========================================================================================================
+Click on already you have account link? in facebook application
+
+step 1: open a chrome browser
+			ChromeDriver driver = new ChromeDriver();
+
+step 2: open a fb register page URL
+		driver.get("https://www.facebook.com/reg");
+
+step 3: locate the already you have account link? 
+		WebElement wb = driver.findElement(By.linkText("Already have an account?"));
+
+step 4: convert WebDriver object into JavascriptExecutor
+		JavascriptExecutor  js = (JavascriptExecutor)driver;
+
+step 5: click on link
+		js.executeScript("arguments[0].click();" , wb);
+
+package Tutorial1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo4 {
+
+	public static void main(String[] args) throws InterruptedException {
+		ChromeDriver driver = new ChromeDriver();
+
+		driver.get("https://www.facebook.com/reg");
+
+		Thread.sleep(4000);
+
+		WebElement wb = driver.findElement(By.linkText("Already have an account?"));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		js.executeScript("arguments[0].click();", wb);
+
+	}
+
+}
+
+=================================================================================================
+Enter Text in first name and last name text box in facebook register page
+
+
+step 1: open a chrome browser
+			ChromeDriver driver = new ChromeDriver();
+
+step 2: open a fb register page URL
+		driver.get("https://www.facebook.com/reg");
+
+
+step 3: locate the first name text box
+		WebElement wb1 = driver.findElement(By.id(""));
+
+
+step 4: locate last name text box
+		WebElement wb1 = driver.findElement(By.id(""));
+
+
+step 5: convert WebDriver object into JavascriptExecutor
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+	
+step 6: enter text in first name text box
+		js.executeScript("arguments[0].value='Sonali';",  wb1);
+
+
+step 7: enter text in last name text box
+		js.executeScript("arguments[0].value='Bhosale'; ", wb2);
+
+
+package Tutorial1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo5 {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		ChromeDriver driver = new ChromeDriver();
+
+		driver.get("https://www.facebook.com/reg");
+
+		Thread.sleep(4000);
+
+		WebElement wb1 = driver.findElement(By.name("firstname"));
+
+		WebElement wb2 = driver.findElement(By.name("lastname"));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		js.executeScript("arguments[0].value='Sonali';", wb1);
+
+		js.executeScript("arguments[0].value='bhosale';", wb2);
+
+	}
+
+}
+==================================================================================
+How many ways we can click on element?								VVVVVVIIIMMMMMPPPPPPPPPPPPPPPPPPP
+	there are 5 ways we can click on element
+		1) WebElement click() method
+		2) WebElement submit() method
+		3) Actions class click() method
+		4) Actions class Keys.ENTER keyword
+		5) JavascriptExecutor click() method		
+
+
+How to enter text in text box without using sendKeys() method		VVVVVVIIIMMMMMPPPPPPPPPPPPPPPPPPP
+		- We can enter text in text box using JavascriptExecutor value keyword
+
+
+==================================================================================
+Select 10 Nov 2010 Value
+
+step 1: open a chrome browser
+			ChromeDriver driver = new ChromeDriver();
+
+step 2: open a URL
+			driver.get("https://www.facebook.com/reg");
+
+step 3: locate date dropdown	
+			WebElement wb1 = driver.findElement(By.id(""));
+
+step 4: locate month dropdown
+			WebElement wb2 = driver.findElement(By.id(""));
+
+
+step 6: Convert WebDriver object into the JavascriptExecutor
+			JavascriptExecutor js =(JavascriptExecutor)driver;
+
+step 7: select 10 Date 
+			js.executeScript("arguments[0].value-'10'; ", wb1);
+	
+
+step 8: select Nov month
+			js.executeScript("arguments[0].value='Nov'; ", wb2);
+
+
+step 9; select 2010 year
+			js.executeScript("document.getElementsByName('birthday_year')[0].value='2010';")
+
+
+
+
+package Tutorial1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo6 {
+
+	public static void main(String[] args) throws InterruptedException {
+		ChromeDriver driver = new ChromeDriver();
+
+		driver.get("https://www.facebook.com/reg");
+
+		Thread.sleep(4000);
+
+		WebElement wb1 = driver.findElement(By.name("birthday_day"));
+
+		WebElement wb2 = driver.findElement(By.name("birthday_month"));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		// Select 10 Day
+		js.executeScript("arguments[0].value='10';", wb1);
+
+		// Select Nov month
+		js.executeScript("arguments[0].value='11';", wb2);
+
+		// Select 2010 year
+
+		js.executeScript("document.getElementsByName('birthday_year')[0].value='2010';");
+
+	}
+
+}
+==================================================================================================
+https://demoqa.com/automation-practice-form
+
+step 1; open a chrome browser
+				ChromeDriver driver = new ChromeDriver();
+
+step 2 open a URL
+				driver.get("https://demoqa.com/automation-practice-form")
+
+step 3: locate the drop down element
+				WebElement wb1 = driver.findElement(By.xpath(""));
+
+step 4: convert WebDriver object into JavascriptExecutor 
+				JavascriptExecutor js = (JavascriptExecutor)driver;
+	
+step 5:click on drop down
+				js.executeScript("arguments[0].click();" , wb);
+
+step 6: locate all drop down values
+				List<WebElement> listValues = driver,findElements(By.xpath(""));
+
+
+step 7:iterate all values using enhance for loop
+				for(WebElement value: listValues)
+				{
+		
+						step 7:  capture actual drop down value using getText() method
+
+						String actualValue = value.getText();
+
+						step 8:check expected vale is present or not
+						
+						if(actualValue.equals("Expected Value"));
+						{
+	
+								step 9: click on drop down value and break the loop
+							
+								js.executeScript("arguments[0].click();"value);
+								break;
+						}
+			}
+
+
+
+
+
+
+
+https://portal2.passportindia.gov.in/AppOnlineProject/user/RegistrationBaseAction?request_locale=en
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			
+			
+
+		
