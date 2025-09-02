@@ -23,7 +23,7 @@ export default function NotFound() {
           <div className="text-sm text-gray-500">
             <p>Looking for course content?</p>
             <div className="flex justify-center gap-4 mt-2">
-              <Link href="/day1" className="text-blue-600 hover:underline">Day 1</Link>
+              <Link href="/manual-testing-basics" className="text-blue-600 hover:underline">Day 1</Link>
               <Link href="/practice" className="text-blue-600 hover:underline">Practice</Link>
               <Link href="/interview-questions" className="text-blue-600 hover:underline">Interview Q&A</Link>
             </div>

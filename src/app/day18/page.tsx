@@ -12,8 +12,8 @@ export default function Day18() {
       dayNumber={18}
       title="Mouse Events & Actions Class"
       description="Master mouse events and Actions class including click, double-click, right-click, drag-and-drop, scroll, and mouse hover operations."
-      previousDay="/day17"
-      nextDay="/day19"
+      previousDay="/frame-handling-iframe-navigation"
+      nextDay="/javascript-executor-dom-manipulation"
     >
       <div className="max-w-4xl mx-auto">
         {/* Actions Class Overview */}

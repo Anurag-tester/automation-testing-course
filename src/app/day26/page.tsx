@@ -13,8 +13,8 @@ export default function Day26() {
       dayNumber={26}
       title="Day 26: Dynamic Table & Calendar Handling in Selenium"
       description="Master dynamic calendar navigation and date selection techniques using while loops and enhanced for loops in Selenium WebDriver"
-      previousDay="/day25"
-      nextDay="/day27"
+      previousDay="/dropdown-handling-select-class-dynamic"
+      nextDay="/multiple-window-tab-handling"
     >
       {/* Course Overview */}
       <section className="mb-16">

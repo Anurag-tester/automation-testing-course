@@ -76,8 +76,8 @@ export default function Day31() {
       dayNumber={31}
       title="Broken Link Detection"
       description="Learn to identify and validate broken links in web applications using HTTP response codes and URL connection testing."
-      previousDay="/day30"
-      nextDay="/day32"
+      previousDay="/screenshots-browser-options-configuration"
+      nextDay="/selenium-theory-interview-questions"
     >
       <div className="max-w-4xl mx-auto">
         {/* Broken Links Overview */}

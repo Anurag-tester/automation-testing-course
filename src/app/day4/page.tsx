@@ -12,8 +12,8 @@ export default function Day4() {
       dayNumber={4}
       title="Testing Environments & Functional Testing"
       description="Learn about different testing environments and comprehensive functional testing types including Smoke, Retesting, and Regression Testing"
-      previousDay="/day3"
-      nextDay="/day5"
+      previousDay="/advanced-testing-methods-decision-table"
+      nextDay="/defect-management-bug-lifecycle"
     >
         {/* Lesson Overview */}
         <section className="mb-16">

@@ -13,8 +13,8 @@ export default function Day11() {
       dayNumber={11}
       title="Day 11: Selenium Locators & Dropdown Handling"
       description="Master Selenium locators (8 types), CSS Selector vs XPath, and dropdown handling with Select class"
-      previousDay="/day10"
-      nextDay="/day12"
+      previousDay="/selenium-introduction-webdriver-setup"
+      nextDay="/element-interactions-click-type-clear"
     >
         {/* Course Overview */}
         <section className="mb-16">

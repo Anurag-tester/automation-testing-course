@@ -12,8 +12,8 @@ export default function Day14() {
       dayNumber={14}
       title="CSS Selectors & Web Element Operations"
       description="Master CSS selectors and learn comprehensive web element operations including text boxes, radio buttons, checkboxes, buttons, links, and images."
-      previousDay="/day13"
-      nextDay="/day15"
+      previousDay="/advanced-locators-xpath-css-selectors"
+      nextDay="/checkbox-radio-buttons-handling"
     >
       <div className="max-w-4xl mx-auto">
         {/* CSS Selectors */}

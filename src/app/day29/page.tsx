@@ -75,8 +75,8 @@ export default function Day29() {
       dayNumber={29}
       title="Synchronization in Selenium"
       description="Master synchronization concepts including implicit wait, explicit wait, and fluent wait to handle dynamic web elements effectively."
-      previousDay="/day28"
-      nextDay="/day30"
+      previousDay="/selenium-roadmap-comprehensive-review"
+      nextDay="/screenshots-browser-options-configuration"
     >
       <div className="max-w-4xl mx-auto">
         {/* Synchronization Overview */}

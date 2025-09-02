@@ -13,8 +13,8 @@ export default function Day10() {
       dayNumber={10}
       title="Day 10: Selenium WebDriver - Browser Operations"
       description="Introduction to Selenium WebDriver with browser operations: opening browsers, navigation, capturing URLs and titles"
-      previousDay="/day9"
-      nextDay="/day11"
+      previousDay="/methods-functions-parameters-scope"
+      nextDay="/web-element-identification-locators"
     >
         {/* Course Overview */}
         <section className="mb-16">

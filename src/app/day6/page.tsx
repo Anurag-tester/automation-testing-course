@@ -12,8 +12,8 @@ export default function Day6() {
       dayNumber={6}
       title="Integration Testing & Java Fundamentals"
       description="Learn Integration Testing approaches and Java programming basics including data types, variables, and operators"
-      previousDay="/day5"
-      nextDay="/day7"
+      previousDay="/defect-management-bug-lifecycle"
+      nextDay="/java-operators-control-structures"
     >
         {/* Lesson Overview */}
         <section className="mb-16">

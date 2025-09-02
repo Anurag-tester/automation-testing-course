@@ -12,8 +12,8 @@ export default function Day19() {
       dayNumber={19}
       title="Keyboard Events & Actions Class"
       description="Master keyboard events using Actions class including sendKeys, keyDown, keyUp operations, text manipulation, and navigation keys."
-      previousDay="/day18"
-      nextDay="/day20"
+      previousDay="/actions-class-mouse-keyboard-events"
+      nextDay="/relative-xpath-fundamentals"
     >
       <div className="max-w-4xl mx-auto">
         {/* Multiple Ways Overview */}

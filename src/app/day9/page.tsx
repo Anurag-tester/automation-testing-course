@@ -13,8 +13,8 @@ export default function Day9() {
       dayNumber={9}
       title="Day 9: Java Loops - for, while & do-while"
       description="Master Java loop structures for repetitive operations: for loop, while loop, and do-while loop with practical examples"
-      previousDay="/day8"
-      nextDay="/day10"
+      previousDay="/loops-iterations-for-while-dowhile"
+      nextDay="/selenium-introduction-webdriver-setup"
     >
         {/* Course Overview */}
         <section className="mb-16">

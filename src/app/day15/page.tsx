@@ -12,8 +12,8 @@ export default function Day15() {
       dayNumber={15}
       title="Browser Operations & Selenium Locators"
       description="Master browser operations, navigation methods, and understand all Selenium locators with their differences and best practices."
-      previousDay="/day14"
-      nextDay="/day16"
+      previousDay="/dropdown-handling-select-class"
+      nextDay="/alert-handling-javascript-popups"
     >
       <div className="max-w-4xl mx-auto">
         {/* Browser Operations */}

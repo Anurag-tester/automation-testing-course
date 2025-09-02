@@ -12,8 +12,8 @@ export default function Day16() {
       dayNumber={16}
       title="Alert Handling in Selenium"
       description="Master alert popup handling including simple alerts, confirmation alerts, prompt alerts, and authentication popups using Alert interface."
-      previousDay="/day15"
-      nextDay="/day17"
+      previousDay="/checkbox-radio-buttons-handling"
+      nextDay="/frame-handling-iframe-navigation"
     >
       <div className="max-w-4xl mx-auto">
         {/* Alert Handling Overview */}

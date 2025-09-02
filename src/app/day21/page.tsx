@@ -12,8 +12,8 @@ export default function Day21() {
       dayNumber={21}
       title="Advanced XPath & Axes"
       description="Master advanced XPath techniques including attribute-based methods, XPath axes like child and descendant, and complex DOM navigation strategies."
-      previousDay="/day20"
-      nextDay="/day22"
+      previousDay="/relative-xpath-fundamentals"
+      nextDay="/xpath-practice-assignments"
     >
       <div className="max-w-4xl mx-auto">
         {/* XPath Methods Summary */}

@@ -13,8 +13,8 @@ export default function Day2Page() {
       dayNumber={2}
       title="Testing Techniques"
       description="Fish Model continuation, Web Elements identification, and Black Box Testing methods"
-      previousDay="/day1"
-      nextDay="/day3"
+      previousDay="/manual-testing-basics"
+      nextDay="/advanced-testing-methods-decision-table"
     >
       {/* Lesson Overview */}
       <div className="mb-16">

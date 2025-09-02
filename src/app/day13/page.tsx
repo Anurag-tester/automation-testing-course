@@ -13,8 +13,8 @@ export default function Day13() {
       dayNumber={13}
       title="Day 13: Form Automation & Element Interactions"
       description="Complete form automation using CSS selectors with practical registration form examples and element interaction techniques"
-      previousDay="/day12"
-      nextDay="/day14"
+      previousDay="/element-interactions-click-type-clear"
+      nextDay="/dropdown-handling-select-class"
     >
         {/* Course Overview */}
         <section className="mb-16">

@@ -12,8 +12,8 @@ export default function Day20() {
       dayNumber={20}
       title="Relative XPath Fundamentals"
       description="Master relative XPath techniques including single attributes, logical operators, text methods, and advanced XPath functions for robust element location."
-      previousDay="/day19"
-      nextDay="/day21"
+      previousDay="/javascript-executor-dom-manipulation"
+      nextDay="/advanced-xpath-axes-navigation"
     >
       <div className="max-w-4xl mx-auto">
         {/* Relative XPath Overview */}

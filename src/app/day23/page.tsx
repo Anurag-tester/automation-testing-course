@@ -13,8 +13,8 @@ export default function Day23() {
       dayNumber={23}
       title="Day 23: XPath Sibling Navigation - following-sibling & preceding-sibling"
       description="Master XPath sibling navigation techniques to locate related elements in the same parent container"
-      previousDay="/day22"
-      nextDay="/day24"
+      previousDay="/xpath-practice-assignments"
+      nextDay="/advanced-xpath-practice-assignments"
     >
         {/* Course Overview */}
         <section className="mb-16">

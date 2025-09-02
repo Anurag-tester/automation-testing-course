@@ -208,7 +208,7 @@ export default function Curriculum() {
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
             Join our comprehensive program and master all aspects of test automation from web to mobile to API testing.
           </p>
-          <Link href="/day1">
+          <Link href="/manual-testing-basics">
             <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold">
               Start Learning Now
             </Button>

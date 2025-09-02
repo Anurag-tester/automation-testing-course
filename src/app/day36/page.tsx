@@ -76,8 +76,7 @@ export default function Day36() {
       dayNumber={36}
       title="JavaScript Executor Interface"
       description="Master JavaScript Executor interface for advanced browser operations and DOM manipulation when standard WebDriver methods are insufficient."
-      previousDay="/day35"
-      nextDay="/day37"
+      previousDay="/ssl-certificate-file-upload-autoit"
     >
       <div className="max-w-4xl mx-auto">
         {/* JavaScript Executor Overview */}

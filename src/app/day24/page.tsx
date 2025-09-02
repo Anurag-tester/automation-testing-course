@@ -13,8 +13,8 @@ export default function Day24() {
       dayNumber={24}
       title="Day 24: Advanced XPath Practice & Assignments"
       description="Advanced XPath practice with complex scenarios, real-world applications, and comprehensive assignments"
-      previousDay="/day23"
-      nextDay="/day25"
+      previousDay="/xpath-sibling-navigation-following-preceding"
+      nextDay="/dropdown-handling-select-class-dynamic"
     >
         {/* Course Overview */}
         <section className="mb-16">

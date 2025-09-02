@@ -13,8 +13,8 @@ export default function Day8() {
       dayNumber={8}
       title="Day 8: Java Logical Operators & Conditional Statements"
       description="Master logical operators (AND, OR, NOT) and conditional statements (if, if-else, else-if) in Java programming"
-      previousDay="/day7"
-      nextDay="/day9"
+      previousDay="/java-operators-control-structures"
+      nextDay="/methods-functions-parameters-scope"
     >
         {/* Course Overview */}
         <section className="mb-16">

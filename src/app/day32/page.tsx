@@ -75,8 +75,8 @@ export default function Day32() {
       dayNumber={32}
       title="Selenium Theory & Interview Questions"
       description="Comprehensive review of Selenium concepts, theory, and commonly asked interview questions with detailed explanations."
-      previousDay="/day31"
-      nextDay="/day33"
+      previousDay="/broken-link-detection-validation"
+      nextDay="/advanced-selenium-exception-handling"
     >
       <div className="max-w-4xl mx-auto">
         {/* Selenium Overview */}

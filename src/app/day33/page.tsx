@@ -75,8 +75,8 @@ export default function Day33() {
       dayNumber={33}
       title="Advanced Selenium Concepts & Exception Handling"
       description="Deep dive into synchronization, flaky scenarios, exception handling, and advanced Selenium concepts for robust test automation."
-      previousDay="/day32"
-      nextDay="/day34"
+      previousDay="/selenium-theory-interview-questions"
+      nextDay="/shadow-dom-handling-selenium"
     >
       <div className="max-w-4xl mx-auto">
         {/* Synchronization Deep Dive */}

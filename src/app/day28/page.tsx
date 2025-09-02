@@ -75,8 +75,8 @@ export default function Day28() {
       dayNumber={28}
       title="Selenium Roadmap & Comprehensive Review"
       description="Complete roadmap covering all Selenium concepts including browser operations, locators, web elements, Actions class, alerts, frames, and dropdowns."
-      previousDay="/day27"
-      nextDay="/day29"
+      previousDay="/multiple-window-tab-handling"
+      nextDay="/synchronization-implicit-explicit-fluent-wait"
     >
       <div className="max-w-4xl mx-auto">
         {/* Selenium Roadmap Overview */}

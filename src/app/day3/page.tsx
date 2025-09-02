@@ -12,8 +12,8 @@ export default function Day3() {
       dayNumber={3}
       title="Black Box Testing Techniques"
       description="Deep dive into Black Box Testing techniques including ECP, BVA, Error Guessing, Decision Table, and State Transition Testing"
-      previousDay="/day2"
-      nextDay="/day4"
+      previousDay="/testing-techniques-black-box-ecp-bva"
+      nextDay="/test-documentation-plans-cases"
     >
         {/* Lesson Overview */}
         <section className="mb-16">

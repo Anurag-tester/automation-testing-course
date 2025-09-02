@@ -13,8 +13,8 @@ export default function Day25() {
       dayNumber={25}
       title="Day 25: Dropdown Handling in Selenium - Select Class & Dynamic Dropdowns"
       description="Master dropdown handling techniques in Selenium: Select class for HTML select tags and iteration methods for dynamic dropdowns"
-      previousDay="/day24"
-      nextDay="/day26"
+      previousDay="/advanced-xpath-practice-assignments"
+      nextDay="/dynamic-table-calendar-handling"
     >
         {/* Course Overview */}
         <section className="mb-16">

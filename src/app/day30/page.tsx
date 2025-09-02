@@ -75,8 +75,8 @@ export default function Day30() {
       dayNumber={30}
       title="Screenshots & Browser Options"
       description="Learn to capture screenshots, full page screenshots, and configure browser options like incognito mode, headless mode, and notification settings."
-      previousDay="/day29"
-      nextDay="/day31"
+      previousDay="/synchronization-implicit-explicit-fluent-wait"
+      nextDay="/broken-link-detection-validation"
     >
       <div className="max-w-4xl mx-auto">
         {/* Screenshot Overview */}

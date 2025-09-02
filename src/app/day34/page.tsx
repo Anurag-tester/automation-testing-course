@@ -75,8 +75,8 @@ export default function Day34() {
       dayNumber={34}
       title="Shadow DOM Handling in Selenium"
       description="Master the techniques for handling Shadow DOM elements in modern web applications using Selenium WebDriver."
-      previousDay="/day33"
-      nextDay="/day35"
+      previousDay="/advanced-selenium-exception-handling"
+      nextDay="/ssl-certificate-file-upload-autoit"
     >
       <div className="max-w-4xl mx-auto">
         {/* Shadow DOM Overview */}

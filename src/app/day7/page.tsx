@@ -12,8 +12,8 @@ export default function Day7() {
       dayNumber={7}
       title="Advanced Java Programming"
       description="Deep dive into Java fundamentals, data types, variable naming rules, and all four types of operators with practical examples"
-      previousDay="/day6"
-      nextDay="/day8"
+      previousDay="/java-fundamentals-data-types-variables"
+      nextDay="/loops-iterations-for-while-dowhile"
     >
         {/* Lesson Overview */}
         <section className="mb-16">

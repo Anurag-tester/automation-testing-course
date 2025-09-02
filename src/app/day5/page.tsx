@@ -12,8 +12,8 @@ export default function Day5() {
       dayNumber={5}
       title="Advanced Functional Testing Types"
       description="Deep dive into Sanity, Risk-based, Adhoc, Exploratory, and Monkey Testing with practical scenarios and interview questions"
-      previousDay="/day4"
-      nextDay="/day6"
+      previousDay="/test-documentation-plans-cases"
+      nextDay="/java-fundamentals-data-types-variables"
     >
         {/* Lesson Overview */}
         <section className="mb-16">

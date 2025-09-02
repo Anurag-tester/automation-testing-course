@@ -12,8 +12,8 @@ export default function Day17() {
       dayNumber={17}
       title="Frame Handling in Selenium"
       description="Master frame handling techniques including switching between frames, nested frames, and frame navigation using index, ID, name, and WebElement."
-      previousDay="/day16"
-      nextDay="/day18"
+      previousDay="/alert-handling-javascript-popups"
+      nextDay="/actions-class-mouse-keyboard-events"
     >
       <div className="max-w-4xl mx-auto">
         {/* Frame Handling Overview */}

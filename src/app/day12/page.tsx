@@ -13,8 +13,8 @@ export default function Day12() {
       dayNumber={12}
       title="Day 12: Advanced Selenium Locators & CSS Selectors"
       description="Deep dive into CSS Selectors, XPath axes, and advanced element location techniques in Selenium WebDriver"
-      previousDay="/day11"
-      nextDay="/day13"
+      previousDay="/web-element-identification-locators"
+      nextDay="/advanced-locators-xpath-css-selectors"
     >
         {/* Course Overview */}
         <section className="mb-16">

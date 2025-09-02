@@ -13,7 +13,7 @@ export default function Day1Page() {
       dayNumber={1}
       title="Manual Testing Basics"
       description="Introduction to Software Development Life Cycle (SDLC) and Fish Model fundamentals"
-      nextDay="/day2"
+      nextDay="/testing-techniques-black-box-ecp-bva"
     >
       {/* Lesson Overview */}
       <div className="mb-16">

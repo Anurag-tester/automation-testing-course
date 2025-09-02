@@ -75,8 +75,8 @@ export default function Day35() {
       dayNumber={35}
       title="SSL Certificate & File Upload Handling"
       description="Learn to handle SSL certificates and automate file uploads using AutoIT library in Selenium WebDriver."
-      previousDay="/day34"
-      nextDay="/day36"
+      previousDay="/shadow-dom-handling-selenium"
+      nextDay="/javascript-executor-interface-advanced-operations"
     >
       <div className="max-w-4xl mx-auto">
         {/* SSL Certificate Handling */}

@@ -13,8 +13,8 @@ export default function Day27() {
       dayNumber={27}
       title="Day 27: Multiple Window & Tab Handling in Selenium"
       description="Master window and tab handling techniques using getWindowHandle(), getWindowHandles(), and switchTo().window() methods"
-      previousDay="/day26"
-      nextDay="/day28"
+      previousDay="/dynamic-table-calendar-handling"
+      nextDay="/selenium-roadmap-comprehensive-review"
     >
       {/* Course Overview */}
       <section className="mb-16">
