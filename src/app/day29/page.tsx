@@ -440,8 +440,10 @@ export default function Day29() {
           </div>
         </section>
 
-                  {/* Quiz Section */}
-        <Quiz questions={quizQuestions} />
+        {/* Quiz Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-light text-gray-900 mb-8">Knowledge Check</h2>
+          <Quiz questions={quizQuestions} />
         </section>
 
         {/* Key Points Summary */}

@@ -372,6 +372,9 @@ export default function Day15() {
           </div>
         </section>
 
+        {/* Quiz Section */}
+        <Quiz 
+          title="Day 15 Knowledge Check"
           questions={[
             {
               id: 1,

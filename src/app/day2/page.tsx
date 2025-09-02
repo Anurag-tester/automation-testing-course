@@ -289,6 +289,9 @@ export default function Day2Page() {
           </div>
         </section>
 
+        {/* Quiz Section */}
+        <Quiz 
+          title="Day 2 Knowledge Check"
           questions={[
             {
               id: 1,
