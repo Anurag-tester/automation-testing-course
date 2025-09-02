@@ -120,7 +120,7 @@ export default function Day36() {
           <h2 className="text-2xl font-light text-gray-900 mb-8">JavaScript Executor Operations</h2>
           
           <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-            <h3 className="text-lg font-medium text-gray-900 mb-6">15 Different Operations You Can Perform</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-6">16 Different Operations You Can Perform</h3>
             
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-green-50 rounded-lg p-4">
@@ -142,17 +142,18 @@ export default function Day36() {
                   <li>8. Handle dropdown</li>
                   <li>9. Mouse over event</li>
                   <li>10. Scroll down or scroll up</li>
+                  <li>11. Capture browser title</li>
                 </ul>
               </div>
               
               <div className="bg-orange-50 rounded-lg p-4">
                 <h4 className="font-medium text-orange-900 mb-3">Advanced Operations</h4>
                 <ul className="text-orange-800 text-sm space-y-1">
-                  <li>11. Capture browser title</li>
                   <li>12. Capture browser URL</li>
                   <li>13. Create border for element</li>
                   <li>14. Highlight element with color</li>
                   <li>15. Generate custom alerts</li>
+                  <li>16. Closed shadow root</li>
                 </ul>
               </div>
             </div>
@@ -525,7 +526,7 @@ js.executeScript("document.getElementsByName('birthday_year')[0].value='2010';")
 
         {/* Missing Operations 9-15 */}
         <section className="mb-16">
-          <h2 className="text-2xl font-light text-gray-900 mb-8">Additional JavaScript Executor Operations (9-15)</h2>
+          <h2 className="text-2xl font-light text-gray-900 mb-8">Additional JavaScript Executor Operations (9-16)</h2>
           
           <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm mb-8">
             <div className="bg-yellow-50 rounded-lg p-6">
