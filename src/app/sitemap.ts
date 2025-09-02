@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { courseData } from '@/data/courseData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://automation-testing-course.vercel.app'
+  const baseUrl = 'https://testmaster-iota.vercel.app'
   
   // Static pages
   const staticPages = [
