@@ -19,8 +19,8 @@ export default function CookieConsent() {
     setShowBanner(false)
     
     // Enable Google Analytics and GTM after consent
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('consent', 'update', {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', {
         analytics_storage: 'granted'
       })
     }
