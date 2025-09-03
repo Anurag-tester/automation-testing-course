@@ -50,8 +50,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const day = courseData.find(d => d.slug === params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const day = courseData.find(d => d.slug === slug)
   
   if (!day) {
     return {
@@ -70,7 +71,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `${day.title} | SDET Course`,
       description: day.description,
       type: 'article',
-      url: `https://testmaster-iota.vercel.app/${day.slug}`,
+      url: `https://testmaster-iota.vercel.app/${slug}`,
     },
     twitter: {
       card: 'summary',
@@ -78,13 +79,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: day.description,
     },
     alternates: {
-      canonical: `https://testmaster-iota.vercel.app/${day.slug}`,
+      canonical: `https://testmaster-iota.vercel.app/${slug}`,
     },
   }
 }
 
-export default function SlugPage({ params }: { params: { slug: string } }) {
-  const componentLoader = componentMap[params.slug]
+export default async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const componentLoader = componentMap[slug]
   
   if (!componentLoader) {
     notFound()
