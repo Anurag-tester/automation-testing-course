@@ -66,6 +66,24 @@ export default function Home() {
         name: 'Java Programming'
       }
     ],
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      validFrom: '2024-01-01',
+      category: 'Educational'
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      courseWorkload: 'PT40H',
+      instructor: {
+        '@type': 'Person',
+        name: 'Praful Pawar',
+        jobTitle: 'SDET Trainer & Automation Expert'
+      }
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',

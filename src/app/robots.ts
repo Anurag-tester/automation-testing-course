@@ -15,6 +15,5 @@ export default function robots(): MetadataRoute.Robots {
       }
     ],
     sitemap: 'https://testmaster-iota.vercel.app/sitemap.xml',
-    host: 'https://testmaster-iota.vercel.app',
   }
 }
