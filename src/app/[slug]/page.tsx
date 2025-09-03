@@ -95,8 +95,7 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
       <div className="critical-loading">
         <div className="critical-spinner"></div>
       </div>
-    ),
-    ssr: false
+    )
   })
 
   return <DynamicComponent />

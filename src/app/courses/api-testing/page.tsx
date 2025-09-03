@@ -4,7 +4,7 @@ import { courseData } from '@/data/courseData'
 import { Database, ArrowRight, Clock, Target, Code, Globe, CheckCircle } from 'lucide-react'
 import type { Metadata } from 'next'
 
-const Footer = dynamic(() => import('@/components/Footer'), { ssr: false })
+const Footer = dynamic(() => import('@/components/Footer'))
 const Navbar = dynamic(() => import('@/components/Navbar'))
 
 export const metadata: Metadata = {
