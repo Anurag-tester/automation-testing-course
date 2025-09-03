@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { X, Cookie } from 'lucide-react'
+import Link from 'next/link'
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
@@ -43,9 +44,9 @@ export default function CookieConsent() {
             <p className="text-xs text-gray-600">
               This website uses cookies for analytics and to improve user experience. 
               By continuing to use this site, you consent to our use of cookies.{' '}
-              <a href="/privacy" className="text-blue-600 hover:underline">
+              <Link href="/privacy" className="text-blue-600 hover:underline">
                 Learn more
-              </a>
+              </Link>
             </p>
           </div>
         </div>

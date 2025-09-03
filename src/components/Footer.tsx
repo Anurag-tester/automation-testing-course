@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="border-t border-gray-100 bg-white">
@@ -22,9 +24,9 @@ export default function Footer() {
           </div>
           
           <div className="flex items-center justify-center gap-4 text-xs text-gray-600 mb-2">
-            <a href="/privacy" className="hover:text-gray-800 transition-colors">
+            <Link href="/privacy" className="hover:text-gray-800 transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <span>•</span>
             <a href="https://github.com/Anurag-tester/automation-testing-course" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors">
               GitHub
