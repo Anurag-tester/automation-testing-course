@@ -66,7 +66,7 @@ public class FormsChallenge {
         WebDriver driver = new ChromeDriver();
         
         try {
-            driver.get("http://localhost:3000/practice/forms-allinone");
+            driver.get("http://localhost:3000/practice/forms-challenge");
             
             // Test Case 1: Fill text inputs
             driver.findElement(By.id("firstName")).sendKeys("John");
@@ -441,7 +441,7 @@ public class FormsChallenge {
         </div>
 
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/calendar-datetime" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/calendar-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice/file-management" className="text-gray-600 hover:text-gray-800 transition-colors">

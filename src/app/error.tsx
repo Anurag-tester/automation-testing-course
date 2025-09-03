@@ -1,6 +1,9 @@
 'use client'
 
 import { useEffect } from 'react'
+import { Button } from '@/components/ui/button'
+import { RefreshCw, Home } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Error({
   error,
@@ -14,35 +17,32 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-      <div className="max-w-md w-full text-center">
+    <div className="min-h-screen flex items-center justify-center bg-white px-6">
+      <div className="text-center max-w-md mx-auto">
         <div className="mb-8">
-          <h1 className="text-6xl font-light text-gray-900 mb-4">500</h1>
-          <h2 className="text-xl font-medium text-gray-900 mb-2">Something went wrong</h2>
-          <p className="text-gray-600">
-            An unexpected error occurred. Please try again.
+          <h1 className="text-4xl font-light text-gray-900 mb-4">Something went wrong</h1>
+          <p className="text-gray-600 mb-8">
+            An error occurred while loading this page. Please try again.
           </p>
         </div>
         
-        <div className="space-y-4">
-          <button
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button 
             onClick={reset}
-            className="inline-block bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+            className="bg-black hover:bg-gray-800 text-white px-6 py-3"
           >
+            <RefreshCw className="w-4 h-4 mr-2" />
             Try Again
-          </button>
-          
-          <div className="text-sm text-gray-500">
-            <p>Still having issues?</p>
-            <a 
-              href="https://github.com/Anurag-tester/automation-testing-course/issues" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+          </Button>
+          <Link href="/">
+            <Button 
+              variant="ghost" 
+              className="text-gray-600 hover:text-gray-900 px-6 py-3"
             >
-              Report on GitHub
-            </a>
-          </div>
+              <Home className="w-4 h-4 mr-2" />
+              Go Home
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

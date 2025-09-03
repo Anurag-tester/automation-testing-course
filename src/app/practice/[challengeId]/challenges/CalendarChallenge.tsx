@@ -85,7 +85,7 @@ public class CalendarChallenge {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         
         try {
-            driver.get("http://localhost:3000/practice/calendar-datetime");
+            driver.get("http://localhost:3000/practice/calendar-challenge");
             
             // Test Case 1: Navigate to specific month/year
             String targetMonth = "March";
@@ -410,10 +410,10 @@ public class CalendarChallenge {
         </div>
 
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/table-advanced" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/advanced-table" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
-          <Link href="/practice/forms-allinone" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/forms-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             Next Challenge →
           </Link>
         </div>

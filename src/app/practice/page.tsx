@@ -4,7 +4,7 @@ import { Code, Target, Clock, Star, ChevronRight, Play, Zap, Trophy, Brain } fro
 
 const practiceProblems = [
   {
-    id: 'input-edit',
+    id: 'input-handling',
     title: 'Input - Edit Fields',
     description: 'Complex input field automation with validation, dynamic attributes, and edge cases',
     difficulty: 'Advanced',
@@ -40,7 +40,7 @@ const practiceProblems = [
     color: 'from-green-500 to-green-600'
   },
   {
-    id: 'frame-innerhtml',
+    id: 'frame-navigation',
     title: 'Frame - Inner HTML',
     description: 'Interact with different types of frames/iframes and nested frame structures',
     difficulty: 'Intermediate',
@@ -49,7 +49,7 @@ const practiceProblems = [
     color: 'from-blue-500 to-blue-600'
   },
   {
-    id: 'radio-toggle',
+    id: 'radio-button-toggle',
     title: 'Radio - Toggle Elements',
     description: 'Basic radio button and checkbox interactions with selection and validation',
     difficulty: 'Beginner',
@@ -58,7 +58,7 @@ const practiceProblems = [
     color: 'from-green-500 to-green-600'
   },
   {
-    id: 'window-tabs',
+    id: 'window-management',
     title: 'Window - Tab Management',
     description: 'Switch between different types of tabs and windows',
     difficulty: 'Intermediate',
@@ -67,7 +67,7 @@ const practiceProblems = [
     color: 'from-blue-500 to-blue-600'
   },
   {
-    id: 'elements-find',
+    id: 'elements-challenge',
     title: 'Elements - Find & Smash',
     description: 'Basic element location and interaction practice',
     difficulty: 'Beginner',
@@ -76,8 +76,8 @@ const practiceProblems = [
     color: 'from-green-500 to-green-600'
   },
   {
-    id: 'drag-aui1',
-    title: 'Drag - AUI 1',
+    id: 'drag-drop',
+    title: 'Drag & Drop',
     description: 'Drag me here and there - master drag operations and movements',
     difficulty: 'Advanced',
     estimatedTime: '20-25 min',
@@ -85,17 +85,8 @@ const practiceProblems = [
     color: 'from-orange-500 to-red-600'
   },
   {
-    id: 'drop-aui2',
-    title: 'Drop - AUI 2',
-    description: 'Feel free to bounce me - master drop operations and target interactions',
-    difficulty: 'Advanced',
-    estimatedTime: '20-25 min',
-    skills: ['drop operations', 'dragAndDropBy', 'target elements', 'coordinate-based drops'],
-    color: 'from-pink-500 to-rose-600'
-  },
-  {
-    id: 'sort-aui3',
-    title: 'Sort - AUI 3',
+    id: 'sort-challenge',
+    title: 'Sort Challenge',
     description: 'Sort out the problem quickly - master sorting and reordering elements',
     difficulty: 'Expert',
     estimatedTime: '30-35 min',
@@ -103,8 +94,8 @@ const practiceProblems = [
     color: 'from-cyan-500 to-blue-600'
   },
   {
-    id: 'multiselect-aui4',
-    title: 'Multi-Select - AUI 4',
+    id: 'multi-select',
+    title: 'Multi-Select Challenge',
     description: 'Be a multi-tasker - handle complex multi-selection scenarios',
     difficulty: 'Advanced',
     estimatedTime: '25-30 min',
@@ -112,8 +103,8 @@ const practiceProblems = [
     color: 'from-lime-500 to-green-600'
   },
   {
-    id: 'slider-aui5',
-    title: 'Slider - AUI 5',
+    id: 'slider-challenge',
+    title: 'Slider Challenge',
     description: 'Basic slider controls and range input interactions',
     difficulty: 'Beginner',
     estimatedTime: '15-20 min',
@@ -121,8 +112,8 @@ const practiceProblems = [
     color: 'from-green-500 to-green-600'
   },
   {
-    id: 'waits-timeouts',
-    title: 'Waits - Timeouts',
+    id: 'waits-challenge',
+    title: 'Waits Challenge',
     description: "It's ok to wait but you know.. - master different wait strategies",
     difficulty: 'Advanced',
     estimatedTime: '25-30 min',
@@ -130,8 +121,8 @@ const practiceProblems = [
     color: 'from-stone-500 to-gray-600'
   },
   {
-    id: 'table-simple',
-    title: 'Table - Simple',
+    id: 'table-operations',
+    title: 'Table Operations',
     description: "Basic table operations - rows, columns, and cell data extraction",
     difficulty: 'Beginner',
     estimatedTime: '20-25 min',
@@ -139,8 +130,8 @@ const practiceProblems = [
     color: 'from-green-500 to-green-600'
   },
   {
-    id: 'table-advanced',
-    title: 'Table - Advanced',
+    id: 'advanced-table',
+    title: 'Advanced Table',
     description: "It's little complicated but give a try - complex table operations",
     difficulty: 'Expert',
     estimatedTime: '35-40 min',
@@ -148,8 +139,8 @@ const practiceProblems = [
     color: 'from-indigo-600 to-purple-700'
   },
   {
-    id: 'calendar-datetime',
-    title: 'Calendar - Date & Time',
+    id: 'calendar-challenge',
+    title: 'Calendar Challenge',
     description: 'My time is precious & yours? - master date picker and calendar interactions',
     difficulty: 'Advanced',
     estimatedTime: '25-30 min',
@@ -157,8 +148,8 @@ const practiceProblems = [
     color: 'from-rose-500 to-pink-600'
   },
   {
-    id: 'forms-allinone',
-    title: 'Forms - All in One',
+    id: 'forms-challenge',
+    title: 'Forms Challenge',
     description: 'Interact with everything - comprehensive form handling challenge',
     difficulty: 'Expert',
     estimatedTime: '40-45 min',
@@ -206,6 +197,7 @@ const getDifficultyIcon = (difficulty: string) => {
 };
 
 export const metadata = {
+  metadataBase: new URL('https://testmaster-iota.vercel.app'),
   title: 'Selenium Practice Problems - 22 Hands-on Challenges | Automation Testing',
   description: 'Master Selenium WebDriver with 22 hands-on practice challenges from beginner to expert level. Real-world automation scenarios with interactive solutions.',
   keywords: 'selenium practice problems, automation testing challenges, selenium webdriver practice, hands-on selenium, automation exercises, selenium training',
@@ -404,7 +396,7 @@ export default function PracticePage() {
           <p className="text-gray-600 mb-8 max-w-xl mx-auto">
             Start with beginner challenges and work your way up to expert-level problems. Each challenge will enhance your Selenium automation skills.
           </p>
-          <Link href="/practice/input-edit">
+          <Link href="/practice/input-handling">
             <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <Play className="w-5 h-5 mr-3 inline" />
               Start Challenge

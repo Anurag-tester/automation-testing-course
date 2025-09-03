@@ -54,7 +54,7 @@ public class WindowChallenge {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         
         try {
-            driver.get("http://localhost:3000/practice/window-tabs");
+            driver.get("http://localhost:3000/practice/window-management");
             String parentWindow = driver.getWindowHandle();
             System.out.println("✓ Parent window handle: " + parentWindow);
             
@@ -470,10 +470,10 @@ public class WindowChallenge {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/radio-toggle" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/radio-button-toggle" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
-          <Link href="/practice/elements-find" className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg transition-colors">
+          <Link href="/practice/elements-challenge" className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg transition-colors">
             Next Challenge →
           </Link>
         </div>

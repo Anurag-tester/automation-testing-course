@@ -102,7 +102,7 @@ public class SortChallenge {
         Actions actions = new Actions(driver);
         
         try {
-            driver.get("http://localhost:3000/practice/sort-aui3");
+            driver.get("http://localhost:3000/practice/sort-challenge");
             
             // Test Case 1: Sort basic list items
             List<WebElement> items = driver.findElements(By.cssSelector("ul#sortable-list li"));
@@ -356,7 +356,7 @@ public class SortChallenge {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/drop-aui2" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/drag-drop" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-colors">

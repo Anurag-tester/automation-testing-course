@@ -42,7 +42,7 @@ public class TableSimpleChallenge {
         WebDriver driver = new ChromeDriver();
         
         try {
-            driver.get("http://localhost:3000/practice/table-simple");
+            driver.get("http://localhost:3000/practice/table-operations");
             
             // Test Case 1: Get table headers
             List<WebElement> headers = driver.findElements(By.cssSelector("table thead th"));
@@ -271,10 +271,10 @@ public class TableSimpleChallenge {
         </div>
 
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/waits-timeouts" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/waits-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
-          <Link href="/practice/table-advanced" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/advanced-table" className="text-gray-600 hover:text-gray-800 transition-colors">
             Next Challenge →
           </Link>
         </div>

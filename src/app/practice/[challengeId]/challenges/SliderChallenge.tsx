@@ -43,7 +43,7 @@ public class SliderChallenge {
         Actions actions = new Actions(driver);
         
         try {
-            driver.get("http://localhost:3000/practice/slider-aui5");
+            driver.get("http://localhost:3000/practice/slider-challenge");
             
             // Test Case 1: Move single slider to specific value
             WebElement slider = driver.findElement(By.id("price-slider"));
@@ -331,7 +331,7 @@ public class SliderChallenge {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/select-aui4" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/multi-select" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice" className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition-colors">

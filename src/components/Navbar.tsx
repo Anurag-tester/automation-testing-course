@@ -1,12 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { Code, ChevronDown, ChevronRight, Home, TestTube, BookOpen, Menu, X } from 'lucide-react'
-import SearchBox from '@/components/SearchBox'
 import { courseData } from '@/data/courseData'
+import dynamic from 'next/dynamic'
 
-export default function Navbar() {
+const SearchBox = dynamic(() => import('@/components/SearchBox'), { ssr: false })
+
+const Navbar = memo(function Navbar() {
   const [isCoursesOpen, setIsCoursesOpen] = useState(false)
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null)
@@ -46,7 +48,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <Link href="/">
+            <Link href="/" aria-label="Go to homepage">
               <div className="w-9 h-9 bg-gradient-to-br from-black to-gray-800 rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
                 <Code className="w-4 h-4 text-white" />
               </div>
@@ -80,7 +82,7 @@ export default function Navbar() {
 
                 {isCoursesOpen && (
                   <div 
-                    className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-[9999]"
+                    className="absolute top-full left-0 mt-1 w-72 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-[9999]"
                     onMouseLeave={() => {
                       setHoveredCategory(null)
                       if (hoverTimeout) clearTimeout(hoverTimeout)
@@ -98,24 +100,30 @@ export default function Navbar() {
                         green: 'hover:bg-green-50',
                         purple: 'hover:bg-purple-50'
                       }
+                      const courseUrls = {
+                        'manual-testing': '/courses/manual-testing',
+                        'java': '/courses/java-programming',
+                        'selenium': '/courses/selenium-webdriver'
+                      }
                       
                       return (
                         <div key={category.id}>
                           <Link
-                            href={`/#${category.id}`}
-                            className={`flex items-center gap-3 px-4 py-3 ${hoverClasses[category.color as keyof typeof hoverClasses]} transition-all`}
+                            href={courseUrls[category.id as keyof typeof courseUrls]}
+                            className={`flex items-center gap-3 px-4 py-3 ${hoverClasses[category.color as keyof typeof hoverClasses]} transition-all group`}
                             onClick={() => {
                               setIsCoursesOpen(false)
                               setHoveredCategory(null)
                             }}
                           >
-                            <div className={`w-8 h-8 bg-gradient-to-br ${colorClasses[category.color as keyof typeof colorClasses]} rounded-lg flex items-center justify-center`}>
+                            <div className={`w-8 h-8 bg-gradient-to-br ${colorClasses[category.color as keyof typeof colorClasses]} rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform`}>
                               <IconComponent className="w-4 h-4 text-white" />
                             </div>
-                            <div>
-                              <h3 className="font-medium text-gray-900 text-sm">{category.title}</h3>
-                              <p className="text-xs text-gray-500">{category.days.length} days</p>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-gray-900 text-sm group-hover:text-gray-700">{category.title}</h3>
+                              <p className="text-xs text-gray-500">{category.days.length} days • Foundation to Advanced</p>
                             </div>
+                            <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
                           </Link>
                           {index < courseCategories.length - 1 && (
                             <div className="border-t border-gray-100 mx-4"></div>
@@ -123,6 +131,27 @@ export default function Navbar() {
                         </div>
                       )
                     })}
+                    
+                    {/* Coming Soon Section */}
+                    <div className="border-t border-gray-100 mx-4 mt-2 pt-2">
+                      <Link
+                        href="/courses/api-testing"
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-orange-50 transition-all group"
+                        onClick={() => {
+                          setIsCoursesOpen(false)
+                          setHoveredCategory(null)
+                        }}
+                      >
+                        <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                          <Code className="w-4 h-4 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-medium text-gray-900 text-sm group-hover:text-gray-700">API Testing</h3>
+                          <p className="text-xs text-orange-600 font-medium">Coming Soon • REST Assured</p>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
@@ -139,7 +168,7 @@ export default function Navbar() {
               </Link>
               <Link href="/selenium-cheatsheet" className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 rounded-md transition-all shadow-sm whitespace-nowrap">
                 <Code className="w-3 h-3" />
-                Cheat
+                Cheatsheet
               </Link>
             </nav>
 
@@ -163,6 +192,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all"
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -197,11 +227,16 @@ export default function Navbar() {
                 green: 'from-green-500 to-green-600',
                 purple: 'from-purple-500 to-purple-600'
               }
+              const courseUrls = {
+                'manual-testing': '/courses/manual-testing',
+                'java': '/courses/java-programming',
+                'selenium': '/courses/selenium-webdriver'
+              }
               
               return (
                 <Link
                   key={category.id}
-                  href={`/#${category.id}`}
+                  href={courseUrls[category.id as keyof typeof courseUrls]}
                   className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -215,6 +250,21 @@ export default function Navbar() {
                 </Link>
               )
             })}
+            
+            {/* API Testing - Coming Soon */}
+            <Link
+              href="/courses/api-testing"
+              className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
+                <Code className="w-3 h-3 text-white" />
+              </div>
+              <div>
+                <span>API Testing</span>
+                <span className="text-xs text-orange-600 font-medium ml-1">(Coming Soon)</span>
+              </div>
+            </Link>
             
             <div className="border-t border-gray-100 pt-3 mt-3">
               <Link 
@@ -278,4 +328,6 @@ export default function Navbar() {
       )}
     </div>
   )
-}
+})
+
+export default Navbar

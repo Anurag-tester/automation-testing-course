@@ -13,7 +13,6 @@ import ElementsChallenge from './challenges/ElementsChallenge';
 import DragChallenge from './challenges/DragChallenge';
 import DropChallenge from './challenges/DropChallenge';
 import SortChallenge from './challenges/SortChallenge';
-import SelectChallenge from './challenges/SelectChallenge';
 import SliderChallenge from './challenges/SliderChallenge';
 import WaitsChallenge from './challenges/WaitsChallenge';
 import MultiSelectChallenge from './challenges/MultiSelectChallenge';

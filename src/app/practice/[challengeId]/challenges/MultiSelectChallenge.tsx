@@ -47,7 +47,7 @@ public class MultiSelectChallenge {
         Actions actions = new Actions(driver);
         
         try {
-            driver.get("http://localhost:3000/practice/multiselect-aui4");
+            driver.get("http://localhost:3000/practice/multi-select");
             
             // Test Case 1: Single selection
             WebElement firstItem = driver.findElement(By.cssSelector("[data-testid='selectable-item-1']"));
@@ -261,10 +261,10 @@ public class MultiSelectChallenge {
         </div>
 
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/sort-aui3" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/sort-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
-          <Link href="/practice/slider-aui5" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/slider-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             Next Challenge →
           </Link>
         </div>

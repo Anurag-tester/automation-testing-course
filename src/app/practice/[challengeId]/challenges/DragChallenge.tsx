@@ -72,7 +72,7 @@ public class DragChallenge {
         Actions actions = new Actions(driver);
         
         try {
-            driver.get("http://localhost:3000/practice/drag-aui1");
+            driver.get("http://localhost:3000/practice/drag-drop");
             
             // Test Case 1: Simple drag by offset
             WebElement draggableBox = wait.until(ExpectedConditions.elementToBeClickable(
@@ -253,7 +253,7 @@ public class DragChallenge {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/elements-find" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/elements-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice" className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg transition-colors">

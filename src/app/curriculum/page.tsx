@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 
 export const metadata = {
+  metadataBase: new URL('https://testmaster-iota.vercel.app'),
   title: 'Complete SDET Curriculum - Full Stack Automation Testing Training',
   description: 'Comprehensive SDET curriculum covering Web UI, API, Database, and Mobile automation. Learn industry-standard tools and frameworks in our structured training program.',
   keywords: 'SDET curriculum, automation testing training, full stack SDET, web automation, API testing, mobile automation, database testing',

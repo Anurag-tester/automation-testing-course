@@ -21,16 +21,16 @@ export default function Footer() {
             </a>
           </div>
           
-          <div className="flex items-center justify-center gap-4 text-xs text-gray-400 mb-2">
-            <a href="/privacy" className="hover:text-gray-600 transition-colors">
+          <div className="flex items-center justify-center gap-4 text-xs text-gray-600 mb-2">
+            <a href="/privacy" className="hover:text-gray-800 transition-colors">
               Privacy Policy
             </a>
             <span>•</span>
-            <a href="https://github.com/Anurag-tester/automation-testing-course" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
+            <a href="https://github.com/Anurag-tester/automation-testing-course" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors">
               GitHub
             </a>
           </div>
-          <div className="text-xs text-gray-400">
+          <div className="text-xs text-gray-600">
             © 2024 Automation Testing Course. All rights reserved.
           </div>
         </div>

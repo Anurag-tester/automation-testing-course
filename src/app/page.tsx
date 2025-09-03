@@ -1,15 +1,12 @@
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
-import { courseData, getCategoryColor, getCategoryStats, getUrlFromDayId } from '@/data/courseData'
+import { courseData, getCategoryColor, getCategoryStats } from '@/data/courseData'
 import { BookOpen, Code, TestTube, Play, Calendar, Award, ArrowRight, Search, Target, Users, Clock, Zap, CheckCircle, TrendingUp, Rocket, Star, ChevronRight, Globe, Smartphone, Database } from 'lucide-react'
-
-// Lazy load components
-const Footer = dynamic(() => import('@/components/Footer'), { ssr: false })
-const Navbar = dynamic(() => import('@/components/Navbar'))
 
 export default function Home() {
   const categoryStats = getCategoryStats()
@@ -26,7 +23,7 @@ export default function Home() {
     provider: {
       '@type': 'Organization',
       name: 'SDET Mastery',
-      url: 'https://automation-testing-course.vercel.app'
+      url: 'https://testmaster-iota.vercel.app'
     },
     instructor: {
       '@type': 'Person',
@@ -84,10 +81,8 @@ export default function Home() {
             </div>
           </div>
           
-
-          
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href={getUrlFromDayId('day1')}>
+            <Link href="/manual-testing-basics">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <Play className="w-4 h-4 mr-2" />
                 Start Your Journey
@@ -166,261 +161,226 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-md">
-                  <Globe className="w-5 h-5 text-white" />
+                  <Code className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-sm font-bold text-green-600 mb-1">Web UI</div>
-                <div className="text-xs text-gray-500">Selenium</div>
+                <div className="text-sm font-bold text-green-600 mb-1">Java</div>
+                <div className="text-xs text-gray-500">Programming</div>
               </div>
               <div className="text-center">
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-md">
-                  <Code className="w-5 h-5 text-white" />
+                  <Globe className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-sm font-bold text-purple-600 mb-1">API</div>
-                <div className="text-xs text-gray-500">Rest Assured</div>
+                <div className="text-sm font-bold text-purple-600 mb-1">Selenium</div>
+                <div className="text-xs text-gray-500">WebDriver</div>
               </div>
               <div className="text-center">
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Database className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-sm font-bold text-orange-600 mb-1">Database</div>
-                <div className="text-xs text-gray-500">JDBC</div>
+                <div className="text-sm font-bold text-orange-600 mb-1">API</div>
+                <div className="text-xs text-gray-500">Testing</div>
               </div>
               <div className="text-center">
-                <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-md">
+                <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Smartphone className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-sm font-bold text-pink-600 mb-1">Mobile</div>
-                <div className="text-xs text-gray-500">Appium</div>
+                <div className="text-sm font-bold text-red-600 mb-1">Mobile</div>
+                <div className="text-xs text-gray-500">Automation</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Live Bootcamp Status */}
-        <div className="bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl p-8 mb-12 text-white shadow-xl">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-              <div className="w-8 h-8 bg-white rounded-full animate-pulse flex items-center justify-center">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold mb-4">🔥 Full Stack SDET Bootcamp - Live!</h3>
-            <p className="text-white/90 max-w-2xl mx-auto mb-6">
-              Complete automation training covering Web, API, Database, and Mobile testing. Learn industry-standard tools 
-              like Selenium, Rest Assured, Appium, and modern frameworks with AI assistance.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
-                <span className="font-semibold">✓ 5 Automation Stacks</span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
-                <span className="font-semibold">🚀 40+ Technologies</span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
-                <span className="font-semibold">💼 Industry Ready</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Course Modules */}
-        <div className="space-y-12">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">Complete Curriculum</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">Three progressive modules designed to take you from beginner to expert</p>
-          </div>
-          
-          {/* Manual Testing Module */}
-          <section id="manual-testing" className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
-                  <TestTube className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Manual Testing Fundamentals</h3>
-                  <p className="text-gray-600 text-sm">Build your testing foundation with industry best practices</p>
-                </div>
-              </div>
-              <div className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 rounded-full border border-blue-200">
-                <span className="text-sm font-bold text-blue-700">{categoryStats['manual-testing']} Days</span>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {manualTestingDays.map((day, index) => (
-                <Link key={day.id} href={getUrlFromDayId(day.id)}>
-                  <Card className="group hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-200 cursor-pointer h-full bg-gradient-to-br from-white to-blue-50/30">
-                    <CardHeader className="p-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="w-12 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-sm">
-                          Day {day.id.replace('day', '')}
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                      </div>
-                      <CardTitle className="text-base font-bold group-hover:text-blue-600 transition-colors mb-2">
-                        {day.title.replace(/^Day \d+: /, '')}
-                      </CardTitle>
-                      <CardDescription className="text-gray-600 text-xs leading-relaxed">
-                        {day.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          {/* Java Programming Module */}
-          <section id="java" className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
-                  <Code className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Java Programming</h3>
-                  <p className="text-gray-600 text-sm">Master the programming language that powers automation</p>
-                </div>
-              </div>
-              <div className="px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 rounded-full border border-green-200">
-                <span className="text-sm font-bold text-green-700">{categoryStats['java']} Days</span>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {javaDays.map((day, index) => (
-                <Link key={day.id} href={getUrlFromDayId(day.id)}>
-                  <Card className="group hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-200 cursor-pointer h-full bg-gradient-to-br from-white to-green-50/30">
-                    <CardHeader className="p-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="w-12 h-8 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-sm">
-                          Day {day.id.replace('day', '')}
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all" />
-                      </div>
-                      <CardTitle className="text-base font-bold group-hover:text-green-600 transition-colors mb-2">
-                        {day.title.replace(/^Day \d+: /, '')}
-                      </CardTitle>
-                      <CardDescription className="text-gray-600 text-xs leading-relaxed">
-                        {day.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          {/* Selenium WebDriver Module */}
-          <section id="selenium" className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
-                  <BookOpen className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Selenium WebDriver</h3>
-                  <p className="text-gray-600 text-sm">Become an automation expert with advanced techniques</p>
-                </div>
-              </div>
-              <div className="px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100 rounded-full border border-purple-200">
-                <span className="text-sm font-bold text-purple-700">{categoryStats['selenium']} Days</span>
-              </div>
-            </div>
-            {/* JavaScript Executor Highlight */}
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 mb-6 border border-indigo-200">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-indigo-900 text-sm">🔥 Advanced Topic: JavaScript Executor</h4>
-                  <p className="text-indigo-700 text-xs">Master DOM manipulation and advanced browser operations</p>
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-3">
-                <Link href={getUrlFromDayId('day19')}>
-                  <div className="bg-white rounded-lg p-3 border border-indigo-200 hover:border-indigo-300 hover:shadow-md transition-all group cursor-pointer">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-xs font-bold text-indigo-600 mb-1">Day 19</div>
-                        <div className="text-sm font-medium text-gray-900 group-hover:text-indigo-600">JavaScript Executor Basics</div>
-                        <div className="text-xs text-gray-600">DOM manipulation & scroll operations</div>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-all" />
-                    </div>
+        {/* Course Categories */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Manual Testing */}
+          <Link href="/courses/manual-testing" className="block">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100 cursor-pointer">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <BookOpen className="w-6 h-6 text-white" />
                   </div>
-                </Link>
-                <Link href={getUrlFromDayId('day36')}>
-                  <div className="bg-white rounded-lg p-3 border border-indigo-200 hover:border-indigo-300 hover:shadow-md transition-all group cursor-pointer">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-xs font-bold text-indigo-600 mb-1">Day 36 🆕</div>
-                        <div className="text-sm font-medium text-gray-900 group-hover:text-indigo-600">Advanced JS Executor</div>
-                        <div className="text-xs text-gray-600">15 operations & browser control</div>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-indigo-400 group-hover:translate-x-1 transition-all" />
+                  <Badge className="bg-blue-100 text-blue-700 border-blue-200 px-3 py-1">
+                    {categoryStats['manual-testing']} Days
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
+                  Manual Testing Foundation
+                </CardTitle>
+                <CardDescription className="text-gray-600 leading-relaxed">
+                  Master testing fundamentals, SDLC, test design techniques, and documentation standards
+                </CardDescription>
+              </CardHeader>
+              <div className="px-6 pb-6">
+                <div className="space-y-2 mb-4">
+                  {manualTestingDays.slice(0, 3).map((day) => (
+                    <div key={day.id} className="text-sm text-gray-600 flex items-center">
+                      <CheckCircle className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                      <span className="truncate">{day.title}</span>
                     </div>
-                  </div>
-                </Link>
+                  ))}
+                </div>
+                <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-300">
+                  View Course
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {seleniumDays.map((day, index) => {
-                const isJSExecutor = day.id === 'day36' || day.id === 'day19';
-                return (
-                  <Link key={day.id} href={getUrlFromDayId(day.id)} className="block">
-                    <Card className={`group hover:shadow-lg hover:scale-105 transition-all duration-300 border cursor-pointer h-full flex flex-col ${
-                      isJSExecutor 
-                        ? 'border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 ring-2 ring-indigo-200' 
-                        : 'border-gray-200 bg-gradient-to-br from-white to-purple-50/30'
-                    }`}>
-                      <CardHeader className="p-4 flex-1 flex flex-col">
-                        <div className="flex items-center justify-between mb-3">
-                          <div className={`w-12 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-sm shrink-0 ${
-                            isJSExecutor 
-                              ? 'bg-gradient-to-r from-indigo-500 to-purple-500' 
-                              : 'bg-gradient-to-r from-purple-500 to-purple-600'
-                          }`}>
-                            Day {day.id.replace('day', '')}
-                            {day.id === 'day36' && <span className="ml-1 text-yellow-300">🆕</span>}
-                          </div>
-                          <ChevronRight className={`w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-all shrink-0 ${
-                            isJSExecutor ? 'group-hover:text-indigo-600' : 'group-hover:text-purple-600'
-                          }`} />
-                        </div>
-                        <CardTitle className={`text-base font-bold transition-colors mb-2 flex-1 ${
-                          isJSExecutor ? 'group-hover:text-indigo-600' : 'group-hover:text-purple-600'
-                        }`}>
-                          {day.title.replace(/^Day \d+: /, '')}
-                          {day.id === 'day36' && <span className="ml-2 text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full whitespace-nowrap">JS Executor</span>}
-                        </CardTitle>
-                        <CardDescription className="text-gray-600 text-xs leading-relaxed">
-                          {day.description}
-                        </CardDescription>
-                      </CardHeader>
-                    </Card>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        </div>
-        
-        {/* Final CTA */}
-        <div className="text-center py-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Your SDET Journey?</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            Begin with 35 comprehensive days of content and continue learning as we add advanced topics weekly
-          </p>
-          <Link href={getUrlFromDayId('day1')}>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-              <Rocket className="w-5 h-5 mr-3" />
-              Start Your SDET Journey Now
-            </Button>
+            </Card>
+          </Link>
+
+          {/* Java Programming */}
+          <Link href="/courses/java-programming" className="block">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100 cursor-pointer">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Code className="w-6 h-6 text-white" />
+                  </div>
+                  <Badge className="bg-green-100 text-green-700 border-green-200 px-3 py-1">
+                    {categoryStats.java} Days
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
+                  Java Programming
+                </CardTitle>
+                <CardDescription className="text-gray-600 leading-relaxed">
+                  Learn Java fundamentals, OOP concepts, and programming skills essential for automation
+                </CardDescription>
+              </CardHeader>
+              <div className="px-6 pb-6">
+                <div className="space-y-2 mb-4">
+                  {javaDays.slice(0, 3).map((day) => (
+                    <div key={day.id} className="text-sm text-gray-600 flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <span className="truncate">{day.title}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-md hover:shadow-lg transition-all duration-300">
+                  View Course
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </Card>
+          </Link>
+
+          {/* Selenium WebDriver */}
+          <Link href="/courses/selenium-webdriver" className="block">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100 cursor-pointer">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <TestTube className="w-6 h-6 text-white" />
+                  </div>
+                  <Badge className="bg-purple-100 text-purple-700 border-purple-200 px-3 py-1">
+                    {categoryStats.selenium} Days
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
+                  Selenium WebDriver
+                </CardTitle>
+                <CardDescription className="text-gray-600 leading-relaxed">
+                  Master web automation with Selenium WebDriver, advanced locators, and complex interactions
+                </CardDescription>
+              </CardHeader>
+              <div className="px-6 pb-6">
+                <div className="space-y-2 mb-4">
+                  {seleniumDays.slice(0, 3).map((day) => (
+                    <div key={day.id} className="text-sm text-gray-600 flex items-center">
+                      <CheckCircle className="w-4 h-4 text-purple-500 mr-2 flex-shrink-0" />
+                      <span className="truncate">{day.title}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-md hover:shadow-lg transition-all duration-300">
+                  View Course
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </Card>
           </Link>
         </div>
+
+        {/* Quick Access */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+            <CardHeader>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                  <Target className="w-5 h-5 text-white" />
+                </div>
+                <CardTitle className="text-lg font-bold text-gray-900">Interview Preparation</CardTitle>
+              </div>
+              <CardDescription className="text-gray-600 mb-4">
+                40+ comprehensive interview questions covering Manual Testing, Java, Selenium, and TestNG with detailed explanations.
+              </CardDescription>
+              <Link href="/interview-questions">
+                <Button variant="outline" className="w-full border-2 border-orange-300 hover:border-orange-400 text-orange-700 hover:bg-orange-50">
+                  <Target className="w-4 h-4 mr-2" />
+                  Prepare for Interviews
+                </Button>
+              </Link>
+            </CardHeader>
+          </Card>
+
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+            <CardHeader>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                  <Code className="w-5 h-5 text-white" />
+                </div>
+                <CardTitle className="text-lg font-bold text-gray-900">Practice Challenges</CardTitle>
+              </div>
+              <CardDescription className="text-gray-600 mb-4">
+                22 hands-on practice problems from beginner to expert level. Build real automation skills with interactive challenges.
+              </CardDescription>
+              <Link href="/practice">
+                <Button variant="outline" className="w-full border-2 border-green-300 hover:border-green-400 text-green-700 hover:bg-green-50">
+                  <Code className="w-4 h-4 mr-2" />
+                  Start Practicing
+                </Button>
+              </Link>
+            </CardHeader>
+          </Card>
+        </div>
+
+        {/* Features Grid */}
+        <div className="bg-white rounded-2xl p-8 mb-12 shadow-lg border border-gray-100">
+          <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Why Choose Our SDET Course?</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Clock className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">35 Days Structured</h3>
+              <p className="text-sm text-gray-600">Comprehensive curriculum designed for progressive learning</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Hands-on Practice</h3>
+              <p className="text-sm text-gray-600">22 interactive challenges and real-world scenarios</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Industry Ready</h3>
+              <p className="text-sm text-gray-600">Skills used by top tech companies and startups</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Award className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Expert Guidance</h3>
+              <p className="text-sm text-gray-600">Learn from experienced SDET professionals</p>
+            </div>
+          </div>
+        </div>
       </div>
+
       <Footer />
     </div>
   )

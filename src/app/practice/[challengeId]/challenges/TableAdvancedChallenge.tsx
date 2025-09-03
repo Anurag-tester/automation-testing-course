@@ -94,7 +94,7 @@ public class TableAdvancedChallenge {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         
         try {
-            driver.get("http://localhost:3000/practice/table-advanced");
+            driver.get("http://localhost:3000/practice/advanced-table");
             
             // Test Case 1: Filter table data
             WebElement filterInput = driver.findElement(By.id("table-filter"));
@@ -408,10 +408,10 @@ public class TableAdvancedChallenge {
         </div>
 
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/table-simple" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/table-operations" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
-          <Link href="/practice/calendar-datetime" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/calendar-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             Next Challenge →
           </Link>
         </div>

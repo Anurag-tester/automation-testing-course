@@ -60,7 +60,7 @@ public class DropChallenge {
         Actions actions = new Actions(driver);
         
         try {
-            driver.get("http://localhost:3000/practice/drop-aui2");
+            driver.get("http://localhost:3000/practice/drag-drop");
             
             // Test Case 1: Simple drag and drop
             WebElement source = wait.until(ExpectedConditions.elementToBeClickable(
@@ -374,7 +374,7 @@ public class DropChallenge {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/drag-aui1" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/drag-drop" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors">

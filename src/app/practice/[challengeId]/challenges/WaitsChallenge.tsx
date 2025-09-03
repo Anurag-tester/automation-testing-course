@@ -382,7 +382,7 @@ public class WaitsChallenge {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/slider-aui5" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/slider-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice" className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-colors">

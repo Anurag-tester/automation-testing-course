@@ -61,12 +61,18 @@ export const courseData: Day[] = [
   { id: "day36", slug: "javascript-executor-interface-advanced-operations", title: "JavaScript Executor Interface", description: "Master JavaScript Executor interface for advanced browser operations and DOM manipulation when standard WebDriver methods are insufficient.", category: "selenium", lessons: [], tags: ["javascript executor", "js executor", "executeScript", "executeAsyncScript", "browser operations", "dom manipulation", "javascript interface", "window location", "window open", "history go", "browser navigation", "element click", "element value", "dropdown handling", "text input", "javascript commands", "browser javascript", "selenium javascript", "advanced operations", "javascript automation", "browser control", "js execution", "client side scripting", "javascript injection", "browser scripting", "web automation", "javascript methods"] }
 ];
 
+import { sanitizeId, sanitizeSlug } from '@/lib/security';
+
 export const getDayById = (dayId: string): Day | undefined => {
-  return courseData.find(day => day.id === dayId);
+  const sanitizedId = sanitizeId(dayId);
+  if (!sanitizedId) return undefined;
+  return courseData.find(day => day.id === sanitizedId);
 };
 
 export const getDayBySlug = (slug: string): Day | undefined => {
-  return courseData.find(day => day.slug === slug);
+  const sanitizedSlug = sanitizeSlug(slug);
+  if (!sanitizedSlug) return undefined;
+  return courseData.find(day => day.slug === sanitizedSlug);
 };
 
 // URL mapping functions

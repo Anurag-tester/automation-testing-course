@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sdet-mastery.vercel.app/sitemap.xml

@@ -2,18 +2,28 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Complete SDET Automation Testing Course',
+    name: 'SDET Automation Testing Course',
     short_name: 'SDET Course',
-    description: 'Master SDET skills with our comprehensive 35-day automation testing course',
+    description: 'Complete SDET automation testing course with Selenium WebDriver, Java, and manual testing',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#3b82f6',
     icons: [
       {
-        src: '/favicon.svg',
-        sizes: 'any',
-        type: 'image/svg+xml',
+        src: '/favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        src: '/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        src: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
       },
     ],
   }

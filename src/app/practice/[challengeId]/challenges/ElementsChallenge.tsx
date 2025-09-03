@@ -71,7 +71,7 @@ public class ElementsChallenge {
         Actions actions = new Actions(driver);
         
         try {
-            driver.get("http://localhost:3000/practice/elements-find");
+            driver.get("http://localhost:3000/practice/elements-challenge");
             
             // Test Case 1: Find all elements using complex locator
             List<WebElement> allElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
@@ -452,7 +452,7 @@ public class ElementsChallenge {
 
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/window-tabs" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/window-management" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice" className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg transition-colors">

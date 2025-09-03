@@ -1,24 +1,10 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 
-const Quiz = dynamic(() => import('./Quiz'), {
-  loading: () => (
-    <div className="bg-white rounded-xl border border-gray-100 p-8 shadow-sm animate-pulse">
-      <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
-      <div className="space-y-3">
-        <div className="h-4 bg-gray-200 rounded w-full"></div>
-        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-      </div>
-    </div>
-  ),
-  ssr: false
-})
+const Quiz = lazy(() => import('./Quiz'))
 
 interface LazyQuizProps {
-  title?: string
   questions: Array<{
     id: number
     question: string
@@ -28,18 +14,19 @@ interface LazyQuizProps {
   }>
 }
 
-export default function LazyQuiz({ title, questions }: LazyQuizProps) {
+export default function LazyQuiz({ questions }: LazyQuizProps) {
   return (
     <Suspense fallback={
-      <div className="bg-white rounded-xl border border-gray-100 p-8 shadow-sm animate-pulse">
-        <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
+      <div className="bg-gray-50 rounded-2xl p-8 animate-pulse">
+        <div className="h-6 bg-gray-200 rounded mb-4 w-1/3"></div>
         <div className="space-y-3">
           <div className="h-4 bg-gray-200 rounded w-full"></div>
           <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
         </div>
       </div>
     }>
-      <Quiz title={title} questions={questions} />
+      <Quiz questions={questions} />
     </Suspense>
   )
 }

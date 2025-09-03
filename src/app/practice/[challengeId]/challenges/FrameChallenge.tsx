@@ -41,7 +41,7 @@ public class FrameChallenge {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         
         try {
-            driver.get("http://localhost:3000/practice/frame-innerhtml");
+            driver.get("http://localhost:3000/practice/frame-navigation");
             
             // Test Case 1: Enter text in first frame using complex locator
             WebElement firstFrame = wait.until(ExpectedConditions.presenceOfElementLocated(
@@ -398,7 +398,7 @@ public class FrameChallenge {
           <Link href="/practice/alert-dialog" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
-          <Link href="/practice/radio-toggle" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors">
+          <Link href="/practice/radio-button-toggle" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors">
             Next Challenge →
           </Link>
         </div>

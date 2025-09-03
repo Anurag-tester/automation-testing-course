@@ -381,7 +381,7 @@ public class FileManagementChallenge {
         </div>
 
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <Link href="/practice/forms-allinone" className="text-gray-600 hover:text-gray-800 transition-colors">
+          <Link href="/practice/forms-challenge" className="text-gray-600 hover:text-gray-800 transition-colors">
             ← Previous Challenge
           </Link>
           <Link href="/practice/shadow-dom" className="text-gray-600 hover:text-gray-800 transition-colors">
