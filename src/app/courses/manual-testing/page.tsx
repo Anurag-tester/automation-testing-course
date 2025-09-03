@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+
 import { courseData } from '@/data/courseData'
 import { BookOpen, ArrowRight, CheckCircle, Clock, TestTube, FileText, Bug, Clipboard, AlertTriangle } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -82,15 +80,15 @@ export default function ManualTestingPage() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/manual-testing-basics">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2">
                 Start Course
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
             <Link href="/">
-              <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900">
+              <button className="border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 px-6 py-3 rounded-lg font-medium">
                 Back to Home
-              </Button>
+              </button>
             </Link>
           </div>
 
@@ -105,54 +103,68 @@ export default function ManualTestingPage() {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Course Lessons</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4">
           {manualTestingDays.map((day, index) => {
             const dayIcons = [TestTube, FileText, Clipboard, Bug, AlertTriangle]
             const IconComponent = dayIcons[index] || TestTube
             
             return (
-              <Card key={day.id} className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 cursor-pointer">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                      <IconComponent className="w-6 h-6 text-white" />
+              <Link key={day.id} href={`/${day.slug}`}>
+                <div className="group bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                  
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="px-3 py-1 rounded-full text-xs font-medium border bg-blue-100 text-blue-700 border-blue-200 flex items-center gap-1">
+                            Day {index + 1}
+                          </div>
+                          <div className="flex items-center gap-1 text-gray-500 text-xs">
+                            <Clock className="w-3 h-3" />
+                            {["2 hours", "2.5 hours", "3 hours", "2 hours", "2.5 hours"][index]}
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          {day.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                          {day.description}
+                        </p>
+                        
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                            {["Beginner", "Beginner", "Intermediate", "Beginner", "Intermediate"][index]}
+                          </span>
+                          <span className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded">
+                            Manual Testing
+                          </span>
+                        </div>
+                        
+                        <div className="text-xs text-gray-500">
+                          Interactive Learning Module
+                        </div>
+                      </div>
+                      
+                      <div className="ml-4">
+                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Badge className="bg-blue-100 text-blue-700 border-blue-200 px-3 py-1">
-                        Day {index + 1}
-                      </Badge>
-                      <div className="w-2 h-2 bg-gray-300 rounded-full group-hover:bg-blue-500 transition-colors duration-300"></div>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <IconComponent className="w-4 h-4" />
+                        <span>Start Learning</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <BookOpen className="w-4 h-4 text-white" />
+                      </div>
                     </div>
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors mb-2">
-                    {day.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed mb-4">
-                    {day.description}
-                  </CardDescription>
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      <span className="text-gray-700">{["2 hours", "2.5 hours", "3 hours", "2 hours", "2.5 hours"][index]}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                        {["Beginner", "Beginner", "Intermediate", "Beginner", "Intermediate"][index]}
-                      </span>
-                    </div>
-                  </div>
-                  <Link href={`/${day.slug}`}>
-                    <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-md hover:shadow-xl group-hover:scale-105 transition-all duration-300 font-medium">
-                      {index === 0 && "Learn SDLC Basics"}
-                      {index === 1 && "Master Test Techniques"}
-                      {index === 2 && "Advanced Methods"}
-                      {index === 3 && "Create Test Docs"}
-                      {index === 4 && "Manage Defects"}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </CardHeader>
-              </Card>
+                </div>
+              </Link>
             )
           })}
         </div>
@@ -164,10 +176,10 @@ export default function ManualTestingPage() {
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/courses/java-programming">
-              <Button className="bg-green-700 hover:bg-green-800 text-white font-medium">
+              <button className="bg-green-700 hover:bg-green-800 text-white font-medium px-6 py-3 rounded-lg flex items-center gap-2">
                 Java Programming Course
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
           </div>
         </div>

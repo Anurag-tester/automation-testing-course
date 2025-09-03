@@ -17,6 +17,7 @@ const Navbar = memo(function Navbar() {
   const manualTestingDays = courseData.filter(day => day.category === 'manual-testing')
   const javaDays = courseData.filter(day => day.category === 'java')
   const seleniumDays = courseData.filter(day => day.category === 'selenium')
+  const apiDays = courseData.filter(day => day.category === 'api-testing')
 
   const courseCategories = [
     {
@@ -39,6 +40,13 @@ const Navbar = memo(function Navbar() {
       icon: BookOpen,
       color: 'purple',
       days: seleniumDays
+    },
+    {
+      id: 'api-testing',
+      title: 'API Testing',
+      icon: Code,
+      color: 'orange',
+      days: apiDays
     }
   ]
 
@@ -93,17 +101,20 @@ const Navbar = memo(function Navbar() {
                       const colorClasses = {
                         blue: 'from-blue-500 to-blue-600',
                         green: 'from-green-500 to-green-600',
-                        purple: 'from-purple-500 to-purple-600'
+                        purple: 'from-purple-500 to-purple-600',
+                        orange: 'from-orange-500 to-orange-600'
                       }
                       const hoverClasses = {
                         blue: 'hover:bg-blue-50',
                         green: 'hover:bg-green-50',
-                        purple: 'hover:bg-purple-50'
+                        purple: 'hover:bg-purple-50',
+                        orange: 'hover:bg-orange-50'
                       }
                       const courseUrls = {
                         'manual-testing': '/courses/manual-testing',
                         'java': '/courses/java-programming',
-                        'selenium': '/courses/selenium-webdriver'
+                        'selenium': '/courses/selenium-webdriver',
+                        'api-testing': '/courses/api-testing'
                       }
                       
                       return (
@@ -132,26 +143,7 @@ const Navbar = memo(function Navbar() {
                       )
                     })}
                     
-                    {/* Coming Soon Section */}
-                    <div className="border-t border-gray-100 mx-4 mt-2 pt-2">
-                      <Link
-                        href="/courses/api-testing"
-                        className="flex items-center gap-3 px-4 py-3 hover:bg-orange-50 transition-all group"
-                        onClick={() => {
-                          setIsCoursesOpen(false)
-                          setHoveredCategory(null)
-                        }}
-                      >
-                        <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-                          <Code className="w-4 h-4 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-medium text-gray-900 text-sm group-hover:text-gray-700">API Testing</h3>
-                          <p className="text-xs text-orange-600 font-medium">Coming Soon • REST Assured</p>
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
-                      </Link>
-                    </div>
+
                   </div>
                 )}
               </div>
@@ -225,12 +217,14 @@ const Navbar = memo(function Navbar() {
               const colorClasses = {
                 blue: 'from-blue-500 to-blue-600',
                 green: 'from-green-500 to-green-600',
-                purple: 'from-purple-500 to-purple-600'
+                purple: 'from-purple-500 to-purple-600',
+                orange: 'from-orange-500 to-orange-600'
               }
               const courseUrls = {
                 'manual-testing': '/courses/manual-testing',
                 'java': '/courses/java-programming',
-                'selenium': '/courses/selenium-webdriver'
+                'selenium': '/courses/selenium-webdriver',
+                'api-testing': '/courses/api-testing'
               }
               
               return (
@@ -251,20 +245,7 @@ const Navbar = memo(function Navbar() {
               )
             })}
             
-            {/* API Testing - Coming Soon */}
-            <Link
-              href="/courses/api-testing"
-              className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-md flex items-center justify-center">
-                <Code className="w-3 h-3 text-white" />
-              </div>
-              <div>
-                <span>API Testing</span>
-                <span className="text-xs text-orange-600 font-medium ml-1">(Coming Soon)</span>
-              </div>
-            </Link>
+
             
             <div className="border-t border-gray-100 pt-3 mt-3">
               <Link 

@@ -4,17 +4,17 @@
 
 ## 🎯 Course Overview
 
-**35 Days of Complete SDET Training** covering:
+**36 Days of Complete SDET Training** covering:
 - 📋 **Manual Testing Foundation** (5 days)
 - ☕ **Java Programming** (4 days) 
-- 🌐 **Selenium WebDriver Mastery** (26 days)
+- 🌐 **Selenium WebDriver Mastery** (27 days)
 - 🎯 **40+ Interview Questions**
 - 💻 **22 Practice Challenges**
 - 📚 **Complete Curriculum Guide**
 
 ## ✨ Features
 
-- 📚 **35 comprehensive days** of structured content
+- 📚 **36 comprehensive days** of structured content
 - 💻 **Interactive code examples** with syntax highlighting
 - 🧪 **22 hands-on practice challenges** (Beginner to Expert)
 - 📝 **40 interview questions** with detailed answers
@@ -61,7 +61,7 @@ http://localhost:3000
 - **Day 8:** Loops & Iterations (For, While, Do-While)
 - **Day 9:** Methods & Functions (Parameters, Return Types, Scope)
 
-### 🟣 Selenium WebDriver Mastery (Days 10-35)
+### 🟣 Selenium WebDriver Mastery (Days 10-36)
 - **Day 10:** Selenium Introduction & Setup
 - **Day 11:** Web Element Identification & Locators
 - **Day 12:** Element Interactions (Click, Type, Clear)
@@ -88,6 +88,7 @@ http://localhost:3000
 - **Day 33:** Advanced Concepts & Exception Handling
 - **Day 34:** Shadow DOM Handling
 - **Day 35:** SSL Certificate & File Upload (AutoIT)
+- **Day 36:** JavaScript Executor Interface & Advanced Techniques (2 Parts)
 
 ## 🎯 Practice Challenges (22 Total)
 

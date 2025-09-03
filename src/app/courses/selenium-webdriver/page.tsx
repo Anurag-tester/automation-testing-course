@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { courseData } from '@/data/courseData'
+
+import { courseData, getUniqueDaysCount, getTotalTopicsCount } from '@/data/courseData'
 import { TestTube, ArrowRight, CheckCircle, Clock, Globe, MousePointer, Search, Layers, Zap, Camera, Link2, Code2, Shield, Upload } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -12,8 +10,8 @@ const Navbar = dynamic(() => import('@/components/Navbar'))
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://testmaster-iota.vercel.app'),
-  title: 'Selenium WebDriver Course - 27 Days Complete Training',
-  description: 'Master Selenium WebDriver automation with our comprehensive 27-day course covering locators, interactions, waits, and advanced automation techniques.',
+  title: 'Selenium WebDriver Course - 28 Days Complete Training',
+  description: 'Master Selenium WebDriver automation with our comprehensive 28-day course covering locators, interactions, waits, and advanced automation techniques.',
 }
 
 export default function SeleniumWebDriverPage() {
@@ -36,8 +34,8 @@ export default function SeleniumWebDriverPage() {
     courseCode: 'SEL-001',
     educationalLevel: 'Intermediate to Advanced',
     teaches: ['Selenium WebDriver', 'Web Automation', 'XPath', 'CSS Selectors', 'Synchronization', 'Actions Class'],
-    numberOfCredits: 27,
-    timeRequired: 'P27D',
+    numberOfCredits: 28,
+    timeRequired: 'P28D',
     url: 'https://testmaster-iota.vercel.app/courses/selenium-webdriver'
   }
 
@@ -65,12 +63,12 @@ export default function SeleniumWebDriverPage() {
 
           <div className="flex justify-center items-center gap-6 mb-8">
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600 mb-1">{seleniumDays.length}</div>
+              <div className="text-2xl font-bold text-purple-600 mb-1">{getUniqueDaysCount('selenium')}</div>
               <div className="text-sm text-gray-600">Days</div>
             </div>
             <div className="w-px h-8 bg-gray-300"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-1">27</div>
+              <div className="text-2xl font-bold text-blue-600 mb-1">{getTotalTopicsCount('selenium')}</div>
               <div className="text-sm text-gray-600">Topics</div>
             </div>
             <div className="w-px h-8 bg-gray-300"></div>
@@ -82,15 +80,15 @@ export default function SeleniumWebDriverPage() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/selenium-introduction-webdriver-setup">
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+              <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2">
                 Start Course
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
             <Link href="/">
-              <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900">
+              <button className="border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 px-6 py-3 rounded-lg font-medium">
                 Back to Home
-              </Button>
+              </button>
             </Link>
           </div>
 
@@ -105,7 +103,7 @@ export default function SeleniumWebDriverPage() {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Course Lessons</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4">
           {seleniumDays.map((day, index) => {
             const dayIcons = [
               TestTube, Globe, MousePointer, Search, Layers, CheckCircle, 
@@ -117,57 +115,66 @@ export default function SeleniumWebDriverPage() {
             const IconComponent = dayIcons[index] || TestTube
             
             return (
-              <Card key={day.id} className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 cursor-pointer">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                      <IconComponent className="w-6 h-6 text-white" />
+              <Link key={day.id} href={`/${day.slug}`}>
+                <div className="group bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-purple-500 to-purple-600"></div>
+                  
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="px-3 py-1 rounded-full text-xs font-medium border bg-purple-100 text-purple-700 border-purple-200 flex items-center gap-1">
+                            Day {day.id.startsWith('day') ? day.id.match(/\d+/)?.[0] : index + 10}
+                          </div>
+                          <div className="flex items-center gap-1 text-gray-500 text-xs">
+                            <Clock className="w-3 h-3" />
+                            {[
+                              "2 hours", "2.5 hours", "2 hours", "3 hours", "2.5 hours", "2 hours", "2.5 hours", "2 hours", "3 hours", "2.5 hours",
+                              "3.5 hours", "4 hours", "3 hours", "3.5 hours", "3 hours", "2.5 hours", "3 hours", "3.5 hours", "2 hours", "4 hours",
+                              "2.5 hours", "3 hours", "2 hours", "3.5 hours", "4 hours", "3 hours", "3.5 hours"
+                            ][index] || "2-3 hours"}
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                          {day.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                          {day.description}
+                        </p>
+                        
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                            {index < 5 ? "Beginner" : index < 15 ? "Intermediate" : "Advanced"}
+                          </span>
+                          <span className="px-2 py-1 bg-purple-100 text-purple-600 text-xs rounded">
+                            Selenium
+                          </span>
+                        </div>
+                        
+                        <div className="text-xs text-gray-500">
+                          Interactive Learning Module
+                        </div>
+                      </div>
+                      
+                      <div className="ml-4">
+                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all" />
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Badge className="bg-purple-100 text-purple-700 border-purple-200 px-3 py-1">
-                        Day {index + 10}
-                      </Badge>
-                      <div className="w-2 h-2 bg-gray-300 rounded-full group-hover:bg-purple-500 transition-colors duration-300"></div>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <IconComponent className="w-4 h-4" />
+                        <span>Start Learning</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <Code2 className="w-4 h-4 text-white" />
+                      </div>
                     </div>
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-purple-800 transition-colors mb-2">
-                    {day.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed mb-4">
-                    {day.description}
-                  </CardDescription>
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      <span className="text-gray-700">
-                        {[
-                          "2 hours", "2.5 hours", "2 hours", "3 hours", "2.5 hours", "2 hours", "2.5 hours", "2 hours", "3 hours", "2.5 hours",
-                          "3.5 hours", "4 hours", "3 hours", "3.5 hours", "3 hours", "2.5 hours", "3 hours", "3.5 hours", "2 hours", "4 hours",
-                          "2.5 hours", "3 hours", "2 hours", "3.5 hours", "4 hours", "3 hours", "3.5 hours"
-                        ][index] || "2-3 hours"}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
-                        {index < 5 ? "Beginner" : index < 15 ? "Intermediate" : "Advanced"}
-                      </span>
-                    </div>
-                  </div>
-                  <Link href={`/${day.slug}`}>
-                    <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-md hover:shadow-xl group-hover:scale-105 transition-all duration-300 font-medium">
-                      {[
-                        "Setup WebDriver", "Find Elements", "Interact & Click", "Advanced Locators", "Handle Dropdowns",
-                        "Checkboxes & Radio", "Manage Alerts", "Navigate Frames", "Mouse & Keyboard", "Execute JavaScript",
-                        "Relative XPath", "Advanced XPath", "XPath Practice", "Sibling Navigation", "XPath Mastery",
-                        "Dynamic Dropdowns", "Tables & Calendar", "Multiple Windows", "Selenium Roadmap", "Master Waits",
-                        "Screenshots & Config", "Broken Links", "Interview Prep", "Exception Handling", "Shadow DOM",
-                        "SSL & File Upload", "Advanced JavaScript"
-                      ][index] || "Start Learning"}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </CardHeader>
-              </Card>
+                </div>
+              </Link>
             )
           })}
         </div>
@@ -179,15 +186,15 @@ export default function SeleniumWebDriverPage() {
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/practice">
-              <Button className="bg-orange-700 hover:bg-orange-800 text-white font-medium">
+              <button className="bg-orange-700 hover:bg-orange-800 text-white font-medium px-6 py-3 rounded-lg flex items-center gap-2">
                 Practice Challenges
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
             <Link href="/interview-questions">
-              <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900">
+              <button className="border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 px-6 py-3 rounded-lg font-medium">
                 Interview Prep
-              </Button>
+              </button>
             </Link>
           </div>
         </div>

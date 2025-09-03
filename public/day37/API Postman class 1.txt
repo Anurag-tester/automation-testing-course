@@ -1,0 +1,97 @@
+What is API?
+		- API stands for Application Programming interface.
+		- API is used to communication between 2 or more software component [Front End and Backend Database].
+		- API is used to exchange test data between 2 or more software component [Front End and Backend Database].
+		- Everyday we use application Facebook, what's up , You-tube, amazon, mobile phone we use API.
+
+What is API Testing?
+		- API testing is an type of software testing.
+		- inside the API testing we focus on business logic of the functionality.
+		- API is lack of UI (user interface) means in API we don't UI is present, we validate business logic of the functionality with the help of different HTTP Request.
+		
+
+what are the different types of HTTP Request?
+		1) POST Request
+		2) PUT Request
+		3) PATCH Request
+		4) GET Request 
+		5) DELETE Request
+
+===================================================================================================
+1) GET Request
+		- GET Request is used to retrieve entity from the server.
+						or
+		- GET Request used to search a user information or open a user information as per condition.
+
+		E.g.
+			1) Search all Employee								----> GET Request
+											
+			2) Search Employee as per employee ID				-----> GET Request with Path Parameter
+														
+			3) Search Employee as per employee first Name		------> GET Request with Query Parameter
+	
+			4) Search Employee as per employee dept name		------> GET Request with Query Parameter
+
+
+			- to hit GET Request we need URL				--> Swagger Documentation
+
+		-------------------------------------------------------------------------------------------------------------------
+
+		http://localhost:3000/employees
+
+		http://localhost:3000/employees/{id}
+
+		http://localhost:3000/employees?firstName='Anuja'
+
+
+		- Once we hit the Request we verify different things as like
+						1) status code / response code							200
+						2) status line											200 OK
+						3) response time or latency
+						4) response payload or body			---> employee information should be present in JSON or XML Format
+						5) response header
+						6) response cookies
+
+	
+	-------------------------------------------------------------------------------------------------------------------
+	Postman tool
+================================================================================================
+2) DELETE Request
+
+		http://localhost:3000/employees/{id}
+
+		- Once we hit the Request we verify different things as like
+						1) status code / response code							204
+						2) status line											204 No Content
+						3) response time or latency
+						5) response header
+						6) response cookies
+			
+=======================================================================
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

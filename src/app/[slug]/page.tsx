@@ -40,6 +40,8 @@ const componentMap: Record<string, () => Promise<{ default: React.ComponentType 
   'shadow-dom-handling-selenium': () => import('@/components/days/day34'),
   'ssl-certificate-file-upload-autoit': () => import('@/components/days/day35'),
   'javascript-executor-interface-advanced-operations': () => import('@/components/days/day36'),
+  'javascript-executor-scroll-alerts-styling': () => import('@/components/days/day36-part2'),
+  'api-testing-introduction-postman': () => import('@/components/days/day37'),
 }
 
 export async function generateStaticParams() {
@@ -58,10 +60,26 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
 
+  const keywords = day.tags ? day.tags.join(', ') : day.slug?.replace(/-/g, ', ')
+  
   return {
     title: `${day.title} | SDET Course`,
     description: day.description,
-    keywords: `${day.slug?.replace(/-/g, ', ')}, sdet, automation testing`,
+    keywords: `${keywords}, sdet, automation testing, selenium webdriver, java programming`,
+    openGraph: {
+      title: `${day.title} | SDET Course`,
+      description: day.description,
+      type: 'article',
+      url: `https://testmaster-iota.vercel.app/${day.slug}`,
+    },
+    twitter: {
+      card: 'summary',
+      title: `${day.title} | SDET Course`,
+      description: day.description,
+    },
+    alternates: {
+      canonical: `https://testmaster-iota.vercel.app/${day.slug}`,
+    },
   }
 }
 
@@ -77,7 +95,8 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
       <div className="critical-loading">
         <div className="critical-spinner"></div>
       </div>
-    )
+    ),
+    ssr: false
   })
 
   return <DynamicComponent />

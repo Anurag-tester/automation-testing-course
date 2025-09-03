@@ -11,7 +11,7 @@ export interface Day {
   slug?: string;
   title: string;
   description: string;
-  category: 'manual-testing' | 'java' | 'selenium';
+  category: 'manual-testing' | 'java' | 'selenium' | 'api-testing';
   lessons: Lesson[];
   tags?: string[];
 }
@@ -58,7 +58,11 @@ export const courseData: Day[] = [
   { id: "day33", slug: "advanced-selenium-exception-handling", title: "Advanced Selenium Concepts & Exception Handling", description: "Deep dive into synchronization, flaky scenarios, exception handling, and advanced Selenium concepts for robust test automation.", category: "selenium", lessons: [], tags: ["advanced selenium", "exception handling", "flaky scenarios", "synchronization deep dive", "wait strategies", "implicit vs explicit", "explicit vs fluent", "selenium exceptions", "staleelementreferenceexception", "nosuchelementexception", "timeoutexception", "sessionnotcreatedException", "webdriverexception", "flaky tests", "test stability", "robust automation", "exception management", "error handling", "try catch blocks", "selenium debugging", "advanced techniques", "screenshot strategies", "ashot library", "full page screenshots", "automation best practices", "selenium mastery"] },
   { id: "day34", slug: "shadow-dom-handling-selenium", title: "Shadow DOM Handling in Selenium", description: "Master the techniques for handling Shadow DOM elements in modern web applications using Selenium WebDriver.", category: "selenium", lessons: [], tags: ["shadow dom", "shadow dom handling", "web components", "modern web applications", "shadow root", "getshadowroot method", "searchcontext interface", "shadow dom automation", "encapsulated dom", "shadow elements", "css selector shadow", "nested shadow dom", "shadow dom navigation", "browser console shadow", "selenium 4 shadow", "shadow dom testing", "web components testing", "modern ui automation", "shadow dom challenges", "shadow dom best practices", "shadow dom examples", "shadow host elements", "shadow tree navigation", "component automation", "advanced selenium", "selenium shadow dom", "shadow dom selenium 4"] },
   { id: "day35", slug: "ssl-certificate-file-upload-autoit", title: "SSL Certificate & File Upload Handling", description: "Learn to handle SSL certificates and automate file uploads using AutoIT library in Selenium WebDriver.", category: "selenium", lessons: [], tags: ["ssl certificate", "ssl handling", "file upload", "autoit library", "secure socket layers", "self signed certificates", "setacceptinsecurecerts", "chrome options", "browser security", "file upload automation", "autoit script", "controlfocus", "controlsettext", "controlclick", "windows file dialog", "desktop automation", "file dialog handling", "upload automation", "runtime exec", "exe script execution", "file path automation", "browser certificates", "qa environment", "uat testing", "insecure certificates", "file upload selenium", "autoit selenium integration"] },
-  { id: "day36", slug: "javascript-executor-interface-advanced-operations", title: "JavaScript Executor Interface", description: "Master JavaScript Executor interface for advanced browser operations and DOM manipulation when standard WebDriver methods are insufficient.", category: "selenium", lessons: [], tags: ["javascript executor", "js executor", "executeScript", "executeAsyncScript", "browser operations", "dom manipulation", "javascript interface", "window location", "window open", "history go", "browser navigation", "element click", "element value", "dropdown handling", "text input", "javascript commands", "browser javascript", "selenium javascript", "advanced operations", "javascript automation", "browser control", "js execution", "client side scripting", "javascript injection", "browser scripting", "web automation", "javascript methods"] }
+  { id: "day36", slug: "javascript-executor-interface-advanced-operations", title: "Day 36: JavaScript Executor Interface (Part 1)", description: "Master JavaScript Executor interface for advanced browser operations and DOM manipulation when standard WebDriver methods are insufficient.", category: "selenium", lessons: [], tags: ["javascript executor", "js executor", "executeScript", "executeAsyncScript", "browser operations", "dom manipulation", "javascript interface", "window location", "window open", "history go", "browser navigation", "element click", "element value", "dropdown handling", "text input", "javascript commands", "browser javascript", "selenium javascript", "advanced operations", "javascript automation", "browser control", "js execution", "client side scripting", "javascript injection", "browser scripting", "web automation", "javascript methods"] },
+  { id: "day36-part2", slug: "javascript-executor-scroll-alerts-styling", title: "Day 36: JavaScript Executor - Scroll, Alerts & Styling", description: "Master advanced JavaScript Executor techniques including scrolling, custom alerts, element highlighting, border creation, and closed shadow root handling.", category: "selenium", lessons: [], tags: ["javascript executor", "js executor advanced", "scroll into view", "scrollIntoView", "custom alerts", "javascript alerts", "confirm popup", "prompt popup", "element highlighting", "background color", "border creation", "style border", "element styling", "capture browser title", "capture browser url", "document title", "document url", "closed shadow root", "shadow dom", "element border", "css styling", "javascript injection", "dom manipulation", "browser operations", "executeScript method", "arguments[0]", "web element styling", "visual effects", "element identification", "javascript commands", "browser scripting", "advanced automation", "selenium javascript", "dynamic styling", "element effects", "browser information", "page details", "javascript automation"] },
+  
+  // API Testing (Day 37+)
+  { id: "day37", slug: "api-testing-introduction-postman", title: "API Testing Introduction & Postman Basics", description: "Master API testing fundamentals, HTTP methods (GET, POST, PUT, DELETE), Postman basics, status codes validation, and business logic testing for comprehensive SDET training.", category: "api-testing", lessons: [], tags: ["api testing", "postman", "http methods", "get request", "post request", "put request", "delete request", "patch request", "api fundamentals", "application programming interface", "software testing", "business logic testing", "status codes", "response validation", "json format", "xml format", "rest api", "web services", "api documentation", "swagger documentation", "path parameters", "query parameters", "request headers", "response headers", "cookies validation", "latency testing", "performance testing", "api automation", "endpoint testing", "200 ok", "204 no content", "404 error", "500 error", "response time", "response payload", "response body", "api communication", "frontend backend", "database testing", "middleware testing", "json server", "employee api", "crud operations", "api validation points", "http status codes", "api best practices", "sdet training", "automation testing", "api testing tools", "postman collections", "api scripts", "api monitoring"] }
 ];
 
 import { sanitizeId, sanitizeSlug } from '@/lib/security';
@@ -95,6 +99,8 @@ export const getCategoryColor = (category: Day['category']) => {
       return 'bg-green-100 text-green-800 border-green-200';
     case 'selenium':
       return 'bg-purple-100 text-purple-800 border-purple-200';
+    case 'api-testing':
+      return 'bg-orange-100 text-orange-800 border-orange-200';
     default:
       return 'bg-gray-100 text-gray-800 border-gray-200';
   }
@@ -105,6 +111,7 @@ export const getCategoryStats = () => {
     'manual-testing': courseData.filter(day => day.category === 'manual-testing').length,
     'java': courseData.filter(day => day.category === 'java').length,
     'selenium': courseData.filter(day => day.category === 'selenium').length,
+    'api-testing': courseData.filter(day => day.category === 'api-testing').length,
   };
 };
 
@@ -132,6 +139,25 @@ export const additionalPages = [
     tags: ["practice", "problems", "challenges", "hands-on", "selenium", "webdriver", "automation", "input-handling", "dropdown", "table-operations", "frame-navigation", "window-management", "dynamic-elements", "file-operations", "advanced-interactions", "beginner", "intermediate", "advanced", "expert", "coding", "exercises", "real-world", "scenarios", "letcode", "practice-site", "test-cases", "solutions", "skills", "mastery"]
   }
 ];
+
+// Helper functions for dynamic counting
+export function getUniqueDaysCount(category?: string) {
+  const data = category ? courseData.filter(day => day.category === category) : courseData
+  const uniqueDays = new Set()
+  
+  data.forEach(day => {
+    // Extract day number from id (e.g., "day36-part2" -> "day36")
+    const dayNumber = day.id.split('-')[0]
+    uniqueDays.add(dayNumber)
+  })
+  
+  return uniqueDays.size
+}
+
+export function getTotalTopicsCount(category?: string) {
+  const data = category ? courseData.filter(day => day.category === category) : courseData
+  return data.length
+}
 
 // Note: This bootcamp is ongoing - new days will be added regularly
 export const isBootcampOngoing = true;

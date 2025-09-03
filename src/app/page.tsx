@@ -18,22 +18,60 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: 'Complete SDET Automation Testing Course',
-    description: 'Master SDET skills with our comprehensive 35-day automation testing course covering Selenium WebDriver, Java Programming, Manual Testing, and API Testing.',
+    name: 'SDET Mastery - Complete Automation Testing Bootcamp',
+    description: 'Transform into a job-ready SDET expert! Comprehensive automation testing bootcamp covering Selenium WebDriver, Java Programming, Manual Testing, and API Testing with real-world projects.',
+    url: 'https://testmaster-iota.vercel.app',
+    image: 'https://testmaster-iota.vercel.app/apple-touch-icon.png',
     provider: {
       '@type': 'Organization',
       name: 'SDET Mastery',
-      url: 'https://testmaster-iota.vercel.app'
+      url: 'https://testmaster-iota.vercel.app',
+      logo: 'https://testmaster-iota.vercel.app/apple-touch-icon.png'
     },
     instructor: {
       '@type': 'Person',
-      name: 'Praful Pawar'
+      name: 'Praful Pawar',
+      jobTitle: 'SDET Trainer & Automation Expert'
     },
-    courseCode: 'SDET-35',
+    courseCode: 'SDET-BOOTCAMP',
     educationalLevel: 'Beginner to Advanced',
-    teaches: ['Selenium WebDriver', 'Java Programming', 'Manual Testing', 'API Testing', 'Test Automation'],
-    numberOfCredits: 35,
-    timeRequired: 'P35D'
+    teaches: ['Selenium WebDriver', 'Java Programming', 'Manual Testing', 'API Testing', 'Test Automation', 'Postman', 'TestNG', 'Maven'],
+    numberOfCredits: 50,
+    timeRequired: 'PT40H',
+    coursePrerequisites: 'Basic computer knowledge',
+    educationalCredentialAwarded: 'SDET Certification',
+    inLanguage: 'en',
+    isAccessibleForFree: true,
+    learningResourceType: 'Course',
+    educationalUse: 'Professional Development',
+    audience: {
+      '@type': 'EducationalAudience',
+      educationalRole: 'student'
+    },
+    about: [
+      {
+        '@type': 'Thing',
+        name: 'Software Testing'
+      },
+      {
+        '@type': 'Thing', 
+        name: 'Test Automation'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Selenium WebDriver'
+      },
+      {
+        '@type': 'Thing',
+        name: 'Java Programming'
+      }
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '150',
+      bestRating: '5'
+    }
   }
 
   return (
@@ -60,7 +98,7 @@ export default function Home() {
           </h1>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Master automation testing with our comprehensive 35-day SDET course. Learn Selenium WebDriver, Java programming, manual testing techniques, and advanced automation frameworks used by top tech companies.
+            Master automation testing with our comprehensive 37+ day SDET course. Learn Selenium WebDriver, Java programming, manual testing techniques, API testing, and advanced automation frameworks used by top tech companies.
           </p>
 
           {/* Interactive Stats */}
@@ -192,11 +230,11 @@ export default function Home() {
         </div>
 
         {/* Course Categories */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 items-stretch">
           {/* Manual Testing */}
-          <Link href="/courses/manual-testing" className="block">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100 cursor-pointer">
-              <CardHeader className="pb-4">
+          <Link href="/courses/manual-testing" className="block h-full">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100 cursor-pointer h-full flex flex-col">
+              <CardHeader className="pb-4 flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <BookOpen className="w-6 h-6 text-white" />
@@ -212,7 +250,7 @@ export default function Home() {
                   Master testing fundamentals, SDLC, test design techniques, and documentation standards
                 </CardDescription>
               </CardHeader>
-              <div className="px-6 pb-6">
+              <div className="px-6 pb-6 mt-auto">
                 <div className="space-y-2 mb-4">
                   {manualTestingDays.slice(0, 3).map((day) => (
                     <div key={day.id} className="text-sm text-gray-600 flex items-center">
@@ -230,9 +268,9 @@ export default function Home() {
           </Link>
 
           {/* Java Programming */}
-          <Link href="/courses/java-programming" className="block">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100 cursor-pointer">
-              <CardHeader className="pb-4">
+          <Link href="/courses/java-programming" className="block h-full">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100 cursor-pointer h-full flex flex-col">
+              <CardHeader className="pb-4 flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Code className="w-6 h-6 text-white" />
@@ -248,7 +286,7 @@ export default function Home() {
                   Learn Java fundamentals, OOP concepts, and programming skills essential for automation
                 </CardDescription>
               </CardHeader>
-              <div className="px-6 pb-6">
+              <div className="px-6 pb-6 mt-auto">
                 <div className="space-y-2 mb-4">
                   {javaDays.slice(0, 3).map((day) => (
                     <div key={day.id} className="text-sm text-gray-600 flex items-center">
@@ -266,9 +304,9 @@ export default function Home() {
           </Link>
 
           {/* Selenium WebDriver */}
-          <Link href="/courses/selenium-webdriver" className="block">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100 cursor-pointer">
-              <CardHeader className="pb-4">
+          <Link href="/courses/selenium-webdriver" className="block h-full">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100 cursor-pointer h-full flex flex-col">
+              <CardHeader className="pb-4 flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <TestTube className="w-6 h-6 text-white" />
@@ -284,7 +322,7 @@ export default function Home() {
                   Master web automation with Selenium WebDriver, advanced locators, and complex interactions
                 </CardDescription>
               </CardHeader>
-              <div className="px-6 pb-6">
+              <div className="px-6 pb-6 mt-auto">
                 <div className="space-y-2 mb-4">
                   {seleniumDays.slice(0, 3).map((day) => (
                     <div key={day.id} className="text-sm text-gray-600 flex items-center">
@@ -294,6 +332,48 @@ export default function Home() {
                   ))}
                 </div>
                 <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-md hover:shadow-lg transition-all duration-300">
+                  View Course
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </Card>
+          </Link>
+
+          {/* API Testing */}
+          <Link href="/courses/api-testing" className="block h-full">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-orange-50 to-orange-100 cursor-pointer h-full flex flex-col">
+              <CardHeader className="pb-4 flex-1">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Database className="w-6 h-6 text-white" />
+                  </div>
+                  <Badge className="bg-orange-100 text-orange-700 border-orange-200 px-3 py-1">
+                    {categoryStats['api-testing']} Day
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-orange-700 transition-colors">
+                  API Testing
+                </CardTitle>
+                <CardDescription className="text-gray-600 leading-relaxed">
+                  Master API testing fundamentals, HTTP methods, Postman, and business logic validation
+                </CardDescription>
+              </CardHeader>
+              <div className="px-6 pb-6 mt-auto">
+                <div className="space-y-2 mb-4">
+                  <div className="text-sm text-gray-600 flex items-center">
+                    <CheckCircle className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                    <span className="truncate">API Testing Introduction</span>
+                  </div>
+                  <div className="text-sm text-gray-600 flex items-center">
+                    <CheckCircle className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                    <span className="truncate">HTTP Methods & Postman</span>
+                  </div>
+                  <div className="text-sm text-gray-600 flex items-center">
+                    <CheckCircle className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                    <span className="truncate">Business Logic Testing</span>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-md hover:shadow-lg transition-all duration-300">
                   View Course
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -353,7 +433,7 @@ export default function Home() {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <Clock className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">35 Days Structured</h3>
+              <h3 className="font-bold text-gray-900 mb-2">37+ Days Structured</h3>
               <p className="text-sm text-gray-600">Comprehensive curriculum designed for progressive learning</p>
             </div>
             <div className="text-center group">

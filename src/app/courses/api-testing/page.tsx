@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Database, ArrowRight, Clock, Star } from 'lucide-react'
+import { courseData } from '@/data/courseData'
+import { Database, ArrowRight, Clock, Target, Code, Globe, CheckCircle } from 'lucide-react'
 import type { Metadata } from 'next'
 
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: false })
@@ -10,110 +9,176 @@ const Navbar = dynamic(() => import('@/components/Navbar'))
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://testmaster-iota.vercel.app'),
-  title: 'API Testing Course - Coming Soon | SDET Training',
-  description: 'Master API testing with REST Assured, JSON validation, and automated API testing frameworks. Course launching soon!',
+  title: 'API Testing Course - Master REST API Testing & Postman | SDET Course',
+  description: 'Master API testing fundamentals with HTTP methods, Postman, business logic validation, and comprehensive API automation techniques.',
 }
 
-export default function ApiTestingPage() {
+export default function APITestingCourse() {
+  const apiDays = courseData.filter(day => day.category === 'api-testing')
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'API Testing Course',
+    description: 'Master API testing fundamentals with HTTP methods, Postman automation, and business logic validation for comprehensive backend testing.',
+    provider: {
+      '@type': 'Organization',
+      name: 'SDET Mastery',
+      url: 'https://testmaster-iota.vercel.app'
+    },
+    instructor: {
+      '@type': 'Person',
+      name: 'Praful Pawar'
+    },
+    courseCode: 'API-001',
+    educationalLevel: 'Beginner to Intermediate',
+    teaches: ['API Testing', 'HTTP Methods', 'Postman', 'Business Logic Testing', 'JSON Validation'],
+    numberOfCredits: 1,
+    timeRequired: 'P1D',
+    url: 'https://testmaster-iota.vercel.app/courses/api-testing'
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
-      <div className="max-w-4xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Database className="w-4 h-4" />
-            <span>Coming Soon</span>
+            <span>API Testing Course</span>
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            API Testing Course
+            API Testing Mastery
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Master API testing with REST Assured, JSON validation, schema validation, and automated API testing frameworks. 
-            This comprehensive course is launching soon!
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            Master API testing fundamentals with HTTP methods, Postman automation, and business logic validation 
+            for comprehensive backend testing expertise.
           </p>
 
           <div className="flex justify-center items-center gap-6 mb-8">
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600 mb-1">15+</div>
-              <div className="text-sm text-gray-600">Days</div>
+              <div className="text-2xl font-bold text-orange-600 mb-1">{apiDays.length}</div>
+              <div className="text-sm text-gray-600">Day</div>
             </div>
             <div className="w-px h-8 bg-gray-300"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-1">REST</div>
-              <div className="text-sm text-gray-600">Assured</div>
+              <div className="text-2xl font-bold text-green-600 mb-1">5</div>
+              <div className="text-sm text-gray-600">HTTP Methods</div>
             </div>
             <div className="w-px h-8 bg-gray-300"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 mb-1">JSON</div>
-              <div className="text-sm text-gray-600">Validation</div>
+              <div className="text-2xl font-bold text-purple-600 mb-1">Beginner</div>
+              <div className="text-sm text-gray-600">Level</div>
             </div>
           </div>
-        </div>
 
-        <Card className="mb-8 border-2 border-orange-200">
-          <CardHeader className="text-center">
-            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-8 h-8 text-orange-600" />
-            </div>
-            <CardTitle className="text-2xl text-gray-900 mb-4">Course Under Development</CardTitle>
-            <CardDescription className="text-gray-600 text-base leading-relaxed">
-              We're currently developing a comprehensive API Testing course that will cover REST Assured framework, 
-              JSON Path expressions, schema validation, authentication methods, and complete API automation frameworks.
-            </CardDescription>
-          </CardHeader>
-        </Card>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-lg">
-                <Star className="w-5 h-5 text-yellow-500 mr-2" />
-                What's Coming
-              </CardTitle>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div>• REST Assured Framework</div>
-                <div>• JSON Path & Schema Validation</div>
-                <div>• Authentication & Authorization</div>
-                <div>• API Test Automation</div>
-                <div>• Postman Integration</div>
-                <div>• CI/CD for API Testing</div>
-              </div>
-            </CardHeader>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-lg">
-                <Database className="w-5 h-5 text-blue-500 mr-2" />
-                Prerequisites
-              </CardTitle>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div>• Java Programming Basics</div>
-                <div>• Understanding of HTTP Methods</div>
-                <div>• JSON Format Knowledge</div>
-                <div>• Basic Testing Concepts</div>
-                <div>• Maven/TestNG Experience</div>
-              </div>
-            </CardHeader>
-          </Card>
-        </div>
-
-        <div className="text-center">
-          <p className="text-gray-600 mb-6">
-            Complete the foundational courses first to prepare for API Testing
-          </p>
-          <div className="flex justify-center gap-4">
-            <Link href="/courses/selenium-webdriver">
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white">
-                Complete Selenium First
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/api-testing-introduction-postman">
+              <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2">
+                Start Course
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
             <Link href="/">
-              <Button variant="outline">
+              <button className="border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 px-6 py-3 rounded-lg font-medium">
                 Back to Home
-              </Button>
+              </button>
+            </Link>
+          </div>
+
+          {/* Breadcrumb */}
+          <nav className="flex items-center space-x-2 text-sm text-gray-600 mt-6">
+            <Link href="/" className="hover:text-orange-600">Home</Link>
+            <span>/</span>
+            <Link href="/courses/api-testing" className="hover:text-orange-600">Courses</Link>
+            <span>/</span>
+            <span className="text-gray-900">API Testing</span>
+          </nav>
+        </div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Course Lessons</h2>
+        <div className="grid md:grid-cols-1 gap-4 max-w-4xl mx-auto">
+          {apiDays.map((day, index) => {
+            const dayIcons = [Database]
+            const IconComponent = dayIcons[index] || Database
+            
+            return (
+              <Link key={day.id} href={`/${day.slug}`}>
+                <div className="group bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-orange-500 to-red-500"></div>
+                  
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="px-3 py-1 rounded-full text-xs font-medium border bg-orange-100 text-orange-700 border-orange-200 flex items-center gap-1">
+                            Day {index + 37}
+                          </div>
+                          <div className="flex items-center gap-1 text-gray-500 text-xs">
+                            <Clock className="w-3 h-3" />
+                            2 hours
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                          {day.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                          {day.description}
+                        </p>
+                        
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                            Beginner
+                          </span>
+                          <span className="px-2 py-1 bg-orange-100 text-orange-600 text-xs rounded">
+                            API Testing
+                          </span>
+                        </div>
+                        
+                        <div className="text-xs text-gray-500">
+                          Interactive Learning Module
+                        </div>
+                      </div>
+                      
+                      <div className="ml-4">
+                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <IconComponent className="w-4 h-4" />
+                        <span>Start Learning</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                        <Database className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+
+        <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8 text-center mt-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready for Advanced Testing?</h2>
+          <p className="text-gray-600 mb-6">
+            After mastering API Testing, explore our comprehensive practice challenges to build real-world skills.
+          </p>
+          <div className="flex justify-center gap-4">
+            <Link href="/practice">
+              <button className="bg-green-700 hover:bg-green-800 text-white font-medium px-6 py-3 rounded-lg flex items-center gap-2">
+                Practice Challenges
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
           </div>
         </div>

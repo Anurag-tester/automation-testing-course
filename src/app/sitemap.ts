@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Generate course day pages using actual slugs
   const dayPages = courseData.map(day => `/${day.slug || day.id}`)
+  
+  // Add new pages
+  const newPages = [
+    '/api-testing-introduction-postman',
+    '/javascript-executor-scroll-alerts-styling'
+  ]
 
   // Practice challenge pages
   const practicePages = [
@@ -44,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/practice/shadow-dom',
   ]
 
-  const allPages = [...staticPages, ...dayPages, ...practicePages]
+  const allPages = [...staticPages, ...dayPages, ...practicePages, ...newPages]
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page}`,

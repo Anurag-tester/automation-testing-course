@@ -125,14 +125,61 @@ const searchKeywords = {
   'timeoutexception': ['day33'],
   'shadow dom': ['day34'],
   'getshadowroot': ['day34'],
-  'web components': ['day34']
+  'web components': ['day34'],
+  'scroll into view': ['day36-part2'],
+  'scrollintoview': ['day36-part2'],
+  'custom alerts': ['day36-part2'],
+  'confirm popup': ['day36-part2'],
+  'prompt popup': ['day36-part2'],
+  'element highlighting': ['day36-part2'],
+  'background color': ['day36-part2'],
+  'border creation': ['day36-part2'],
+  'style border': ['day36-part2'],
+  'document title': ['day36-part2'],
+  'document url': ['day36-part2'],
+  'closed shadow root': ['day36-part2'],
+  'element styling': ['day36-part2'],
+  'javascript executor advanced': ['day36-part2'],
+  'scroll alerts styling': ['day36-part2'],
+  'js scroll': ['day36-part2'],
+  'js alerts': ['day36-part2'],
+  'js styling': ['day36-part2'],
+  
+  // API Testing Keywords
+  'api testing': ['day37'],
+  'postman': ['day37'],
+  'http methods': ['day37'],
+  'get request': ['day37'],
+  'post request': ['day37'],
+  'put request': ['day37'],
+  'delete request': ['day37'],
+  'patch request': ['day37'],
+  'rest api': ['day37'],
+  'web services': ['day37'],
+  'json': ['day37'],
+  'xml': ['day37'],
+  'status codes': ['day37'],
+  'response validation': ['day37'],
+  'api documentation': ['day37'],
+  'swagger': ['day37'],
+  'path parameters': ['day37'],
+  'query parameters': ['day37'],
+  'request headers': ['day37'],
+  'response headers': ['day37'],
+  'cookies': ['day37'],
+  'latency testing': ['day37'],
+  'performance testing': ['day37'],
+  'api automation': ['day37'],
+  'endpoint testing': ['day37'],
+  'business logic': ['day37'],
+  'application programming interface': ['day37']
 }
 
 interface SearchResult {
   id: string
   title: string
   description: string
-  category?: 'manual-testing' | 'java' | 'selenium'
+  category?: 'manual-testing' | 'java' | 'selenium' | 'api-testing'
   dayNumber?: number
   path?: string
   type: 'day' | 'page' | 'keyword'
@@ -403,6 +450,8 @@ export default function SearchBox() {
         return 'bg-green-50 text-green-700 border-green-200'
       case 'selenium':
         return 'bg-purple-50 text-purple-700 border-purple-200'
+      case 'api-testing':
+        return 'bg-orange-50 text-orange-700 border-orange-200'
       default:
         return 'bg-gray-50 text-gray-700 border-gray-200'
     }
@@ -416,6 +465,8 @@ export default function SearchBox() {
         return 'Java'
       case 'selenium':
         return 'Selenium'
+      case 'api-testing':
+        return 'API Testing'
       default:
         return category
     }

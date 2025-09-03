@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {
+      "firstname": "anuja",
+      "lastname": "patil",
+      "city": "pune",
+      "mobilenumber": 909090,
+      "email": "anuja1@gmail.com",
+      "id": "1"
+    },
+    {
+      "firstname": "Suraj",
+      "lastname": "Yadav",
+      "city": "Delhi",
+      "mobilenumber": 7777,
+      "email": "suraj1@gmail.com",
+      "id": "3"
+    }
+  ]
+}
