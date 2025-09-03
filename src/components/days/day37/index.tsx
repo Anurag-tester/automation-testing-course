@@ -4,6 +4,60 @@ import DayLayout from '@/components/DayLayout'
 import Image from 'next/image'
 import LazyQuiz from '@/components/LazyQuiz'
 import dynamic from 'next/dynamic'
+import { useState } from 'react'
+
+const Document = dynamic(() => import('react-pdf').then(mod => ({ default: mod.Document })), { ssr: false })
+const Page = dynamic(() => import('react-pdf').then(mod => ({ default: mod.Page })), { ssr: false })
+
+function PDFViewer() {
+  const [numPages, setNumPages] = useState<number>(0)
+  const [pageNumber, setPageNumber] = useState<number>(1)
+
+  function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
+    setNumPages(numPages)
+  }
+
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden">
+      <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+        <span className="text-sm text-gray-600">
+          Page {pageNumber} of {numPages}
+        </span>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setPageNumber(Math.max(1, pageNumber - 1))}
+            disabled={pageNumber <= 1}
+            className="px-3 py-1 text-xs bg-blue-600 text-white rounded disabled:bg-gray-300"
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => setPageNumber(Math.min(numPages, pageNumber + 1))}
+            disabled={pageNumber >= numPages}
+            className="px-3 py-1 text-xs bg-blue-600 text-white rounded disabled:bg-gray-300"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+      <div className="flex justify-center bg-gray-100 p-4">
+        <Document
+          file="/day37/Json Server SetUp.pdf"
+          onLoadSuccess={onDocumentLoadSuccess}
+          loading={<div className="text-center py-8">Loading PDF...</div>}
+          error={<div className="text-center py-8 text-red-600">Failed to load PDF</div>}
+        >
+          <Page
+            pageNumber={pageNumber}
+            width={Math.min(800, typeof window !== 'undefined' ? window.innerWidth - 100 : 800)}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+          />
+        </Document>
+      </div>
+    </div>
+  )
+}
 
 export default function Day37() {
   return (
@@ -393,15 +447,7 @@ export default function Day37() {
               </p>
             </div>
             
-            <div className="border border-gray-200 rounded-lg overflow-hidden">
-              <iframe
-                src="/day37/Json Server SetUp.pdf"
-                width="100%"
-                height="600px"
-                className="border-0"
-                title="JSON Server Setup Guide"
-              />
-            </div>
+            <PDFViewer />
           </div>
         </section>
 
