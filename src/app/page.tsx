@@ -4,12 +4,70 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { submitToIndexNow } from '@/lib/indexnow'
+import { useEffect } from 'react'
 
 import { courseData, getCategoryColor, getCategoryStats } from '@/data/courseData'
 import { BookOpen, Code, TestTube, Play, Calendar, Award, ArrowRight, Search, Target, Users, Clock, Zap, CheckCircle, TrendingUp, Rocket, Star, ChevronRight, Globe, Smartphone, Database } from 'lucide-react'
 
+'use client'
+
 export default function Home() {
   const categoryStats = getCategoryStats()
+  
+  useEffect(() => {
+    const allUrls = [
+      'https://testmaster-iota.vercel.app/',
+      'https://testmaster-iota.vercel.app/curriculum',
+      'https://testmaster-iota.vercel.app/practice',
+      'https://testmaster-iota.vercel.app/interview-questions',
+      'https://testmaster-iota.vercel.app/selenium-cheatsheet',
+      'https://testmaster-iota.vercel.app/courses/manual-testing',
+      'https://testmaster-iota.vercel.app/courses/java-programming',
+      'https://testmaster-iota.vercel.app/courses/selenium-webdriver',
+      'https://testmaster-iota.vercel.app/courses/api-testing',
+      // All 38 course day URLs
+      'https://testmaster-iota.vercel.app/manual-testing-basics',
+      'https://testmaster-iota.vercel.app/testing-techniques-black-box-ecp-bva',
+      'https://testmaster-iota.vercel.app/advanced-testing-methods-decision-table',
+      'https://testmaster-iota.vercel.app/test-documentation-plans-cases',
+      'https://testmaster-iota.vercel.app/defect-management-bug-lifecycle',
+      'https://testmaster-iota.vercel.app/java-fundamentals-data-types-variables',
+      'https://testmaster-iota.vercel.app/java-operators-control-structures',
+      'https://testmaster-iota.vercel.app/loops-iterations-for-while-dowhile',
+      'https://testmaster-iota.vercel.app/methods-functions-parameters-scope',
+      'https://testmaster-iota.vercel.app/selenium-introduction-webdriver-setup',
+      'https://testmaster-iota.vercel.app/web-element-identification-locators',
+      'https://testmaster-iota.vercel.app/element-interactions-click-type-clear',
+      'https://testmaster-iota.vercel.app/advanced-locators-xpath-css-selectors',
+      'https://testmaster-iota.vercel.app/dropdown-handling-select-class',
+      'https://testmaster-iota.vercel.app/checkbox-radio-buttons-handling',
+      'https://testmaster-iota.vercel.app/alert-handling-javascript-popups',
+      'https://testmaster-iota.vercel.app/frame-handling-iframe-navigation',
+      'https://testmaster-iota.vercel.app/actions-class-mouse-keyboard-events',
+      'https://testmaster-iota.vercel.app/javascript-executor-dom-manipulation',
+      'https://testmaster-iota.vercel.app/relative-xpath-fundamentals',
+      'https://testmaster-iota.vercel.app/advanced-xpath-axes-navigation',
+      'https://testmaster-iota.vercel.app/xpath-practice-assignments',
+      'https://testmaster-iota.vercel.app/xpath-sibling-navigation-following-preceding',
+      'https://testmaster-iota.vercel.app/advanced-xpath-practice-assignments',
+      'https://testmaster-iota.vercel.app/dropdown-handling-select-class-dynamic',
+      'https://testmaster-iota.vercel.app/dynamic-table-calendar-handling',
+      'https://testmaster-iota.vercel.app/multiple-window-tab-handling',
+      'https://testmaster-iota.vercel.app/selenium-roadmap-comprehensive-review',
+      'https://testmaster-iota.vercel.app/synchronization-implicit-explicit-fluent-wait',
+      'https://testmaster-iota.vercel.app/screenshots-browser-options-configuration',
+      'https://testmaster-iota.vercel.app/broken-link-detection-validation',
+      'https://testmaster-iota.vercel.app/selenium-theory-interview-questions',
+      'https://testmaster-iota.vercel.app/advanced-selenium-exception-handling',
+      'https://testmaster-iota.vercel.app/shadow-dom-handling-selenium',
+      'https://testmaster-iota.vercel.app/ssl-certificate-file-upload-autoit',
+      'https://testmaster-iota.vercel.app/javascript-executor-interface-advanced-operations',
+      'https://testmaster-iota.vercel.app/javascript-executor-scroll-alerts-styling',
+      'https://testmaster-iota.vercel.app/api-testing-introduction-postman'
+    ]
+    submitToIndexNow(allUrls)
+  }, [])
   
   const manualTestingDays = courseData.filter(day => day.category === 'manual-testing')
   const javaDays = courseData.filter(day => day.category === 'java')
