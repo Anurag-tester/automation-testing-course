@@ -37,6 +37,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://testmaster-iota.vercel.app',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+  },
 }
 
 export default function RootLayout({
@@ -51,7 +62,9 @@ export default function RootLayout({
           <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION} />
         )}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#3b82f6" />
