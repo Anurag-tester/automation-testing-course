@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -9,8 +11,6 @@ import { useEffect } from 'react'
 
 import { courseData, getCategoryColor, getCategoryStats } from '@/data/courseData'
 import { BookOpen, Code, TestTube, Play, Calendar, Award, ArrowRight, Search, Target, Users, Clock, Zap, CheckCircle, TrendingUp, Rocket, Star, ChevronRight, Globe, Smartphone, Database } from 'lucide-react'
-
-'use client'
 
 export default function Home() {
   const categoryStats = getCategoryStats()
